@@ -320,6 +320,76 @@ input:focus {
 .third-section-inner-bottom {
     margin: 0 105px;
     padding: 48px 0 16px 0;
-    background-image: url(require('../app/assets/images/tracks_1.png'));
+    background-image: url(https://i.imgur.com/ZkJRxtd.png), url(https://i.imgur.com/6YDQMpJ.png), url(https://i.imgur.com/QCJeoYS.png);
+    background-repeat: no-repeat,no-repeat,no-repeat;
+    background-position: top left,25% 95%,bottom right;
+}
 
+.third-section-inner-bottom-inner {
+    margin: 0 160px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+.third-section-grid-box {
+    margin: 16px;
+    height: 133px;
+    width: 29.8%;
+    background-color: white;
+    font-size: 19px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 420ms cubic-bezier(.165,.84,.44,1);
+    position: relative;
+}
+
+.third-section-grid-box:hover {
+    background-color: #3f46ad;
+    transform: scale(1.04);
+    color: white;
+}
+
+.fa-arrow-right {
+    color: white;
+    font-size: 14px;
+}
+
+.arrow-1 {
+    position: absolute;
+    right: 94px;
+    top: 60px;
+}
+
+.arrow-2 {
+    position: absolute;
+    right: 72px;
+    top: 60px;
+}
+
+.arrow-3 {
+    position: absolute;
+    right: 39px;
+    top: 60px;
+}
+
+.arrow-4 {
+    position: absolute;
+    right: 66px;
+    top: 60px;
+}
+
+.arrow-5 {
+    position: absolute;
+    right: 109px;
+    top: 60px;
+}
+
+.arrow-6 {
+    position: absolute;
+    right: 104px;
+    top: 60px;
 }

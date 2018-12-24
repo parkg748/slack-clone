@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Icon } from 'semantic-ui-react';
 import ColorPanel from './ColorPanel/ColorPanel';
 import SidePanel from './SidePanel/SidePanel';
 import Messages from './Messages/Messages';
@@ -95,7 +96,16 @@ class App extends React.Component {
             <h2>Built for every team</h2>
             <p>No matter your job title or department, Slack can help your team work together and get things done.</p>
           </div>
-          <div className='third-section-inner-bottom'></div>
+          <div className='third-section-inner-bottom'>
+            <div className='third-section-inner-bottom-inner'>
+              <div className='third-section-grid-box'>Sales <i className="arrow-1 fas fa-arrow-right"></i></div>
+              <div className='third-section-grid-box'>Marketing <i className="arrow-2 fas fa-arrow-right"></i></div>
+              <div className='third-section-grid-box'>Customer support <i className="arrow-3 fas fa-arrow-right"></i></div>
+              <div className='third-section-grid-box'>Engineering <i className="arrow-4 fas fa-arrow-right"></i></div>
+              <div className='third-section-grid-box'>IT <i className="arrow-5 fas fa-arrow-right"></i></div>
+              <div className='third-section-grid-box'>HR <i className="arrow-6 fas fa-arrow-right"></i></div>
+            </div>
+          </div>
         </div>
       </div>
     );
