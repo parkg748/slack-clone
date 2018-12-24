@@ -8,7 +8,6 @@ import firebase from './components/firebase';
 import 'semantic-ui-css/semantic.min.css'
 import { setUser } from './actions/index';
 import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom';
-
 import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
