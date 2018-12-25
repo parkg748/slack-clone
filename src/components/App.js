@@ -206,6 +206,83 @@ class App extends React.Component {
             </div>
           </div>
         </div>
+        <div className='sixth-section'>
+          <div className='sixth-section-inner'>
+            <h3>Try devchat with your team for free</h3>
+            <button>GET STARTED</button>
+          </div>
+        </div>
+        <div className='footer'>
+          <div className='footer-inner'>
+            <img src={require('../app/assets/images/download.png')}/>
+            <div className='footer-inner-right'>
+              <div className='footer-inner-right-column'>
+                <p>COMPANY</p>
+                <ul>
+                  <li>About Us</li>
+                  <li>Careers</li>
+                  <li>Blog</li>
+                  <li>Press</li>
+                  <li>Brand Guidelines</li>
+                </ul>
+              </div>
+              <div className='footer-inner-right-column'>
+                <p>PRODUCT</p>
+                <ul>
+                  <li>Why devchat?</li>
+                  <li>Enterprise</li>
+                  <li>Customer Stories</li>
+                  <li>Pricing</li>
+                  <li>Security</li>
+                  <li>devchat Demo</li>
+                </ul>
+              </div>
+              <div className='footer-inner-right-column'>
+                <p>RESOURCES</p>
+                <ul>
+                  <li>Download</li>
+                  <li>Help Center</li>
+                  <li>Guides</li>
+                  <li>Partners</li>
+                  <li>Events</li>
+                  <li>App Directory</li>
+                  <li>API</li>
+                  <li>Gartner Report</li>
+                  <li>eBooks</li>
+                </ul>
+              </div>
+              <div className='footer-inner-right-column'>
+                <p>EXTRAS</p>
+                <ul>
+                  <li>devchat Shop</li>
+                  <li>devchat at Work</li>
+                  <li>devchat Funds</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='footer-bottom'>
+          <div className='footer-bottom-inner'>
+            <ul>
+              <li>Status</li>
+              <li>Privacy & Terms</li>
+              <li>Contact Us</li>
+            </ul>
+            <ul>
+              <li>
+                <select value='English'>
+                  <option value='English'>English (US)</option>
+                </select>
+                <i className="fas fa-angle-down"></i>
+              </li>
+              <li className='margin-left'><i className="fab fa-twitter"></i></li>
+              <li className='margin-left'><i className="fab fa-facebook"></i></li>
+              <li className='margin-left'><i className="fab fa-youtube"></i></li>
+              <li className='margin-left'><i class="fab fa-linkedin"></i></li>
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }
