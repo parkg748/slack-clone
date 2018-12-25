@@ -22,6 +22,7 @@ import CreateTeamName from './components/CreateTeamName';
 import CreateChannelName from './components/CreateChannelName';
 import CreateInvites from './components/CreateInvites';
 import CreateTada from './components/CreateTada';
+import GetStartedFind from './components/GetStartedFind';
 
 const store = createStore(rootReducer, composeWithDevTools());
 
@@ -46,6 +47,7 @@ class Root extends React.Component {
                 <Route path='/create/tada' component={CreateTada}/>
                 <Route path='/create' component={Create}/>
                 <Route path='/get-started/create' component={GetStartedCreate}/>
+                <Route path='/get-started/find' component={GetStartedFind}/>
                 <Route path='/get-started' component={GetStarted}/>
                 <Route path='/signin' component={Signin}/>
                 <Route path='/login' component={Login}/>

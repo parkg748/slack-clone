@@ -55,7 +55,7 @@ class Signin extends React.Component {
                             <span>.devchat.com</span>
                         </div>
                         <button onClick={(e) => this.handleSubmit(e)}>Continue <i className="continue-arrow fas fa-arrow-right"></i></button>
-                        <p className='find-workspace'>Don’t know your workspace URL? <Link to='/'>Find your workspace</Link></p>
+                        <p className='find-workspace'>Don’t know your workspace URL? <Link to='/get-started'>Find your workspace</Link></p>
                     </div>
                 </div>
                 <p>Need to get your group started on devchat? <Link to='/'>Create a new workspace</Link></p>

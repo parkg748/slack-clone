@@ -24,7 +24,7 @@ class GetStarted extends React.Component {
                         <div className='get-started-body-inner-inner-inner-inner'>
                             <h1>Start with a workspace</h1>
                             <p>In devchat, everything happens in a workspace. Like a virtual office building, a workspace is where your team can gather in devchat to communicate and get work done.</p>
-                            <button>
+                            <button onClick={() => this.props.history.push('/get-started/find')}>
                                 <div className='find-your-devchat-workplace-icon'><i className="fas fa-search"></i></div>
                                 <span>
                                     <strong>Find your devchat workspace</strong>

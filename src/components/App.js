@@ -60,7 +60,7 @@ class App extends React.Component {
                   <li>Pricing</li>
                 </ul>
                 <ul>
-                  <li className='right-header-sign-in'>Sign In</li>
+                  <li className='right-header-sign-in'><Link to='/signin'>Sign In</Link></li>
                   <button>GET STARTED</button>
                 </ul>
               </div>

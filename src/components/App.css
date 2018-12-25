@@ -119,9 +119,15 @@ input:focus {
     background-color: transparent;
 }
 
-.right-header-sign-in:hover {
+.right-header-sign-in a:hover {
     font-weight: 100 !important;
     color: #3f46ad !important;
+    font-weight: 100;
+}
+
+.right-header-sign-in a {
+    color: #5b5e6d;
+    font-weight: 100;
 }
 
 .signin {
@@ -2014,6 +2020,10 @@ strong {
     margin-bottom: 0;
 }
 
+.get-started-find-body-inner-inner-inner {
+    margin-bottom: 0;
+}
+
 .create-confirm-email-inner h1 {
     margin: 0 0 14px 0 !important;
     font-size: 28px;
@@ -2033,6 +2043,14 @@ strong {
 
 .get-started-create-body-inner-inner-inner h1 {
     margin: 4px 0 20px 0 !important;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    color: #2c2d30;
+}
+
+.get-started-find-body-inner-inner-inner h1 {
+    margin: 0 0 4px 0 !important;
     font-size: 28px;
     font-weight: bold;
     font-family: 'Lato', sans-serif;
@@ -2110,6 +2128,16 @@ strong {
 .get-started-create-body-inner-inner-inner p {
     padding: 8px 24px 0 0;
     margin-bottom: 22px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    color: #717274;
+    font-weight: 100;
+}
+
+.get-started-find-body-inner-inner-inner p {
+    padding-top: 8px;
+    margin-bottom: 16px;
     font-family: 'Lato', sans-serif;
     font-size: 15px;
     line-height: 24px;
@@ -2239,6 +2267,38 @@ strong {
     background-size: contain;
     background-repeat: no-repeat;
     width: 160%;
+    background-position: -38%;
+}
+
+
+.get-started-find-body-inner-inner-inner p > strong {
+    margin-left: 0;
+    font-weight: bold;
+}
+
+.get-started-find-body-inner-inner-inner a {
+    cursor: pointer;
+}
+
+.get-started-find-body-inner-inner-inner a:hover {
+    text-decoration: underline;
+}
+
+.get-started-find-body-inner-inner-image {
+    background-image: url(https://i.imgur.com/Y7LZ1dj.png);
+    height: 337px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 190%;
+    background-position: -38%;
+}
+
+.get-started-find-email-inner-inner-image {
+    background-image: url(https://i.imgur.com/aVt4qiO.png);
+    height: 337px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 180%;
     background-position: -38%;
 }
 
