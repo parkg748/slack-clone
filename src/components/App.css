@@ -1087,3 +1087,64 @@ strong {
     display: flex;
     align-items: center;
 }
+
+.signin-footer-bottom {
+    margin-top: 16px;
+    height: 50px;
+    background-color: rgba(0,0,0,.05);
+}
+
+.signin-footer-bottom-inner {
+    margin: 0 213px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    color: #717274;
+    height: 100%;
+}
+
+.signin-footer-bottom-inner ul {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.signin-footer-bottom-inner li {
+    margin-right: 11px;
+    display: flex;
+    align-items: center;
+    color: #717274;
+    cursor: pointer;
+}
+
+.signin-footer-bottom-inner li:hover {
+    color: #8c8c94
+}
+
+.contact-us {
+    font-size: 13px;
+}
+
+.fa-slack {
+    color: #919193;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.signin-footer-twitter {
+    font-size: 17px;
+}
+
+.signin-footer-twitter:hover {
+    color: #4fa9f1;
+}
+
+.signin-footer-youtube {
+    font-size: 17px;
+}
+
+.signin-footer-youtube:hover {
+    color: #d11f10;
+}

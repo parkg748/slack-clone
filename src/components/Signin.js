@@ -92,6 +92,16 @@ class Signin extends React.Component {
                 </div>
             </div>
         </div>
+        <div className='signin-footer-bottom'>
+            <div className='signin-footer-bottom-inner'>
+                <i className="fab fa-slack"></i>
+                <ul>
+                    <li className='contact-us'>Contact Us</li>
+                    <li><i className="signin-footer-twitter fab fa-twitter"></i></li>
+                    <li><i className="signin-footer-youtube fab fa-youtube"></i></li>
+                </ul>
+            </div>
+        </div>
       </div>
     );
   }
