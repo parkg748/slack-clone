@@ -1148,3 +1148,293 @@ strong {
 .signin-footer-youtube:hover {
     color: #d11f10;
 }
+
+.create-left-sidebar {
+    width: 33.6%;
+    display: flex;
+    flex-flow: wrap;
+    align-content: space-between;
+    height: 100vh;
+}
+
+.create-left-header {
+    height: 69px;
+    display: flex;
+    align-items: center;
+}
+
+.create-left-header img {
+    width: 37px;
+    height: 37px;
+    margin-left: 18px;
+}
+
+.create-left-header span {
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 34px;
+    margin-left: 6px;
+    padding-bottom: 9px;
+}
+
+.create-left-sidebar-body {
+    padding: 0 58px;
+    height: fit-content;
+    display: flex;
+    flex-flow: wrap;
+    
+}
+
+.create-left-sidebar-body h1 {
+    margin: 28px 0 20px 0 !important;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    height: fit-content;
+}
+
+.create-left-sidebar-body p {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    height: fit-content;
+}
+
+.create-left-sidebar-body input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #919193;
+    border-radius: .25rem;
+    font-size: 20px;
+    color: #2c2d30;
+    margin-bottom: 8px;
+}
+
+.create-left-sidebar-submit {
+    padding: 38px 58px 32px 58px;
+    margin-bottom: 16px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.create-left-sidebar-submit button {
+    width: fit-content;
+    padding: 14px 35px 14px 35px;
+    font-size: 20px;
+    color: rgba(44,45,48,.75);
+    background-color: #e8e8e8;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    position: relative;
+    height: fit-content;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.create-continue-arrow {
+    color: rgba(44,45,48,.75);
+    margin-left: 11px;
+}
+
+.create-right-sidebar {
+    padding: 0 102px;
+    background-color: #50b1f8;
+    width: 66.4%;
+    height: 100vh;
+}
+
+.create-right-sidebar-header {
+    padding: 16px;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.create-right-sidebar-header span {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+.create-right-sidebar-header button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    margin-left: 8px;
+    padding: 8px 20px;
+    font-family: 'Lato', sans-serif;
+    border-radius: .25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.create-right-sidebar-header button:hover {
+    color: #2c2d30;
+    background-color: white;
+}
+
+.create-right-sidebar-image {
+    background-image: url(https://i.imgur.com/xw87Szi.png);
+    padding: 0 120px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+    height: 50vh;
+    position: absolute;
+    width: 50%;
+    top: 28%;
+}
+
+.create-workspace {
+    display: flex;
+    height: 100vh;
+}
+
+.get-started-header {
+    height: 69px;
+    background-color: white;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.get-started-header img {
+    width: 30px;
+    height: 30px;
+    margin-left: 18px;
+}
+
+.get-started-header span {
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 6px;
+    padding-bottom: 5px;
+}
+
+.get-started-body {
+    background-color: #f9f9f9;
+}
+
+.get-started-body-inner {
+    padding: 27px 32px 96px 32px;
+    margin: 0 208px;
+}
+
+.get-started-body-inner-inner {
+    margin: 0 216px 19px 216px;
+}
+
+.get-started-body-inner-inner-inner {
+    margin-top: -20px;
+    border: 1px solid #e8e8e8;
+    box-shadow: 0 10px 25px #e8e8e8;
+    padding: 60px 60px 0 60px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.get-started-body-inner-inner-inner-inner {
+    margin-bottom: 32px;
+}
+
+.get-started-body-inner-inner-inner-inner h1 {
+    margin: 0 0 8px 0 !important;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    color: #2c2d30;
+}
+
+.get-started-body-inner-inner-inner-inner p {
+    padding: 8px 24px 0 0;
+    margin-bottom: 32px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    color: #717274;
+    font-weight: 100;
+}
+
+.get-started-body-inner-inner-inner-inner button {
+    padding: 20px 0;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.find-your-devchat-workplace-icon {
+    margin: 10px 16px 0 0;
+    height: 36px;
+    width: 36px;
+    background-color: #008952;
+    color: white;
+    border-radius: .25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.get-started-body-inner-inner-inner-inner button > span {
+    margin-top: 4px;
+    color: #717274;
+    font-size: 13px;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-flow: wrap;
+    width: 80%;
+}
+
+.get-started-body-inner-inner-inner-inner span > strong {
+    font-size: 15px;
+    color: #2c2d30;
+    margin-left: 0;
+    margin-bottom: 5px;
+}
+
+.fa-angle-right {
+    padding-left: 24px;
+    font-size: 20px;
+}
+
+.get-started-create-workspace {
+    margin: 0 0 32px 0;
+    padding: 20px 0;
+    border-top: none !important;
+}
+
+.create-new-workplace-icon {
+    margin: 10px 16px 0 0;
+    height: 36px;
+    width: 36px;
+    background-color: #0576b9;
+    color: white;
+    border-radius: .25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.get-started-body-inner-bottom {
+    height: 175px;
+    width: 294%;
+    background-image: url(https://i.imgur.com/jyXu2Ca.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: -6%;
+}

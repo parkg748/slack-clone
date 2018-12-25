@@ -6,10 +6,25 @@ class Signin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+        url: '',
+        loading: false
     };
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    // need function to check if url exist in database
+    this.setState({ loading: true });
+  }
+
+  update(field) {
+      return (e) => {
+          this.setState({[field]: e.target.value});
+      }
+  }
+
   render() {
+    const { url } = this.state;
 
     return (
       <div>
@@ -36,10 +51,10 @@ class Signin extends React.Component {
                     <div className='signin-body-inner-input'>
                         <p>Enter your workspace’s <strong>devchat URL.</strong></p>
                         <div className='signin-body-inner-inner-input'>
-                            <input type='text' placeholder='your-workspace-url'/>
+                            <input onChange={this.update('url')} type='text' placeholder='your-workspace-url' value={url}/>
                             <span>.devchat.com</span>
                         </div>
-                        <button>Continue <i className="continue-arrow fas fa-arrow-right"></i></button>
+                        <button onClick={(e) => this.handleSubmit(e)}>Continue <i className="continue-arrow fas fa-arrow-right"></i></button>
                         <p className='find-workspace'>Don’t know your workspace URL? <Link to='/'>Find your workspace</Link></p>
                     </div>
                 </div>
