@@ -77,7 +77,7 @@ class App extends React.Component {
                 <input className={`${input}`} onClick={() => this.update('input')} type='email' placeholder='Email address'/>
                 <button>GET STARTED</button>
               </div>
-              <p className='sign-in-disclaimer'>Already using devchat? <Link to='/'>Sign in.</Link></p>
+              <p className='sign-in-disclaimer'>Already using devchat? <Link to='/signin'>Sign in.</Link></p>
             </div>
           </div>
         </div>
@@ -279,7 +279,7 @@ class App extends React.Component {
               <li className='margin-left'><i className="fab fa-twitter"></i></li>
               <li className='margin-left'><i className="fab fa-facebook"></i></li>
               <li className='margin-left'><i className="fab fa-youtube"></i></li>
-              <li className='margin-left'><i class="fab fa-linkedin"></i></li>
+              <li className='margin-left'><i className="fab fa-linkedin"></i></li>
             </ul>
           </div>
         </div>

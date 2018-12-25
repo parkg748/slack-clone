@@ -983,3 +983,107 @@ strong {
 .find-workspace a:hover {
     text-decoration: underline;
 }
+
+.signin-footer {
+    border-top: 1px solid #e8e8e8;
+    background-color: white;
+    color: #717274;
+    padding-top: 40px;
+    height: 284px;
+}
+
+.signin-footer-inner {
+    margin: 0 213px;
+    padding: 0 24px;
+    display: flex;
+}
+
+.signin-footer-inner-column-left {
+    width: 25%;
+    padding-right: 19px;
+    margin-bottom: 19px;
+}
+
+.signin-footer-inner-column-middle {
+    width: 25%;
+    padding-right: 19px;
+    margin-bottom: 19px;
+    margin-left: 15px;
+}
+
+.signin-footer-inner-column-middle li {
+    color: #717274;
+    list-style: none;
+    font-size: 13px;
+    font-weight: 100;
+    font-family: 'Lato',appleLogo,sans-serif;
+    cursor: pointer;
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.signin-footer-inner-column-left li {
+    color: #717274;
+    list-style: none;
+    font-size: 13px;
+    font-weight: 100;
+    font-family: 'Lato',appleLogo,sans-serif;
+    cursor: pointer;
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.signin-footer-inner-column-left li:hover {
+    color: #8c8c94;
+}
+
+.signin-footer-inner-column-middle li:hover {
+    color: #8c8c94;
+}
+
+.using-devchat {
+    color: #ff9000;
+    font-size: 11px;
+    font-weight: 100;
+    font-family: 'Lato',appleLogo,sans-serif;
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.devchat {
+    color: #e32072;
+    font-size: 11px;
+    font-weight: 100;
+    height: 25px;
+    font-family: 'Lato',appleLogo,sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.fa-heart {
+    margin-left: 2px;
+    font-size: 9px;
+}
+
+.legal {
+    color: #008952;
+    font-size: 11px;
+    font-weight: 100;
+    font-family: 'Lato',appleLogo,sans-serif;
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.handy-links {
+    color: #4b6bc6;
+    font-size: 11px;
+    font-weight: 100;
+    font-family: 'Lato',appleLogo,sans-serif;
+    height: 25px;
+    display: flex;
+    align-items: center;
+}

@@ -46,6 +46,52 @@ class Signin extends React.Component {
                 <p>Need to get your group started on devchat? <Link to='/'>Create a new workspace</Link></p>
             </div>
         </div>
+        <div className='signin-footer'>
+            <div className='signin-footer-inner'>
+                <div className='signin-footer-inner-column-left'>
+                    <ul>
+                        <div className='using-devchat'>USING DEVCHAT</div>
+                        <li>Product</li>
+                        <li>Enterprise</li>
+                        <li>Pricing</li>
+                        <li>Support</li>
+                        <li>devchat Guides</li>
+                        <li>App Directory</li>
+                        <li>API</li>
+                    </ul>
+                </div>
+                <div className='signin-footer-inner-column-middle'>
+                    <ul>
+                        <div className='devchat'>DEVCHAT <i className="fas fa-heart"></i></div>
+                        <li>Jobs</li>
+                        <li>Customers</li>
+                        <li>Developers</li>
+                        <li>Events</li>
+                        <li>Blog</li>
+                        <li>devchat Shop</li>
+                    </ul>
+                </div>
+                <div className='signin-footer-inner-column-middle'>
+                    <ul>
+                        <div className='legal'>LEGAL</div>
+                        <li>Privacy</li>
+                        <li>Security</li>
+                        <li>Terms of Service</li>
+                        <li>Policies</li>
+                    </ul>
+                </div>
+                <div className='signin-footer-inner-column-middle'>
+                    <ul>
+                        <div className='handy-links'>HANDY LINKS</div>
+                        <li>Download desktop app</li>
+                        <li>Download mobile app</li>
+                        <li>Brand Guidelines</li>
+                        <li>devchat at Work</li>
+                        <li>Status</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
       </div>
     );
   }

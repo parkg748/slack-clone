@@ -29,10 +29,10 @@ class Root extends React.Component {
     render() {
         return this.props.isLoading ? <Spinner /> : (
             <Switch>
-                <Route exact path='/' component={App}/>
                 <Route path='/signin' component={Signin}/>
                 <Route path='/login' component={Login}/>
                 <Route path='/register' component={Register}/>
+                <Route exact path='/' component={App}/>
             </Switch>
         );
     }
