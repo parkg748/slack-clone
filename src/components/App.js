@@ -61,7 +61,7 @@ class App extends React.Component {
                 </ul>
                 <ul>
                   <li className='right-header-sign-in'>Sign In</li>
-                  <button>Sign in</button>
+                  <button>GET STARTED</button>
                 </ul>
               </div>
             </div>
