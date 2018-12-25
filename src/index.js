@@ -16,6 +16,7 @@ import Spinner from './Spinner';
 import Signin from './components/Signin';
 import Create from './components/Create';
 import GetStarted from './components/GetStarted';
+import GetStartedCreate from './components/GetStartedCreate';
 
 const store = createStore(rootReducer, composeWithDevTools());
 
@@ -34,6 +35,7 @@ class Root extends React.Component {
         return this.props.isLoading ? <Spinner /> : (
             <Switch>
                 <Route path='/create' component={Create}/>
+                <Route path='/get-started/create' component={GetStartedCreate}/>
                 <Route path='/get-started' component={GetStarted}/>
                 <Route path='/signin' component={Signin}/>
                 <Route path='/login' component={Login}/>

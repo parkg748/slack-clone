@@ -1357,9 +1357,31 @@ strong {
     color: #2c2d30;
 }
 
-.get-started-body-inner-inner-inner-inner p {
+.get-started-create-body-inner-inner-inner {
+    margin-bottom: 0;
+}
+
+.get-started-create-body-inner-inner-inner h1 {
+    margin: 0 0 14px 0 !important;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    color: #2c2d30;
+}
+
+.get-started-create-body-inner-inner-inner p {
     padding: 8px 24px 0 0;
-    margin-bottom: 32px;
+    margin-bottom: 22px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    color: #717274;
+    font-weight: 100;
+}
+
+.get-started-body-inner-inner-inner-inner p {
+    padding-top: 8px;
+    margin-bottom: 16px;
     font-family: 'Lato', sans-serif;
     font-size: 15px;
     line-height: 24px;
@@ -1437,4 +1459,46 @@ strong {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: -6%;
+}
+
+.get-started-create-body-inner-inner-input {
+    margin: 18px 0 24px 0;
+}
+
+.get-started-create-body-inner-inner-input input {
+    padding: 12px;
+    border: 1px solid #919193;
+    color: #2c2d30;
+    margin: 0 8px 8px 0;
+    border-radius: .25rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    width: 100%;
+}
+
+.get-started-create-body-inner-inner-input button {
+    margin-top: 17px;
+    height: 49px;
+    background-color: #e8e8e8;
+    color: rgba(44,45,48,.75);
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    border-radius: .25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 32px 16px 32px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+}
+
+.get-started-create-body-inner-inner-image {
+    background-image: url(https://i.imgur.com/RIfLmIP.png);
+    height: 337px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 160%;
+    background-position: -38%;
 }
