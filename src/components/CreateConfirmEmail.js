@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 
-class GetStartedCreate extends React.Component {
+class CreateConfirmEmail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48,4 +48,4 @@ class GetStartedCreate extends React.Component {
   }
 }
 
-export default GetStartedCreate;
+export default CreateConfirmEmail;

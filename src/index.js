@@ -18,6 +18,10 @@ import Create from './components/Create';
 import GetStarted from './components/GetStarted';
 import GetStartedCreate from './components/GetStartedCreate';
 import CreateConfirmEmail from './components/CreateConfirmEmail';
+import CreateTeamName from './components/CreateTeamName';
+import CreateChannelName from './components/CreateChannelName';
+import CreateInvites from './components/CreateInvites';
+import CreateTada from './components/CreateTada';
 
 const store = createStore(rootReducer, composeWithDevTools());
 
@@ -36,6 +40,10 @@ class Root extends React.Component {
         return this.props.isLoading ? <Spinner /> : (
             <Switch>
                 <Route path='/create/confirmemail' component={CreateConfirmEmail}/>
+                <Route path='/create/teamname' component={CreateTeamName}/>
+                <Route path='/create/channelname' component={CreateChannelName}/>
+                <Route path='/create/invites' component={CreateInvites}/>
+                <Route path='/create/tada' component={CreateTada}/>
                 <Route path='/create' component={Create}/>
                 <Route path='/get-started/create' component={GetStartedCreate}/>
                 <Route path='/get-started' component={GetStarted}/>
