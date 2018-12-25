@@ -1332,12 +1332,26 @@ strong {
     margin: 0 208px;
 }
 
+.create-confirm-email-body {
+    padding: 27px 32px 14px 32px;
+    margin: 0 208px;
+}
+
 .get-started-body-inner-inner {
     margin: 0 216px 19px 216px;
 }
 
 .get-started-body-inner-inner-inner {
     margin-top: -20px;
+    border: 1px solid #e8e8e8;
+    box-shadow: 0 10px 25px #e8e8e8;
+    padding: 60px 60px 0 60px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.create-confirm-email {
+    margin-top: 38px;
     border: 1px solid #e8e8e8;
     box-shadow: 0 10px 25px #e8e8e8;
     padding: 60px 60px 0 60px;
@@ -1361,12 +1375,97 @@ strong {
     margin-bottom: 0;
 }
 
-.get-started-create-body-inner-inner-inner h1 {
+.create-confirm-email-inner h1 {
     margin: 0 0 14px 0 !important;
     font-size: 28px;
     font-weight: bold;
     font-family: 'Lato', sans-serif;
     color: #2c2d30;
+}
+
+.create-confirm-email-inner p {
+    margin-bottom: 32px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 22px;
+    color: #2c2d30;
+    font-weight: 100;
+}
+
+.get-started-create-body-inner-inner-inner h1 {
+    margin: 4px 0 20px 0 !important;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    color: #2c2d30;
+}
+
+.create-confirm-email-inner-input {
+    margin-bottom: 8px;
+    height: 74px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.create-confirm-email-inner-input-left {
+    width: 46%;
+    border-radius: 5px;
+}
+
+.create-confirm-email-inner-input-right {
+    width: 46%;
+    border-radius: 5px;
+}
+
+.create-confirm-email-inner-input-right input {
+    padding: 12px 12px 20px 12px;
+    font-size: 22px;
+    color: #2c2d30;
+    width: 33.3%;
+    border: none;
+    height: 100%;
+    text-align: center;
+}
+
+.left-left {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border: 1px solid #717274 !important;
+}
+
+.left-middle {
+    border-top: 1px solid #717274 !important;
+    border-bottom: 1px solid #717274 !important;
+}
+
+.create-confirm-email-inner p > strong {
+    font-weight: bold;
+    margin-left: 0;
+}
+
+.create-confirm-email-inner-input-left input {
+    padding: 12px 12px 20px 12px;
+    font-size: 22px;
+    color: #2c2d30;
+    width: 33.3%;
+    border: none;
+    height: 100%;
+    text-align: center;
+}
+
+.left-right {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px solid #717274 !important;
+}
+
+.create-confirm-email-inner-input-divider {
+    margin: 36px 0;
+    padding: 0 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #717274;
 }
 
 .get-started-create-body-inner-inner-inner p {
@@ -1388,6 +1487,7 @@ strong {
     color: #717274;
     font-weight: 100;
 }
+
 
 .get-started-body-inner-inner-inner-inner button {
     padding: 20px 0;
@@ -1497,6 +1597,15 @@ strong {
 .get-started-create-body-inner-inner-image {
     background-image: url(https://i.imgur.com/RIfLmIP.png);
     height: 337px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 160%;
+    background-position: -38%;
+}
+
+.create-confirm-email-inner-input-image {
+    background-image: url(https://i.imgur.com/aVt4qiO.png);
+    height: 317px;
     background-size: contain;
     background-repeat: no-repeat;
     width: 160%;

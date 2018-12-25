@@ -17,6 +17,7 @@ import Signin from './components/Signin';
 import Create from './components/Create';
 import GetStarted from './components/GetStarted';
 import GetStartedCreate from './components/GetStartedCreate';
+import CreateConfirmEmail from './components/CreateConfirmEmail';
 
 const store = createStore(rootReducer, composeWithDevTools());
 
@@ -34,6 +35,7 @@ class Root extends React.Component {
     render() {
         return this.props.isLoading ? <Spinner /> : (
             <Switch>
+                <Route path='/create/confirmemail' component={CreateConfirmEmail}/>
                 <Route path='/create' component={Create}/>
                 <Route path='/get-started/create' component={GetStartedCreate}/>
                 <Route path='/get-started' component={GetStarted}/>
