@@ -15,7 +15,7 @@ class CreateTada extends React.Component {
       <div className='team-name'>
         <div className='get-started-header'>
             <img src={require('../app/assets/images/download.png')}/>
-            <span>devchat</span>
+            <span onClick={() => this.props.history.push('/')}>devchat</span>
         </div>
         <div className='team-name-body'>
             <div className='teamname-left-sidebar'>

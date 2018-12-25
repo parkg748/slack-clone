@@ -15,7 +15,7 @@ class GetStarted extends React.Component {
       <div>
           <div className='get-started-header'>
             <img src={require('../app/assets/images/download.png')}/>
-            <span>devchat</span>
+            <span onClick={() => this.props.history.push('/')}>devchat</span>
           </div>
           <div className='get-started-body'>
             <div className='get-started-body-inner'>
@@ -32,7 +32,7 @@ class GetStarted extends React.Component {
                                 </span>
                                 <i className="fas fa-angle-right"></i>
                             </button>
-                            <button className='get-started-create-workspace'>
+                            <button onClick={() => this.props.history.push('/get-started/create')} className='get-started-create-workspace'>
                                 <div className='create-new-workplace-icon'><i className="fas fa-plus"></i></div>
                                 <span>
                                     <strong>Create a new workspace</strong>

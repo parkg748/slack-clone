@@ -31,7 +31,7 @@ class Signin extends React.Component {
         <div className='signin-header'>
             <div className='signin'>
                 <img src={require('../app/assets/images/download.png')} />
-                <div className='logo-name'>devchat</div>
+                <div className='logo-name' onClick={() => this.props.history.push('/')}>devchat</div>
                 <div className='signin-right-header'>
                     <ul>
                         <li>Product</li>

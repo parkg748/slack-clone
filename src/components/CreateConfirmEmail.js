@@ -15,7 +15,7 @@ class CreateConfirmEmail extends React.Component {
       <div>
           <div className='get-started-header'>
             <img src={require('../app/assets/images/download.png')}/>
-            <span>devchat</span>
+            <span onClick={() => this.props.history.push('/')}>devchat</span>
           </div>
           <div className='get-started-body'>
             <div className='create-confirm-email-body'>

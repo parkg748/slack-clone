@@ -16,7 +16,7 @@ class Create extends React.Component {
         <div className='create-left-sidebar'>
             <div className='create-left-header'>
                 <img src={require('../app/assets/images/download.png')}/>
-                <span>devchat</span>
+                <span onClick={() => this.props.history.push('/')}>devchat</span>
             </div>
             <div className='create-left-sidebar-body'>
                 <h1>Create a new workspace</h1>
