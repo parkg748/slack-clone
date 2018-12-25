@@ -11,8 +11,26 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ''
+      input: '',
+      header: 'header-outer'
     };
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    if (window.scrollY >= 427) {
+      this.setState({ header: 'header-outer-fixed' });
+    } else {
+      this.setState({ header: 'header-outer' });
+    }
   }
 
   update(field) {
@@ -24,25 +42,28 @@ class App extends React.Component {
   }
 
   render() {
-    const { input } = this.state;
+    const { input, header } = this.state;
+
 
     return (
-      <div>
-        <div className='header'>
-          <div className='logo'>
-            <img src={require('../app/assets/images/download.png')} />
-            <div className='logo-name'>devchat</div>
-            <div className='right-header'>
-              <ul>
-                <li>Why devchat?</li>
-                <li>Solutions</li>
-                <li>Resources</li>
-                <li>Pricing</li>
-              </ul>
-              <ul>
-                <li>Sign In</li>
-                <button>GET STARTED</button>
-              </ul>
+      <div onScroll={this.handleScroll}>
+        <div className={`${header}`}>
+          <div className='header'>
+            <div className='logo'>
+              <img src={require('../app/assets/images/download.png')} />
+              <div className='logo-name'>devchat</div>
+              <div className='right-header'>
+                <ul>
+                  <li>Why devchat?</li>
+                  <li>Solutions</li>
+                  <li>Resources</li>
+                  <li>Pricing</li>
+                </ul>
+                <ul>
+                  <li>Sign In</li>
+                  <button>GET STARTED</button>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -104,6 +125,84 @@ class App extends React.Component {
               <div className='third-section-grid-box'>Engineering <i className="arrow-4 fas fa-arrow-right"></i></div>
               <div className='third-section-grid-box'>IT <i className="arrow-5 fas fa-arrow-right"></i></div>
               <div className='third-section-grid-box'>HR <i className="arrow-6 fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </div>
+        <div className='fourth-section'>
+          <div className='fourth-section-inner'>
+            <div className='fourth-section-inner-inner'>
+              <h2>You're in good company</h2>
+              <p>Millions of people around the world have already made devchat the place where their work happens.</p>
+            </div>
+            <div className='fourth-section-inner-bottom'>
+              <div className='fourth-section-column'>
+                <div className='fourth-section-column-header'>
+                  <span>LVMH/Benefit Cosmetics</span>
+                  <h3>Beautifying the world with a wink and smile (and devchat).</h3>
+                </div>
+                <img src={require('../app/assets/images/card_benefit.jpg')}/>
+                <div className='fourth-section-read-story'>
+                  <span>READ STORY</span>
+                  <i className="fas fa-align-left"></i>
+                </div>
+              </div>
+              <div className='fourth-section-column'>
+                <div className='fourth-section-column-header'>
+                  <span>Away</span>
+                  <h3>Bringing the ideal suitcase to market with devchat.</h3>
+                </div>
+                <img src={require('../app/assets/images/card_away.jpg')}/>
+                <div className='fourth-section-read-story'>
+                  <span>READ STORY</span>
+                  <i className="fas fa-align-left"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='fifth-section'>
+          <div className='fifth-section-header'>What’s new at devchat</div>
+          <div className='fifth-section-inner'>
+            <div className='fifth-section-inner-inner'>
+              <div className='fifth-section-column'>
+                <div>
+                  <img src={require('../app/assets/images/blog-ICYMI-slack.jpg')}/>
+                  <div className='fifth-section-column-content'>
+                    <span>Blog</span>
+                    <h3>In Case You Missed It: More control and convenience in devchat</h3>
+                  </div>
+                </div>
+                <div className='fifth-section-read-story'>
+                  <span>READ STORY</span>
+                  <i className="fifth-section-read-story-arrow fas fa-arrow-right"></i>
+                </div>
+              </div>
+              <div className='fifth-section-column'>
+                <div>
+                  <img src={require('../app/assets/images/ebook-sales-teams-slack.jpg')}/>
+                  <div className='fifth-section-column-content'>
+                    <span>eBook</span>
+                    <h3>Getting Started with devchat for Sales teams</h3>
+                  </div>
+                </div>
+                <div className='fifth-section-read-story'>
+                  <span>GET EBOOK</span>
+                  <i className="fifth-section-read-story-arrow fas fa-arrow-right"></i>
+                </div>
+              </div>
+              <div className='fifth-section-column'>
+                <div>
+                  <img src={require('../app/assets/images/ebook-getting-started-with-marketing-slack.jpg')}/>
+                  <div className='fifth-section-column-content'>
+                    <span>eBook</span>
+                    <h3>Getting Started with Slack for Marketing teams</h3>
+                  </div>
+                </div>
+                <div className='fifth-section-read-story'>
+                  <span>GET EBOOK</span>
+                  <i className="fifth-section-read-story-arrow fas fa-arrow-right"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>
