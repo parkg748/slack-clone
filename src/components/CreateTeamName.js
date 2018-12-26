@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import firebase from './firebase';
 import './App.css';
 import CreateChannelName from './CreateChannelName';
 
@@ -11,8 +10,8 @@ class CreateTeamName extends React.Component {
         email: this.props.email,
         name: '',
         channelValid: false,
-        channelsRef: firebase.database().ref('channels')
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
@@ -24,22 +23,8 @@ class CreateTeamName extends React.Component {
   handleSubmit(e) {
       e.preventDefault();
       if (this.isFormValid(this.state)) {
-        this.addChannel();
+        this.setState({ channelValid: true });
       }
-  }
-
-  addChannel() {
-    const { email, channelsRef, name } = this.state;
-    const key = channelsRef.push().key;
-    const newChannel = {
-        id: key,
-        name,
-        createdBy: {
-            name: this.props.email
-        }
-    }
-    channelsRef.child(key).update(newChannel);
-    this.setState({ channelValid: true });
   }
 
   isFormValid = ({ name }) => name;

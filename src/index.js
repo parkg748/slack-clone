@@ -18,7 +18,6 @@ import Create from './components/Create';
 import GetStarted from './components/GetStarted';
 import GetStartedCreate from './components/GetStartedCreate';
 import CreateConfirmEmail from './components/CreateConfirmEmail';
-import CreateInvites from './components/CreateInvites';
 import CreateTada from './components/CreateTada';
 import GetStartedFind from './components/GetStartedFind';
 import SigninTemp from './components/SigninTemp';
@@ -41,7 +40,6 @@ class Root extends React.Component {
         return this.props.isLoading ? <Spinner /> : (
             <Switch>
                 <Route path='/create/confirmemail' component={CreateConfirmEmail}/>
-                <Route path='/create/invites' component={CreateInvites}/>
                 <Route path='/create/tada' component={CreateTada}/>
                 <Route path='/create' component={Create}/>
                 <Route path='/get-started/create' component={GetStartedCreate}/>

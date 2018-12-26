@@ -1,19 +1,40 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
+import CreateInvites from './CreateInvites';
 
 class CreateChannelName extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
         name: this.props.name,
-        email: this.props.email
+        email: this.props.email,
+        channelDetail: '',
+        detailValid: false
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  render() {
-    const { name, email } = this.state;
+  update(field) {
+      return (e) => {
+          this.setState({ [field]: e.target.value });
+      }
+  }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    if (this.isFormValid(this.state)) {
+    this.setState({ detailValid: true });
+    }
+  }
+
+  isFormValid = ({ channelDetail }) => channelDetail;
+
+  render() {
+    const { name, email, channelDetail, detailValid } = this.state;
+    if (detailValid) {
+        return <CreateInvites name={name} email={email} channelDetail={channelDetail}/>
+    }
     return (
       <div className='team-name'>
         <div className='get-started-header'>
@@ -24,8 +45,8 @@ class CreateChannelName extends React.Component {
             <div className='teamname-left-sidebar'>
                 <div className='teamname-left-sidebar-body'>
                     <h1>What’s a project your team is working on?</h1>
-                    <input type='text' placeholder='Ex. Q4 Budget, Website Update...'/>
-                    <button>Next</button>
+                    <input onChange={this.update('channelDetail')} type='text' placeholder='Ex. Q4 Budget, Website Update...' value={channelDetail}/>
+                    <button onClick={(e) => this.handleSubmit(e)}>Next</button>
                 </div>
             </div>
             <div className='teamname-right-sidebar'>

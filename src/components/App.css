@@ -535,10 +535,6 @@ input:focus {
     box-shadow: 0 1px 4px rgba(44,45,48,.3);
 }
 
-strong {
-    margin-left: 5px;
-}
-
 .logo button:hover {
     color: #6d6f7b;
 }
@@ -1604,14 +1600,18 @@ strong {
     height: fit-content;
 }
 
+.orange-text {
+    color: #ffa940;
+}
+
 .create-left-sidebar-body input {
     width: 100%;
     padding: 12px;
-    border: 1px solid #919193;
     border-radius: .25rem;
     font-size: 20px;
     color: #2c2d30;
     margin-bottom: 8px;
+    transition: border 0.3s ease-in-out;
 }
 
 .create-left-sidebar-submit {
@@ -1624,11 +1624,8 @@ strong {
 }
 
 .create-left-sidebar-submit button {
-    width: fit-content;
     padding: 14px 35px 14px 35px;
     font-size: 20px;
-    color: rgba(44,45,48,.75);
-    background-color: #e8e8e8;
     font-weight: bold;
     font-family: 'Lato', sans-serif;
     position: relative;
@@ -1640,7 +1637,6 @@ strong {
 }
 
 .create-continue-arrow {
-    color: rgba(44,45,48,.75);
     margin-left: 11px;
 }
 
