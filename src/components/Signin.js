@@ -9,6 +9,7 @@ class Signin extends React.Component {
         url: '',
         button: '#008952',
         font: 'white',
+        errors: false,
         loading: false
     };
   }
@@ -26,7 +27,7 @@ class Signin extends React.Component {
   }
 
   render() {
-    const { url, button, font, loading } = this.state;
+    const { url, button, font, loading, errors } = this.state;
 
     return (
       <div>
@@ -48,6 +49,12 @@ class Signin extends React.Component {
         </div>
         <div className='signin-body'>
             <div className='signin-body-inner'>
+                {errors ? (<div className='next-signin-body-error'>
+                    <div className='next-signin-body-error-inner'>
+                        <i className="fas fa-exclamation-triangle"></i>
+                        <span><strong>We couldn’t find your workspace.</strong> If you can’t remember your workspace’s address, we can <Link to='/'>send you a reminder</Link>.</span>
+                    </div>
+                </div>) : ''}
                 <div className='signin-body-inner-inner'>
                     <h1>Sign in to your workspace</h1>
                     <div className='signin-body-inner-input'>
