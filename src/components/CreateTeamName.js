@@ -1,16 +1,55 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import firebase from './firebase';
 import './App.css';
+import CreateChannelName from './CreateChannelName';
 
 class CreateTeamName extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+        email: this.props.email,
+        name: '',
+        channelValid: false,
+        channelsRef: firebase.database().ref('channels')
     };
   }
 
-  render() {
+  update(field) {
+    return (e) => {
+        this.setState({ [field]: e.target.value });
+    }
+  }
 
+  handleSubmit(e) {
+      e.preventDefault();
+      if (this.isFormValid(this.state)) {
+        this.addChannel();
+      }
+  }
+
+  addChannel() {
+    const { email, channelsRef, name } = this.state;
+    const key = channelsRef.push().key;
+    const newChannel = {
+        id: key,
+        name,
+        createdBy: {
+            name: this.props.email
+        }
+    }
+    channelsRef.child(key).update(newChannel);
+    this.setState({ channelValid: true });
+  }
+
+  isFormValid = ({ name }) => name;
+
+
+  render() {
+    const { name, email, channelValid } = this.state;
+    if (channelValid) {
+        return <CreateChannelName name={name} email={email}/>;
+    }
     return (
       <div className='team-name'>
         <div className='get-started-header'>
@@ -21,8 +60,8 @@ class CreateTeamName extends React.Component {
             <div className='teamname-left-sidebar'>
                 <div className='teamname-left-sidebar-body'>
                     <h1>What’s the name of your company or team?</h1>
-                    <input type='text' placeholder='Ex. Acme or Acme Marketing'/>
-                    <button>Next</button>
+                    <input onChange={this.update('name')} type='text' placeholder='Ex. Acme or Acme Marketing' value={name}/>
+                    <button onClick={(e) => this.handleSubmit(e)}>Next</button>
                 </div>
             </div>
             <div className='teamname-right-sidebar'>

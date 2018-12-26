@@ -6,10 +6,13 @@ class CreateChannelName extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+        name: this.props.name,
+        email: this.props.email
     };
   }
 
   render() {
+    const { name, email } = this.state;
 
     return (
       <div className='team-name'>
@@ -28,7 +31,7 @@ class CreateChannelName extends React.Component {
             <div className='teamname-right-sidebar'>
                 <div className='teamname-template'>
                     <div className='channelname-template-left'>
-                        <div className='channelname-template-left-first-line'>Grace</div>
+                        <div className='channelname-template-left-first-line'>{name}</div>
                         <div className='channelname-template-left-second-line'></div>
                         <span className='channelname-template-first-hash'>#</span><div className='channelname-template-left-third-line'></div>
                         <span className='channelname-template-second-hash'>#</span><div className='channelname-template-left-fourth-line'></div>

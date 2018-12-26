@@ -71,7 +71,7 @@ class Signin extends React.Component {
                         <p className='find-workspace'>Don’t know your workspace URL? <Link to='/get-started'>Find your workspace</Link></p>
                     </div>
                 </div>
-                <p>Need to get your group started on devchat? <Link to='/'>Create a new workspace</Link></p>
+                <p>Need to get your group started on devchat? <Link to='/create'>Create a new workspace</Link></p>
             </div>
         </div>
         <div className='signin-footer'>
