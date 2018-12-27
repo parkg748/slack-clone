@@ -14,11 +14,10 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './reducers';
 import Spinner from './Spinner';
 import Signin from './components/Signin';
-import Create from './components/Create';
+import Create from './components/Create/Create';
 import GetStarted from './components/GetStarted';
 import GetStartedCreate from './components/GetStartedCreate';
 import CreateConfirmEmail from './components/CreateConfirmEmail';
-import CreateTada from './components/CreateTada';
 import GetStartedFind from './components/GetStartedFind';
 import SigninTemp from './components/SigninTemp';
 
@@ -40,7 +39,6 @@ class Root extends React.Component {
         return this.props.isLoading ? <Spinner /> : (
             <Switch>
                 <Route path='/create/confirmemail' component={CreateConfirmEmail}/>
-                <Route path='/create/tada' component={CreateTada}/>
                 <Route path='/create' component={Create}/>
                 <Route path='/get-started/create' component={GetStartedCreate}/>
                 <Route path='/get-started/find' component={GetStartedFind}/>
@@ -57,7 +55,8 @@ class Root extends React.Component {
 
 const mapStateToProps = state => ({
     user: state.user.currentUser,
-    isLoading: state.user.isLoading
+    isLoading: state.user.isLoading,
+    channels: state.channels
 });
 
 const RootWithAuth = withRouter(connect(mapStateToProps, { setUser, clearUser })(Root));

@@ -2057,6 +2057,7 @@ input:focus {
     transition: all 80ms linear;
     cursor: pointer;
     font-family: 'Lato', sans-serif;
+    border: none;
 }
 
 .invites-template-left-third-line {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './App.css';
-import firebase from './firebase';
+import '../App.css';
+import firebase from '../firebase';
 import CreateTada from './CreateTada';
 
 class CreateInvites extends React.Component {

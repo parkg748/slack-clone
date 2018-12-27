@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './App.css';
+import '../App.css';
 import CreateChannelName from './CreateChannelName';
 
 class CreateTeamName extends React.Component {

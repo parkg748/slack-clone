@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Icon } from 'semantic-ui-react';
-import ColorPanel from './ColorPanel/ColorPanel';
-import SidePanel from './SidePanel/SidePanel';
-import Messages from './Messages/Messages';
-import MetaPanel from './MetaPanel/MetaPanel';
 import './App.css';
 
 class App extends React.Component {

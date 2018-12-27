@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './App.css';
-import CreateTeamName from './CreateTeamName';
+import '../App.css';
+import CreateTeamName from '../CreateTeamName';
 
 class Create extends React.Component {
   constructor(props) {
