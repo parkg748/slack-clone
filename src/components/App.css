@@ -1539,13 +1539,38 @@ input:focus {
     font-size: 15px;
 }
 
+.red-border {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border: 1px solid #d72b3f !important;
+    margin-bottom: 0 !important;
+}
+
+.red-border-icon {
+    position: initial !important;
+    margin-right: 11px;
+}
+
+.teamname-left-sidebar-body p {
+    padding: 8px 12px 10px 12px;
+    border-left: 1px solid rgba(215,43,63,.4);
+    border-right: 1px solid rgba(215,43,63,.4);
+    border-bottom: 1px solid rgba(215,43,63,.4);
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: rgba(215,43,63,.1);
+    font-size: 13px;
+    color: #2c2d30;
+    line-height: 21px;
+    margin-bottom: 12px !important;
+}
+
 .teamname-left-sidebar-body button {
     padding: 0 16px 3px 16px;
     height: 45px;
     width: 100%;
     transition: all 80ms linear;
-    background-color: #e8e8e8;
-    color: rgba(44,45,48,.75);
     font-weight: bold;
     display: flex;
     justify-content: center;

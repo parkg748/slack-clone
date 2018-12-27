@@ -10,13 +10,15 @@ class CreateTeamName extends React.Component {
         email: this.props.email,
         name: '',
         channelValid: false,
+        button: '#e8e8e8',
+        font: 'rgba(44,45,48,.75)'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
     return (e) => {
-        this.setState({ [field]: e.target.value });
+        this.setState({ [field]: e.target.value, button: '#008952', font: 'white' });
     }
   }
 
@@ -31,7 +33,7 @@ class CreateTeamName extends React.Component {
 
 
   render() {
-    const { name, email, channelValid } = this.state;
+    const { name, email, channelValid, button, font } = this.state;
     if (channelValid) {
         return <CreateChannelName name={name} email={email}/>;
     }
@@ -46,7 +48,7 @@ class CreateTeamName extends React.Component {
                 <div className='teamname-left-sidebar-body'>
                     <h1>What’s the name of your company or team?</h1>
                     <input onChange={this.update('name')} type='text' placeholder='Ex. Acme or Acme Marketing' value={name}/>
-                    <button onClick={(e) => this.handleSubmit(e)}>Next</button>
+                    <button style={{ color: `${font}`, backgroundColor: `${button}` }} onClick={(e) => this.handleSubmit(e)}>Next</button>
                 </div>
             </div>
             <div className='teamname-right-sidebar'>

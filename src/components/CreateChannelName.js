@@ -10,28 +10,33 @@ class CreateChannelName extends React.Component {
         name: this.props.name,
         email: this.props.email,
         channelDetail: '',
-        detailValid: false
+        detailValid: false,
+        button: '#e8e8e8',
+        font: 'rgba(44,45,48,.75)',
+        error: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
       return (e) => {
-          this.setState({ [field]: e.target.value });
+          this.setState({ [field]: e.target.value, button: '#008952', font: 'white', error: false });
       }
   }
 
   handleSubmit(e) {
     e.preventDefault();
     if (this.isFormValid(this.state)) {
-    this.setState({ detailValid: true });
+        this.setState({ detailValid: true });
+    } else {
+        this.setState({ error: true });
     }
   }
 
   isFormValid = ({ channelDetail }) => channelDetail;
 
   render() {
-    const { name, email, channelDetail, detailValid } = this.state;
+    const { name, email, channelDetail, detailValid, button, font, error } = this.state;
     if (detailValid) {
         return <CreateInvites name={name} email={email} channelDetail={channelDetail}/>
     }
@@ -45,8 +50,15 @@ class CreateChannelName extends React.Component {
             <div className='teamname-left-sidebar'>
                 <div className='teamname-left-sidebar-body'>
                     <h1>What’s a project your team is working on?</h1>
-                    <input onChange={this.update('channelDetail')} type='text' placeholder='Ex. Q4 Budget, Website Update...' value={channelDetail}/>
-                    <button onClick={(e) => this.handleSubmit(e)}>Next</button>
+                    {error ? <div>
+                        <input className='red-border' onChange={this.update('channelDetail')} type='text' placeholder='Ex. Q4 Budget, Website Update...' value={channelDetail}/>
+                        <p>
+                            <i className="red-border-icon fas fa-exclamation-triangle"></i>
+                            <span>devchat can only handle letters, numbers, spaces, and dashes here, with up to 21 characters. Try again?</span>
+                        </p>
+                    </div>  : <input onChange={this.update('channelDetail')} type='text' placeholder='Ex. Q4 Budget, Website Update...' value={channelDetail}/>}
+                    
+                    <button style={{ color: `${font}`, backgroundColor: `${button}` }} onClick={(e) => this.handleSubmit(e)}>Next</button>
                 </div>
             </div>
             <div className='teamname-right-sidebar'>
