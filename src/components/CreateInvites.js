@@ -14,6 +14,7 @@ class CreateInvites extends React.Component {
         channelsRef: firebase.database().ref('channels'),
         invites: [],
         close: ['none', 'none', 'none'],
+        errors: [false, false, false],
         idx: 3,
         invitesValid: false
     };
@@ -50,7 +51,12 @@ class CreateInvites extends React.Component {
       return (e) => {
         let temp = this.state.invites;
         temp[idx] = e.target.value;
+        let errors = this.state.errors;
         this.setState({ [field]: temp });
+        if (this.state.email === e.target.value) {
+            errors[idx] = true;
+            this.setState({ errors });
+        }
       }
   }
 
@@ -77,20 +83,28 @@ class CreateInvites extends React.Component {
     invites = [...invites.slice(0, idx), ...invites.slice(idx + 1)];
     let close = this.state.close;
     close = [...close.slice(0, idx), ...close.slice(idx + 1)];
-    this.setState({ idx: this.state.idx - 1, invites, close });
+    let errors = this.state.errors;
+    errors = [...errors.slice(0, idx), ...errors.slice(idx + 1)];
+    this.setState({ idx: this.state.idx - 1, invites, close, errors });
   }
 
   render() {
-    const { name, channelDetail, invites, close, idx, invitesValid } = this.state;
+    const { name, channelDetail, invites, close, idx, invitesValid, errors } = this.state;
 
     let inputBox = [];
     let j = 105;
     for (let i = 0; i < idx; i++) {
         inputBox.push(<div className='invites-box' onMouseEnter={(e) => this.displayCloseButton(i)} onMouseLeave={(e) => this.hideCloseButton(i)}>
-            <input onChange={this.addInvitee('invites', i)} type='email' placeholder='name@example.com' value={invites[i]}/>
+            {errors[i] ? <div>
+                <input className='red-border' onChange={this.addInvitee('invites', i)} type='email' placeholder='name@example.com' value={invites[i]}/>
+                <p>
+                    <i className="red-border-icon fas fa-exclamation-triangle"></i>
+                    <span>Oops! That looks like an invalid email address!</span>
+                </p>
+            </div> : <input onChange={this.addInvitee('invites', i)} type='email' placeholder='name@example.com' value={invites[i]}/>}
             <i onClick={() => this.deleteInput(i)} style={{ display: `${close[i]}`, top: `${j}px` }} className='fas fa-times'></i>
         </div>);
-        j += 60;
+        errors[i] ? j += 106 : j += 60;
     }
 
     if (invitesValid) {
