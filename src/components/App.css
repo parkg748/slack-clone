@@ -2618,6 +2618,17 @@ input:focus {
     right: -20px;
 }
 
-.invites-box {
+.invites-box-error {
     width: 440px;
+}
+
+.fa-check {
+    position: absolute;
+    color: #008952;
+    top: 20px;
+    right: 60px;
+}
+
+.invites-box {
+    position: relative;
 }

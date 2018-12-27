@@ -15,6 +15,7 @@ class CreateInvites extends React.Component {
         invites: [],
         close: ['none', 'none', 'none'],
         errors: [false, false, false],
+        check: [false, false, false],
         idx: 3,
         invitesValid: false
     };
@@ -52,10 +53,20 @@ class CreateInvites extends React.Component {
         let temp = this.state.invites;
         temp[idx] = e.target.value;
         let errors = this.state.errors;
+        let check = this.state.check;
         this.setState({ [field]: temp });
         if (this.state.email === e.target.value) {
             errors[idx] = true;
-            this.setState({ errors });
+            check[idx] = false;
+            this.setState({ errors, check });
+        } else {
+            errors[idx] = false;
+            if (e.target.value.includes('@')) {
+                check[idx] = true;
+            } else {
+                check[idx] = false;
+            }
+            this.setState({ errors, check });
         }
       }
   }
@@ -89,19 +100,22 @@ class CreateInvites extends React.Component {
   }
 
   render() {
-    const { name, channelDetail, invites, close, idx, invitesValid, errors } = this.state;
+    const { name, channelDetail, invites, close, idx, invitesValid, errors, check } = this.state;
 
     let inputBox = [];
     let j = 105;
     for (let i = 0; i < idx; i++) {
-        inputBox.push(<div className='invites-box' onMouseEnter={(e) => this.displayCloseButton(i)} onMouseLeave={(e) => this.hideCloseButton(i)}>
+        inputBox.push(<div className='invites-box-error' onMouseEnter={(e) => this.displayCloseButton(i)} onMouseLeave={(e) => this.hideCloseButton(i)}>
             {errors[i] ? <div>
                 <input className='red-border' onChange={this.addInvitee('invites', i)} type='email' placeholder='name@example.com' value={invites[i]}/>
                 <p>
                     <i className="red-border-icon fas fa-exclamation-triangle"></i>
                     <span>Oops! That looks like an invalid email address!</span>
                 </p>
-            </div> : <input onChange={this.addInvitee('invites', i)} type='email' placeholder='name@example.com' value={invites[i]}/>}
+            </div> : <div className='invites-box' onMouseEnter={(e) => this.displayCloseButton(i)} onMouseLeave={(e) => this.hideCloseButton(i)}>
+                <input onChange={this.addInvitee('invites', i)} type='email' placeholder='name@example.com' value={invites[i]}/>
+                {check[i] ? <i className="fas fa-check"></i> : ''}
+                </div>}
             <i onClick={() => this.deleteInput(i)} style={{ display: `${close[i]}`, top: `${j}px` }} className='fas fa-times'></i>
         </div>);
         errors[i] ? j += 106 : j += 60;
