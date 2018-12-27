@@ -7,13 +7,39 @@ class CreateTada extends React.Component {
     super(props);
     this.state = {
         name: this.props.name,
-        channelDetail: this.props.channelDetail
+        channelDetail: this.props.channelDetail,
+        invites: this.props.invites,
     };
   }
 
   render() {
-    const { name, channelDetail } = this.state;
-
+    const { name, channelDetail, invites } = this.state;
+    let invitesBox = [];
+    let topBullet = 191;
+    let topSpan = 183;
+    if (invites.length > 0) {
+        invitesBox.push(<div className='invites-template-left-sixth-line'>Teammates</div>);
+        for (let i = 0; i < this.props.invites.length; i++) {
+            let fontSize = 10;
+            let invitesLength = invites[i].length;
+            if (invitesLength > 17) {
+                fontSize -= Math.floor((invitesLength - 17) / 2);
+            }
+            invitesBox.push(<div>
+                <div style={{ top: `${topBullet}px` }} className='invites-bullet-first'></div>
+                <div style={{ top: `${topSpan}px`, fontSize: `${fontSize}px` }} className='invites-template-left-seventh-line'>{invites[i]}</div>
+            </div>);
+            topBullet += 16;
+            topSpan += 16;
+        }
+    } else {
+        invitesBox.push(<div>
+            <div className='channelname-template-left-sixth-line'></div>
+            <div className='channelname-bullet-first'></div><div className='channelname-template-left-seventh-line'></div>
+            <div className='channelname-bullet-second'></div><div className='channelname-template-left-eighth-line'></div>
+            <div className='channelname-bullet-third'></div><div className='channelname-template-left-ninth-line'></div>
+        </div>);
+    }
     return (
       <div className='team-name'>
         <div className='get-started-header'>
@@ -38,10 +64,7 @@ class CreateTada extends React.Component {
                         <div className='invites-green-bar'></div>
                         <span className='channelname-template-second-hash'>#</span><div className='channelname-template-left-fourth-line'></div>
                         <span className='channelname-template-third-hash'>#</span><div className='channelname-template-left-fifth-line'></div>
-                        <div className='channelname-template-left-sixth-line'></div>
-                        <div className='channelname-bullet-first'></div><div className='channelname-template-left-seventh-line'></div>
-                        <div className='channelname-bullet-second'></div><div className='channelname-template-left-eighth-line'></div>
-                        <div className='channelname-bullet-third'></div><div className='channelname-template-left-ninth-line'></div>
+                        {invitesBox}
                     </div>
                     <div className='teamname-template-right'>
                         <div className='invites-template-right-first-line'>#{channelDetail}</div>

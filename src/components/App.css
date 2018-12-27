@@ -1960,6 +1960,27 @@ input:focus {
     font-weight: bold;
 }
 
+.invites-template-left-seventh-line {
+    position: absolute;
+    height: 5px;
+    width: 58%;
+    left: 23px;
+    z-index: 3;
+    border-radius: 5px;
+    font-size: 10px;
+    color: #a89dab;
+    font-weight: bold;
+}
+
+.invites-bullet-first {
+    background-color: #a89dab;
+    position: absolute;
+    left: 14px;
+    border-radius: 50%;
+    width: 3px;
+    height: 3px;
+}
+
 .channelname-template-left-sixth-line {
     position: absolute;
     height: 5px;
@@ -1969,6 +1990,19 @@ input:focus {
     left: 15px;
     z-index: 3;
     border-radius: 5px;
+}
+
+.invites-template-left-sixth-line {
+    position: absolute;
+    height: 5px;
+    width: 42%;
+    top: 164px;
+    left: 15px;
+    z-index: 3;
+    border-radius: 5px;
+    font-size: 10px;
+    color: #a89dab;
+    font-weight: bold;
 }
 
 .channelname-template-left-third-line {

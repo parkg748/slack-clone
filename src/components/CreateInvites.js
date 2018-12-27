@@ -17,29 +17,41 @@ class CreateInvites extends React.Component {
         errors: [false, false, false],
         check: [false, false, false],
         idx: 3,
-        invitesValid: false
+        invitesValid: false, 
+        button: '#e8e8e8',
+        font: 'rgba(44,45,48,.75)',
+        skip: false
     };
     this.addChannel = this.addChannel.bind(this);
     this.displayCloseButton = this.displayCloseButton.bind(this);
     this.hideCloseButton = this.hideCloseButton.bind(this);
     this.deleteInput = this.deleteInput.bind(this);
     this.addMoreInput = this.addMoreInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
-      e.preventDefault();
-      if (this.isFormValid(this.state)) {
+  handleSubmit(e, type) {
+    e.preventDefault();
+    if (this.isFormValid(this.state)) {
+        console.log('here')
         this.addChannel();
-      }
+        this.setState({ button: '#008952', font: 'white' });
+    }
+    if (type === 'skip') {
+        this.setState({ [type]: true });
+    }
   }
+
+  isFormValid = ({ invites }) => invites.every(el => el.includes('@'));
 
   addChannel() {
-    const { email, channelDetail, channelsRef, name } = this.state;
+    const { email, channelDetail, channelsRef, name, invites } = this.state;
     const key = channelsRef.push().key;
     const newChannel = {
         id: key,
         name,
         detail: channelDetail,
+        invites,
         createdBy: {
             name: email
         }
@@ -49,7 +61,7 @@ class CreateInvites extends React.Component {
   }
 
   addInvitee(field, idx) {
-      return (e) => {
+    return (e) => {
         let temp = this.state.invites;
         temp[idx] = e.target.value;
         let errors = this.state.errors;
@@ -58,24 +70,23 @@ class CreateInvites extends React.Component {
         if (this.state.email === e.target.value) {
             errors[idx] = true;
             check[idx] = false;
-            this.setState({ errors, check });
         } else {
             errors[idx] = false;
-            if (e.target.value.includes('@')) {
-                check[idx] = true;
-            } else {
-                check[idx] = false;
-            }
-            this.setState({ errors, check });
+            e.target.value.includes('@') ? check[idx] = true : check[idx] = false;
         }
-      }
-  }
+        if (this.isFormValid(this.state)) {
+            this.setState({ button: '#008952', font: 'white', errors, check });
+        } else {
+            this.setState({ button: '#e8e8e8', font: 'rgba(44,45,48,.75)', errors, check });
+        }
+    }
+}
 
-  displayCloseButton(idx) {
+displayCloseButton(idx) {
     let close = this.state.close;
     close[idx] = '';
     this.setState({ close });
-  }
+}
 
   hideCloseButton(idx) {
     let close = this.state.close;
@@ -100,7 +111,7 @@ class CreateInvites extends React.Component {
   }
 
   render() {
-    const { name, channelDetail, invites, close, idx, invitesValid, errors, check } = this.state;
+    const { name, channelDetail, invites, close, idx, invitesValid, errors, check, button, font, skip } = this.state;
 
     let inputBox = [];
     let j = 105;
@@ -122,7 +133,7 @@ class CreateInvites extends React.Component {
     }
 
     if (invitesValid) {
-        return <CreateTada name={name} channelDetail={channelDetail}/>;
+        return skip ? <CreateTada name={name} channelDetail={channelDetail} invites={[]}/> : <CreateTada name={name} channelDetail={channelDetail} invites={invites}/>;
     }
     return (
       <div className='team-name'>
@@ -140,8 +151,8 @@ class CreateInvites extends React.Component {
                         <span onClick={() => this.addMoreInput()}>Add another</span>
                     </div>
                     <div className='invites-submit'>
-                        <button>Add Teammates</button>
-                        <div className='invites-skipfornow'>Or, <a onClick={(e) => this.handleSubmit(e)}>skip for now</a></div>
+                        <button onClick={(e) => this.handleSubmit(e, 'add')} style={{ color: `${font}`, backgroundColor: `${button}` }}>Add Teammates</button>
+                        <div className='invites-skipfornow'>Or, <a onClick={(e) => this.handleSubmit(e, 'skip')}>skip for now</a></div>
                     </div>
                     
                 </div>
