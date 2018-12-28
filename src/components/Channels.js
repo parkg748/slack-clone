@@ -141,7 +141,15 @@ class Channels extends React.Component {
                         <p>To see what teamwork is like in devchat, take a moment to save your account and invite some teammates to join your workspace.</p>
                         <button>Save Your Account</button>
                     </div>
-                    
+                    <div className='channel-footer'>
+                        <div className='msg-input'>
+                            <div className='msg-add-input'>+</div>
+                            <input type='text' placeholder='Message #testing'/>
+                            <i className="msg-input-gray fas fa-at"></i>
+                            <i className="msg-input-gray far fa-smile"></i>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         );

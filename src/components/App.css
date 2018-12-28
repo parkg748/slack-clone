@@ -3604,3 +3604,33 @@ input:focus {
 .message-pane-banner-body button:hover {
     box-shadow: 0 1px 4px rgba(44,45,48,.3);
 }
+
+.channel-footer {
+    height: 66px;
+    padding: 0 20px;
+    background-color: white;
+    z-index: 202;
+}
+
+.msg-input {
+    height: 40px;
+    border: 2px solid rgba(145,145,147,.7);
+    border-radius: .375rem;
+    width: 100%;
+    display: flex;
+}
+
+.msg-add-input {
+    width: 40px;
+}
+
+.msg-input input {
+    padding: 9px;
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    color: #2c2d30;
+}
+
+.msg-input-gray {
+    color: #717274;
+}
