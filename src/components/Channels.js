@@ -136,6 +136,11 @@ class Channels extends React.Component {
                     <div className='message-pane-banner'>
                         <img src={require('../app/assets/images/second_setup@2x.png')}/>
                     </div>
+                    <div className='message-pane-banner-body'>
+                        <h1>Save your account and start collaborating</h1>
+                        <p>To see what teamwork is like in devchat, take a moment to save your account and invite some teammates to join your workspace.</p>
+                    </div>
+                    
                 </div>
             </div>
         );

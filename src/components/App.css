@@ -3560,3 +3560,25 @@ input:focus {
 .message-pane-banner img {
     object-fit: contain;
 }
+
+.message-pane-banner-body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    flex-flow: wrap;
+}
+
+.message-pane-banner-body h1 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.message-pane-banner-body p {
+    margin: 8px 294px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    line-height: 22px;
+}
