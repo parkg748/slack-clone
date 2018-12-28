@@ -67,11 +67,27 @@ class Channels extends React.Component {
                             </div>
                             <div className='devchat-menu-section'>
                               <ul>
-                                <li>Administration</li>
+                                <li className='administration-container'><div className='administration'>Administration</div><i className="administration-arrow fas fa-angle-right"></i></li>
                                 <li>Invite people</li>
                                 <li>Analytics</li>
                                 <li>Customize devchat</li>
                                 <li>Sign out of <strong>hello</strong></li>
+                              </ul>
+                            </div>
+                            <div className='devchat-menu-section'>
+                              <ul>
+                                <li>Sign in to another workspace…</li>
+                              </ul>
+                            </div>
+                            <div className='devchat-menu-section'>
+                              <ul>
+                                <li className='open-devchat-app'>
+                                  <img />
+                                  <div className='open-devchat-app-content'>
+                                    <span>Open the Slack App</span>
+                                    <i className="fas fa-external-link-alt"></i>
+                                  </div>
+                                </li>
                               </ul>
                             </div>
                           </div>

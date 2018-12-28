@@ -3381,6 +3381,14 @@ input:focus {
     cursor: pointer;
 }
 
+.administration-container {
+  justify-content: space-between;
+}
+
+.administration-arrow {
+  font-size: 14px;
+}
+
 .icon-search-wrapper {
     position: absolute;
     top: 18px;
@@ -3859,6 +3867,11 @@ input:focus {
   align-items: center;
 }
 
+.administration {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+}
+
 .menu-list {
   padding: 8px 24px;
   font-family: 'Lato', sans-serif;
@@ -3873,4 +3886,37 @@ input:focus {
 
 .devchat-menu-section ul > li > strong {
   margin-left: 3px;
+}
+
+.open-devchat-app {
+  height: 43px !important;
+}
+
+.open-devchat-app img {
+  height: 35px;
+  width: 35px;
+  background-color: black;
+  border-radius: .2rem;
+  margin-right: 10px;
+}
+
+.open-devchat-app-content {
+  width: 83%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.open-devchat-app-content span {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  color: #2c2d30;
+}
+
+.open-devchat-app-content span:hover {
+  color: white;
+}
+
+.fa-external-link-alt {
+  font-size: 11px;
 }
