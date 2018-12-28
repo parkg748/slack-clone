@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Channels extends React.Component {
     constructor(props) {
@@ -40,12 +41,46 @@ class Channels extends React.Component {
                 <div className='channel-left-sidebar'>
                     <div onMouseEnter={() => this._onMouseEnter('font')} onMouseLeave={() => this._onMouseLeave('font')} className='channel-left-header'>
                         <div className='channel-left-header-teamname'>
-                            <div>
-                                <span>Testing</span>
-                                <i style={{ color: `${font}` }} className="channel-left-header-caret fas fa-angle-down"></i>
+                          <div className='menu-items-scroller'>
+                            <div className='devchat-menu-section'>
+                              <h2>
+                                <img />
+                                <span>parkg748</span>
+                              </h2>
+                              <ul>
+                                <li>Set a status…</li>
+                                <li>Profile & account</li>
+                                <li>Preferences</li>
+                                <li>Set yourself to<strong>away</strong></li>
+                                <li>Help & feedback</li>
+                              </ul>
                             </div>
-                            <i className="far fa-bell"></i>
-                            <div className='channel-left-notifications'><i className="fas fa-caret-up"></i>Notifications</div>
+                            <div className='devchat-menu-section'>
+                              <h2>
+                                <img />
+                                <div className='devchat-menu-section-container'>
+                                  <span>hello</span>
+                                  <p>hello-hnf8589.slack.com</p>
+                                </div>
+                              </h2>
+                              <div className='menu-list'>Your workspace is currently on devchat's <strong>free</strong> plan. <Link to='/'>See paid plans</Link></div>
+                            </div>
+                            <div className='devchat-menu-section'>
+                              <ul>
+                                <li>Administration</li>
+                                <li>Invite people</li>
+                                <li>Analytics</li>
+                                <li>Customize devchat</li>
+                                <li>Sign out of <strong>hello</strong></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div>
+                              <span>Testing</span>
+                              <i style={{ color: `${font}` }} className="channel-left-header-caret fas fa-angle-down"></i>
+                          </div>
+                          <i className="far fa-bell"></i>
+                          <div className='channel-left-notifications'><i className="fas fa-caret-up"></i>Notifications</div>
                         </div>
                         <div className='team-menu-user'>
                             <div className='team-menu-user-online'></div>
