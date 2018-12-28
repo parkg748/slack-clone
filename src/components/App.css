@@ -2832,6 +2832,7 @@ input:focus {
     right: -36px;
     transition: all .2s ease-in-out;
     display: none;
+    z-index: 202;
 }
 
 .browse-all-channels {
@@ -2885,6 +2886,7 @@ input:focus {
     right: -30px;
     transition: all .2s ease-in-out;
     display: none;
+    z-index: 202;
 }
 
 .create-a-channel i {
@@ -3076,6 +3078,7 @@ input:focus {
     right: -45px;
     transition: all .2s ease-in-out;
     display: none;
+    z-index: 202;
 }
 
 .open-direct-message-2 i {
@@ -3102,6 +3105,7 @@ input:focus {
     right: -20px;
     transition: all .2s ease-in-out;
     display: none;
+    z-index: 202;
 }
 
 .browse-apps-2 i {
