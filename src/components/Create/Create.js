@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import CreateTeamName from '../CreateTeamName';
+import CreateTeamName from './CreateTeamName';
 
 class Create extends React.Component {
   constructor(props) {
@@ -56,7 +56,7 @@ class Create extends React.Component {
         <div className='create-workspace'>
         <div className='create-left-sidebar'>
             <div className='create-left-header'>
-                <img src={require('../app/assets/images/download.png')}/>
+                <img src={require('../../app/assets/images/download.png')}/>
                 <span onClick={() => this.props.history.push('/')}>devchat</span>
             </div>
             <div className='create-left-sidebar-body'>

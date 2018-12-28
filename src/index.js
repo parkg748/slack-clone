@@ -6,7 +6,7 @@ import Register from './components/Auth/Register';
 import registerServiceWorker from './registerServiceWorker';
 import firebase from './components/firebase';
 import 'semantic-ui-css/semantic.min.css'
-import { setUser, clearUser } from './actions/index';
+import { setUser, clearUser, setChannels } from './actions/index';
 import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux';
@@ -15,11 +15,12 @@ import rootReducer from './reducers';
 import Spinner from './Spinner';
 import Signin from './components/Signin';
 import Create from './components/Create/Create';
-import GetStarted from './components/GetStarted';
-import GetStartedCreate from './components/GetStartedCreate';
+import GetStarted from './components/GetStarted/GetStarted';
+import GetStartedCreate from './components/GetStarted/GetStartedCreate';
 import CreateConfirmEmail from './components/CreateConfirmEmail';
-import GetStartedFind from './components/GetStartedFind';
+import GetStartedFind from './components/GetStarted/GetStartedFind';
 import SigninTemp from './components/SigninTemp';
+import Channels from './components/Channels';
 
 const store = createStore(rootReducer, composeWithDevTools());
 
@@ -33,11 +34,13 @@ class Root extends React.Component {
             }
         });
         window.getState = store.getState;
+        window.dispatch = store.dispatch;
     }
 
     render() {
         return this.props.isLoading ? <Spinner /> : (
             <Switch>
+                <Route path='/channel' component={Channels}/>
                 <Route path='/create/confirmemail' component={CreateConfirmEmail}/>
                 <Route path='/create' component={Create}/>
                 <Route path='/get-started/create' component={GetStartedCreate}/>
@@ -53,13 +56,15 @@ class Root extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    user: state.user.currentUser,
-    isLoading: state.user.isLoading,
-    channels: state.channels
-});
+const mapStateToProps = state => {
+    return {
+        user: state.user.currentUser,
+        isLoading: state.user.isLoading,
+        channels: state.channels
+    }
+}
 
-const RootWithAuth = withRouter(connect(mapStateToProps, { setUser, clearUser })(Root));
+const RootWithAuth = withRouter(connect(mapStateToProps, { setUser, clearUser, setChannels })(Root));
 
 ReactDOM.render(<Provider store={store}>
     <Router>

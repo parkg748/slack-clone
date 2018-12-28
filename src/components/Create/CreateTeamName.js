@@ -39,7 +39,7 @@ class CreateTeamName extends React.Component {
     return (
       <div className='team-name'>
         <div className='get-started-header'>
-            <img src={require('../app/assets/images/download.png')}/>
+            <img src={require('../../app/assets/images/download.png')}/>
             <span onClick={() => this.props.history.push('/')}>devchat</span>
         </div>
         <div className='team-name-body'>

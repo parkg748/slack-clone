@@ -13,7 +13,7 @@ class GetStarted extends React.Component {
     return (
       <div>
           <div className='get-started-header'>
-            <img src={require('../app/assets/images/download.png')}/>
+            <img src={require('../../app/assets/images/download.png')}/>
             <span onClick={() => this.props.history.push('/')}>devchat</span>
           </div>
           <div className='get-started-body'>

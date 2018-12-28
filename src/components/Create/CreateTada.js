@@ -12,6 +12,10 @@ class CreateTada extends React.Component {
     };
   }
 
+  goToChannelsPage() {
+      this.props.history.push('/channel');
+  }
+
   render() {
     const { name, channelDetail, invites } = this.state;
     let invitesBox = [];
@@ -43,7 +47,7 @@ class CreateTada extends React.Component {
     return (
       <div className='team-name'>
         <div className='get-started-header'>
-            <img src={require('../app/assets/images/download.png')}/>
+            <img src={require('../../app/assets/images/download.png')}/>
             <span onClick={() => this.props.history.push('/')}>devchat</span>
         </div>
         <div className='team-name-body'>
@@ -51,7 +55,7 @@ class CreateTada extends React.Component {
                 <div className='tada-left-sidebar-body'>
                     <h1>Tada! Meet your team’s first channel: #{channelDetail}</h1>
                     <p>A channel brings together every part of your project – the people, conversations, ideas, updates, and files – so your team can move forward and get more done.</p>
-                    <button>See Your Channel in devchat</button>
+                    <button onClick={() => this.goToChannelsPage()}>See Your Channel in devchat</button>
                     <p className='tada-left-sidebar-disclaimer'>By continuing, you're agreeing to our <Link to='/'>Customer Terms of Service</Link>, <Link to='/'>Privacy Policy</Link>, and <Link to='/'>Cookie Policy</Link>.</p>
                 </div>
             </div>

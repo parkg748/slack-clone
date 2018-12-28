@@ -22,7 +22,7 @@ class GetStartedFind extends React.Component {
           {checkemail ? (
         <div>
             <div className='get-started-header'>
-                <img src={require('../app/assets/images/download.png')}/>
+                <img src={require('../../app/assets/images/download.png')}/>
                 <span onClick={() => this.props.history.push('/')}>devchat</span>
             </div>
             <div className='get-started-body'>
@@ -43,7 +43,7 @@ class GetStartedFind extends React.Component {
           ) : (
         <div>
             <div className='get-started-header'>
-                <img src={require('../app/assets/images/download.png')}/>
+                <img src={require('../../app/assets/images/download.png')}/>
                 <span onClick={() => this.props.history.push('/')}>devchat</span>
             </div>
             <div className='get-started-body'>

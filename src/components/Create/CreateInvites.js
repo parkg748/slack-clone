@@ -59,6 +59,13 @@ class CreateInvites extends React.Component {
     this.setState({ invitesValid: true });
   }
 
+//   saveUser(createdUser) {
+//     return this.state.usersRef.child(createdUser.user.uid).set({
+//         name: createdUser.user.displayName,
+//         avatar: createdUser.user.photoURL
+//     });
+// }
+
   addInvitee(field, idx) {
     return (e) => {
         let temp = this.state.invites;
@@ -137,7 +144,7 @@ displayCloseButton(idx) {
     return (
       <div className='team-name'>
         <div className='get-started-header'>
-            <img src={require('../app/assets/images/download.png')}/>
+            <img src={require('../../app/assets/images/download.png')}/>
             <span onClick={() => this.props.history.push('/')}>devchat</span>
         </div>
         <div className='team-name-body'>

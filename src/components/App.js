@@ -38,8 +38,7 @@ class App extends React.Component {
 
   render() {
     const { input, header } = this.state;
-
-
+    
     return (
       <div onScroll={this.handleScroll}>
         <div className={`${header}`}>
