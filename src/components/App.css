@@ -3622,6 +3622,12 @@ input:focus {
 
 .msg-add-input {
     width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    padding-bottom: 3px;
+    border-right: 2px solid rgba(145,145,147,.7);
 }
 
 .msg-input input {
@@ -3629,8 +3635,46 @@ input:focus {
     font-size: 15px;
     font-family: 'Lato', sans-serif;
     color: #2c2d30;
+    border: none;
+    width: 91.5%;
 }
 
-.msg-input-gray {
+.msg-input-at {
     color: #717274;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.msg-input-at:hover {
+    color: #0576b9;
+    transform: scale(1.25);
+}
+
+.msg-input-smile {
+    color: #717274;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.msg-input-smile:hover {
+    color: #0576b9;
+    transform: scale(1.25);
+}
+
+
+.msg-input-emoji {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 4%;
+    position: relative;
+}
+
+.msg-input-smile-color {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    display: none;
+    top: 4px;
+    right: -4px;
 }
