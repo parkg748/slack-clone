@@ -2690,7 +2690,9 @@ input:focus {
 
 .channel-right-sidebar {
     width: 84%;
-    height: 100vh;
+    height: fit-content;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    z-index: 201;
 }
 
 .channel-left-header {
@@ -3592,7 +3594,7 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 8px 4px;
+    margin: 8px 4px 32px 4px;
     padding: 0 12px 1px 12px;
     border-radius: 4px;
     height: 27px;
