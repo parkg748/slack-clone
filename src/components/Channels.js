@@ -133,6 +133,9 @@ class Channels extends React.Component {
                             </div>
                         </div>
                     </div>
+                    <div className='message-pane-banner'>
+                        <img src={require('../app/assets/images/second_setup@2x.png')}/>
+                    </div>
                 </div>
             </div>
         );

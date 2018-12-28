@@ -3553,4 +3553,10 @@ input:focus {
     height: 110px;
     margin-bottom: 24px;
     background-color: rgba(44,45,48,.03);
+    display: flex;
+    justify-content: center;
+}
+
+.message-pane-banner img {
+    object-fit: contain;
 }
