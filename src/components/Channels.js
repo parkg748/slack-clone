@@ -44,24 +44,35 @@ class Channels extends React.Component {
                     </div>
                     <div className='col-channels'>
                         <div className='divider'></div>
-                        <div className='browse-all-channels'><i className="fas fa-caret-down"></i>Browse all channels</div>
                         <div className='row-col-channels-title'>
                             <span className='row-col-channels-title-name'>Channels</span>
+                            <div className='browse-all-channels'><i className="fas fa-caret-down"></i>Browse all channels</div>
+                            <div className='channels-fa-plus-circle'><i className="fas fa-plus-circle"></i></div>
                             <div className='create-a-channel'><i className="fas fa-caret-down"></i>Create a channel</div>
-                            <i className="fas fa-plus-circle"></i>
                         </div>
                         <div className='row-col-channels'># general</div>
                         <div className='row-col-channels'># hello</div>
                         <div className='row-col-channels'># random</div>
                         <div className='divider-2'></div>
-                        <div className='open-direct-message-1'><i className="fas fa-caret-down"></i>Open a direct message</div>
                         <div className='row-col-channels-title'>
-                            <span className='row-col-channels-title-name'>Direct Messages</span>
+                            <span className='row-col-channels-direct-messages'>Direct Messages</span>
+                            <div className='open-direct-message-1'><i className="fas fa-caret-down"></i>Open a direct message</div>
+                            <div className='direct-fa-plus-circle'><i className="fas fa-plus-circle"></i></div>
                             <div className='open-direct-message-2'><i className="fas fa-caret-down"></i>Open a direct message</div>
-                            <i className="fas fa-plus-circle"></i>
                         </div>
-                        <div className='row-col-channels'>slackbot</div>
-                        <div className='row-col-channels'>parkg748</div>
+                        <div className='row-col-channels'><i className="fas fa-heart"></i>slackbot</div>
+                        <div className='row-col-channels'>
+                            <div className='team-menu-user-online'></div>
+                            <span>parkg748</span>
+                            <p>(you)</p>
+                        </div>
+                        <div className='divider-3'></div>
+                        <div className='row-col-channels-title'>
+                            <span className='row-col-channels-apps'>Apps</span>
+                            <div className='browse-apps-1'><i className="fas fa-caret-down"></i>Browse Apps</div>
+                            <div className='browse-fa-plus-circle'><i className="fas fa-plus-circle"></i></div>
+                            <div className='browse-apps-2'><i className="fas fa-caret-down"></i>Browse Apps</div>
+                        </div>
                     </div>
                 </div>
             </div>

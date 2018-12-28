@@ -2779,8 +2779,8 @@ input:focus {
     justify-content: center;
     align-items: center;
     color: white;
-    top: 0;
-    left: 0;
+    top: -37px;
+    left: 13px;
     transition: all .2s ease-in-out;
     position: absolute;
     display: none;
@@ -2788,8 +2788,8 @@ input:focus {
 
 .browse-all-channels i {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 29px;
+    left: 29px;
     color: black !important;
     font-size: 20px;
     transition: all .2s ease-in-out;
@@ -2815,16 +2815,16 @@ input:focus {
     justify-content: center;
     align-items: center;
     color: white;
-    top: 0;
-    right: 0;
+    top: -40px;
+    right: -30px;
     transition: all .2s ease-in-out;
     display: none;
 }
 
 .create-a-channel i {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 28px;
+    right: 50px;
     color: black !important;
     font-size: 20px;
     transition: all .2s ease-in-out;
@@ -2864,23 +2864,69 @@ input:focus {
     font-size: 16px;
 }
 
-.row-col-channels-title i {
+.channels-fa-plus-circle {
     cursor: pointer;
     color: rgb(202,196,201);
     margin-right: 0;
     font-size: 16px;
 }
 
-.row-col-channels-title i:hover {
+.direct-fa-plus-circle {
+    cursor: pointer;
+    color: rgb(202,196,201);
+    margin-right: 0;
+    font-size: 16px;
+}
+
+.browse-fa-plus-circle {
+    cursor: pointer;
+    color: rgb(202,196,201);
+    margin-right: 0;
+    font-size: 16px;
+}
+
+.channels-fa-plus-circle:hover {
     color: white;
 }
 
-.row-col-channels-title i:hover + .create-a-channel {
+.channels-fa-plus-circle:hover + .create-a-channel {
+    display: flex;
+}
+
+.direct-fa-plus-circle:hover {
+    color: white;
+}
+
+.direct-fa-plus-circle:hover + .open-direct-message-2 {
+    display: flex;
+}
+
+.browse-fa-plus-circle:hover {
+    color: white;
+}
+
+.browse-fa-plus-circle:hover + .browse-apps-2 {
     display: flex;
 }
 
 .row-col-channels-title-name:hover {
     color: white;
+}
+
+.row-col-channels-direct-messages:hover {
+    color: white;
+}
+
+.row-col-channels-direct-messages:hover + .open-direct-message-1 {
+    display: flex;
+}
+
+.row-col-channels-apps:hover {
+    color: white;
+}
+
+.row-col-channels-apps:hover + .browse-apps-1 {
+    display: flex;
 }
 
 .row-col-channels-title-name:hover + .browse-all-channels {
@@ -2906,8 +2952,8 @@ input:focus {
     justify-content: center;
     align-items: center;
     color: white;
-    top: 0;
-    left: 0;
+    top: -37px;
+    left: 13px;
     transition: all .2s ease-in-out;
     position: absolute;
     display: none;
@@ -2915,8 +2961,35 @@ input:focus {
 
 .open-direct-message-1 i {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 28px;
+    left: 46px;
+    color: black !important;
+    font-size: 20px;
+    transition: all .2s ease-in-out;
+}
+
+.browse-apps-1 {
+    height: 20px;
+    background-color: black;
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    padding: 17px 12px 18px 12px;
+    border-radius: 7px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    top: -37px;
+    left: 13px;
+    transition: all .2s ease-in-out;
+    position: absolute;
+    display: none;
+}
+
+.browse-apps-1 i {
+    position: absolute;
+    top: 28px;
+    left: 11px;
     color: black !important;
     font-size: 20px;
     transition: all .2s ease-in-out;
@@ -2933,17 +3006,59 @@ input:focus {
     justify-content: center;
     align-items: center;
     color: white;
-    top: 0;
-    right: 0;
+    top: -40px;
+    right: -45px;
     transition: all .2s ease-in-out;
     display: none;
 }
 
 .open-direct-message-2 i {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 28px;
+    right: 65px;
     color: black !important;
     font-size: 20px;
     transition: all .2s ease-in-out;
+}
+
+.browse-apps-2 {
+    height: 20px;
+    background-color: black;
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    padding: 17px 12px 18px 12px;
+    border-radius: 7px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    top: -40px;
+    right: -20px;
+    transition: all .2s ease-in-out;
+    display: none;
+}
+
+.browse-apps-2 i {
+    position: absolute;
+    top: 28px;
+    right: 41px;
+    color: black !important;
+    font-size: 20px;
+    transition: all .2s ease-in-out;
+}
+
+.row-col-channels p {
+    margin-left: 8px;
+    color: rgb(160, 154, 159);
+}
+
+.row-col-channels i {
+    margin-left: 0;
+    margin-right: 5px;
+    font-size: 11px;
+    color: #38978d;
+}
+
+.divider-3 {
+    height: 62px;
 }
