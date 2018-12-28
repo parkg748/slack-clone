@@ -142,8 +142,8 @@ class Channels extends React.Component {
                         <button>Save Your Account</button>
                     </div>
                     <div className='channel-footer'>
+                        <div className='msg-add-input'>+</div>
                         <div className='msg-input'>
-                            <div className='msg-add-input'>+</div>
                             <input type='text' placeholder='Message #testing'/>
                             <div className='msg-input-emoji'>
                                 <i className="msg-input-at fas fa-at"></i>
