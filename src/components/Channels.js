@@ -139,6 +139,7 @@ class Channels extends React.Component {
                     <div className='message-pane-banner-body'>
                         <h1>Save your account and start collaborating</h1>
                         <p>To see what teamwork is like in devchat, take a moment to save your account and invite some teammates to join your workspace.</p>
+                        <button>Save Your Account</button>
                     </div>
                     
                 </div>

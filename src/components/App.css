@@ -3582,3 +3582,23 @@ input:focus {
     font-size: 15px;
     line-height: 22px;
 }
+
+.message-pane-banner-body button {
+    background-color: #008952;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 4px;
+    padding: 0 12px 1px 12px;
+    border-radius: 4px;
+    height: 27px;
+    font-family: 'Lato', sans-serif;
+}
+
+.message-pane-banner-body button:hover {
+    box-shadow: 0 1px 4px rgba(44,45,48,.3);
+}
