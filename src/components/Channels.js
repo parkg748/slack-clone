@@ -75,15 +75,18 @@ class Channels extends React.Component {
                       <div className='channel-browser-header'># general</div>
                       <div className='channel-browser-purpose'>This channel is for workspace-wide communication and announcements. All members are in this channel.</div>
                       <div className='channel-browser-created-info'>Created by <strong>parkg748</strong> on December 27th, 2018</div>
+                      <i className="fas fa-level-down-alt"></i>
                     </div>
                     <div className='channel-browser-row'>
                       <div className='channel-browser-header'># random</div>
                       <div className='channel-browser-purpose'>A place for non-work-related flimflam, faffing, hodge-podge or jibber-jabber you'd prefer to keep out of more focused work-related channels.</div>
                       <div className='channel-browser-created-info'>Created by <strong>parkg748</strong> on December 27th, 2018</div>
+                      <i className="fas fa-level-down-alt"></i>
                     </div>
                     <div className='channel-browser-row'>
                       <div className='channel-browser-header'># testing</div>
                       <div className='channel-browser-created-info'>Created by <strong>parkg748</strong> on December 27th, 2018</div>
+                      <i className="fas fa-level-down-alt"></i>
                     </div>
                   </div>
                 </div>

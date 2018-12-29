@@ -4100,6 +4100,28 @@ input:focus {
 .channel-browser-row {
   padding: 11px 80px 15px 11px;
   border-top: 1px solid #e8e8e8;
+  cursor: pointer;
+  position: relative;
+}
+
+.channel-browser-row:hover .fa-level-down-alt {
+  display: flex;
+}
+
+.fa-level-down-alt {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  transform: rotate(90deg);
+  color: #2d9ee0;
+  display: none;
+}
+
+.channel-browser-row:hover {
+  border-top: 1px solid transparent;
+  background-color: #eaf5fc;
+  border: 1px solid #cbe7f7;
+  border-radius: 6px;
 }
 
 .channel-browser-header {
