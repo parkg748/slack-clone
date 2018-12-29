@@ -6,6 +6,7 @@ import BrowseChannels from './BrowseChannels';
 import CreateChannel from './CreateChannel';
 import DirectMessages from './DirectMessages';
 import BrowseApp from './BrowseApp';
+import SaveYourAccount from './SaveYourAccount';
 
 class Channels extends React.Component {
     constructor(props) {
@@ -26,7 +27,8 @@ class Channels extends React.Component {
             createChannel: false,
             currentChannel: 'general',
             directMessages: false,
-            browseApp: false
+            browseApp: false,
+            saveYourAccount: false
         };
         this._onMouseEnter = this._onMouseEnter.bind(this);
         this._onMouseLeave = this._onMouseLeave.bind(this);
@@ -55,6 +57,8 @@ class Channels extends React.Component {
         this.setState({ directMessages: !this.state.directMessages });
       } else if (type === 'browse-app') {
         this.setState({ browseApp: !this.state.browseApp });
+      } else if (type === 'save-account') {
+        this.setState({ saveYourAccount: !this.state.saveYourAccount });
       }
     }
 
@@ -89,7 +93,7 @@ class Channels extends React.Component {
     }
 
     render() {
-        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel, privateMode, left, createChannel, currentChannel, directMessages, browseApp } = this.state;
+        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel, privateMode, left, createChannel, currentChannel, directMessages, browseApp, saveYourAccount } = this.state;
 
         return (
             <div className='channel'>
@@ -97,37 +101,7 @@ class Channels extends React.Component {
               {createChannel ? <CreateChannel toggleMenu={this.toggleMenu} left={left} privateMode={privateMode}/> : ''}
               {directMessages ? <DirectMessages toggleMenu={this.toggleMenu}/> : ''}
               {browseApp ? <BrowseApp toggleMenu={this.toggleMenu}/> : ''}
-              <div className='modal-overlay'>
-                <div className='modal-content'>
-                  <div>
-                    <div className='onboarding-dialog-header'>
-                      <h3>Set your name and password</h3>
-                      <i className="onboarding-dialog-header-times fas fa-times"></i>
-                    </div>
-                    <img src={require('../app/assets/images/step_01@2x.png')}/>
-                    <div className='onboarding-step-fields'>
-                      <div className='onboarding-step-fields-container'>
-                      <p>Your full name</p>
-                      <input type='text'/>
-                      <div className='full-name-disclaimer'>Your name will be displayed with messages you send.</div>
-                    </div>
-                    <div className='onboarding-step-fields-container'>
-                      <p>Your password</p>
-                      <input type='password' minlength="8"/>
-                      <div className='full-name-disclaimer'>Passwords must be at least 6 characters long, and can’t be things like password, 123456, or abcdef.</div>
-                    </div>
-                    <div className='onboarding-step-fields-container'>
-                      <input type='checkbox' />
-                      <span>It’s okay to send me email with devchat tips, news, and offers.</span>
-                    </div>
-                  </div>
-                  </div>
-                  <div className='dialog-footer'>
-                    <span>Step 1 of 3</span>
-                    <button>Next</button>
-                  </div>
-                </div>
-              </div>
+              {saveYourAccount ? <SaveYourAccount toggleMenu={this.toggleMenu}/> : ''}
               <div className='channel-left-sidebar'>
                 <div onMouseEnter={() => this._onMouseEnter('font')} onMouseLeave={() => this._onMouseLeave('font')} className='channel-left-header'>
                   <div className='channel-left-header-teamname'>
@@ -233,7 +207,7 @@ class Channels extends React.Component {
                   <div className='message-pane-banner-body'>
                     <h1>Save your account and start collaborating</h1>
                     <p>To see what teamwork is like in devchat, take a moment to save your account and invite some teammates to join your workspace.</p>
-                    <button>Save Your Account</button>
+                    <button onClick={() => this.toggleMenu('save-account')}>Save Your Account</button>
                   </div>
                 </div>
                 <div className='channel-right-bottom'>
