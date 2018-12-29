@@ -92,8 +92,57 @@ class Channels extends React.Component {
               {browseChannel ? <BrowseChannels showChannel={showChannel} sortChannel={sortChannel} toggleMenu={this.toggleMenu} setSelection={this.setSelection} sort={sort} show={show}/> : ''}
               {createChannel ? <CreateChannel toggleMenu={this.toggleMenu} left={left} privateMode={privateMode}/> : ''}
               {directMessages ? <DirectMessages toggleMenu={this.toggleMenu}/> : ''}
+              <div className='contents-container'>
+                <div className='channel-browser-footer'>
+                  <i className="fas fa-cog"></i>
+                  <span>Manage apps...</span>
+                </div>
+                <div onClick={() => this.toggleMenu('browse-channel')} className='contents-container-close-btn'>
+                  <i className="close-btn-icon fas fa-times"></i>
+                  <span>esc</span>
+                </div>
+                <div className='contents'>
+                  <div className='apps-browser-filter-container'>
+                    <div className='apps-browser-filter-channels'>
+                      <h1>Browse channels</h1>
+                      <button>View App Directory</button>
+                    </div>
+                    <input type='text' placeholder='Search by name or category (e.g. productivity, sales)'/>
+                    <i className="apps-browser-filter-search fas fa-search"></i>
+                  </div>
 
-              <div className='channel-left-sidebar'>
+                  <div className='channel-list-container'>
+                    <div className='app-browser-category-section'>
+                      <div className='app-browser-app'>
+                        <img src={require('../app/assets/images/tutorial@2x.png')}/>
+                        <div className='app-browser-app-info'>
+                          <strong>What are apps?</strong>
+                          <span>A quick look at how apps in Slack can streamline your work</span>
+                        </div>
+                        <button>Start</button>
+                      </div>
+                    </div>
+                    <div className='channel-browser-row'>
+                      <div className='channel-browser-header'># general</div>
+                      <div className='channel-browser-purpose'>This channel is for workspace-wide communication and announcements. All members are in this channel.</div>
+                      <div className='channel-browser-created-info'>Created by <strong>parkg748</strong> on December 27th, 2018</div>
+                      <i className="fas fa-level-down-alt"></i>
+                    </div>
+                    <div className='channel-browser-row'>
+                      <div className='channel-browser-header'># random</div>
+                      <div className='channel-browser-purpose'>A place for non-work-related flimflam, faffing, hodge-podge or jibber-jabber you'd prefer to keep out of more focused work-related channels.</div>
+                      <div className='channel-browser-created-info'>Created by <strong>parkg748</strong> on December 27th, 2018</div>
+                      <i className="fas fa-level-down-alt"></i>
+                    </div>
+                    <div className='channel-browser-row'>
+                      <div className='channel-browser-header'># testing</div>
+                      <div className='channel-browser-created-info'>Created by <strong>parkg748</strong> on December 27th, 2018</div>
+                      <i className="fas fa-level-down-alt"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/*<div className='channel-left-sidebar'>
                   <div onMouseEnter={() => this._onMouseEnter('font')} onMouseLeave={() => this._onMouseLeave('font')} className='channel-left-header'>
                       <div className='channel-left-header-teamname'>
                         {menu ? <MenuItemScroller /> : ''}
@@ -125,7 +174,7 @@ class Channels extends React.Component {
                       <div className='row-col-channels-title'>
                           <span onClick={() => this.toggleMenu('direct-messages')} className='row-col-channels-direct-messages'>Direct Messages</span>
                           <div className='open-direct-message-1'><i className="fas fa-caret-down"></i>Open a direct message</div>
-                          <div className='direct-fa-plus-circle'><i className="fas fa-plus-circle"></i></div>
+                          <div onClick={() => this.toggleMenu('direct-messages')} className='direct-fa-plus-circle'><i className="fas fa-plus-circle"></i></div>
                           <div className='open-direct-message-2'><i className="fas fa-caret-down"></i>Open a direct message</div>
                       </div>
                       <div onClick={() => this.setSelection('slackbot', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `slackbot` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `slackbot` ? `white` : `rgb(202,196,201)`}` }} className='row-col-channels'><i className="fas fa-heart"></i>slackbot</div>
@@ -234,7 +283,7 @@ class Channels extends React.Component {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>*/}
             </div>
         );
     }
