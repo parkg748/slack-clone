@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import MenuItemScroller from './MenuItemScroller';
 import NotificationModal from './NotificationModal';
 import BrowseChannels from './BrowseChannels';
+import CreateChannel from './CreateChannel';
 
 class Channels extends React.Component {
     constructor(props) {
@@ -19,7 +20,8 @@ class Channels extends React.Component {
             sortChannel: 'Channel Name',
             browseChannel: false,
             privateMode: false,
-            left: 75
+            left: 75,
+            createChannel: false
         };
         this._onMouseEnter = this._onMouseEnter.bind(this);
         this._onMouseLeave = this._onMouseLeave.bind(this);
@@ -42,6 +44,8 @@ class Channels extends React.Component {
         this.setState({ privateMode: true, left: 2 });
       } else if (type === 'private') {
         this.setState({ privateMode: false, left: 75 });
+      } else if (type === 'create-channel') {
+        this.setState({ createChannel: !this.state.createChannel });
       }
     }
 
@@ -74,50 +78,13 @@ class Channels extends React.Component {
     }
 
     render() {
-        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel, privateMode, left } = this.state;
+        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel, privateMode, left, createChannel } = this.state;
 
         return (
             <div className='channel'>
               {browseChannel ? <BrowseChannels showChannel={showChannel} sortChannel={sortChannel} toggleMenu={this.toggleMenu} setSelection={this.setSelection} sort={sort} show={show}/> : ''}
-              <div className='contents-container'>
-                <div onClick={() => this.toggleMenu('browse-channel')} className='contents-container-close-btn'>
-                  <i className="close-btn-icon fas fa-times"></i>
-                  <span>esc</span>
-                </div>
-                <div className='create-channel-contents'>
-                  <div className='channel-modal-header'>
-                    <h1>Create a channel</h1>
-                  </div>
-                  <p>Channels are where your members communicate. They’re best when organized around a topic — #leads, for example.</p>
-                  <div className='private-toggle-container'>
-                    <div className='toggle-checked'>
-                      {privateMode ? <button className='private-button' onClick={() => this.toggleMenu('private')}>Private<div style={{ left: `${left}%` }} className='toggled-checked-circle'></div></button> : <button className='public-button' onClick={() => this.toggleMenu('public')}>Public<div style={{ left: `${left}%` }} className='toggled-checked-circle'></div></button>}
-                      {privateMode ? <div className='toggle-secondary-label'>This channel can only be joined or viewed by invite.</div> : <div className='toggle-secondary-label'>Anyone in your workspace can view and join this channel.</div>}
-                    </div>
-                  </div>
-                  <div className='invites-submit'>
-                    <label><strong>Name</strong></label>
-                    <input type='text' placeholder='e.g. leads'/>
-                    <i className="fas fa-lock"></i>
-                    <span>Names must be lowercase, without spaces or periods, and shorter than 22 characters.</span>
-                  </div>
-                  <div className='medium-bottom-margin'>
-                    <label><strong>Purpose</strong>(optional)</label>
-                    <input type='text' />
-                    <span>What’s this channel about?</span>
-                  </div>
-                  <div className='send-invites-to'>
-                    <label><strong>Send invites to:</strong> (optional)</label>
-                    <input className='send-invites-to' type='text' placeholder='Search by name'/>
-                    <span>Select up to 1000 people to add to this channel.</span>
-                  </div>
-                  <div className='save-channel'>
-                    <button className='save-channel-cancel'>Cancel</button>
-                    <button className='save-channel-create'>Create Channel</button>
-                  </div>
-                </div>
-              </div>
-              {/*<div className='channel-left-sidebar'>
+              {createChannel ? <CreateChannel toggleMenu={this.toggleMenu} left={left} privateMode={privateMode}/> : ''}
+              <div className='channel-left-sidebar'>
                   <div onMouseEnter={() => this._onMouseEnter('font')} onMouseLeave={() => this._onMouseLeave('font')} className='channel-left-header'>
                       <div className='channel-left-header-teamname'>
                         {menu ? <MenuItemScroller /> : ''}
@@ -139,7 +106,7 @@ class Channels extends React.Component {
                       <div className='row-col-channels-title'>
                           <span onClick={() => this.toggleMenu('browse-channel')} className='row-col-channels-title-name'>Channels</span>
                           <div className='browse-all-channels'><i className="fas fa-caret-down"></i>Browse all channels</div>
-                          <div className='channels-fa-plus-circle'><i className="fas fa-plus-circle"></i></div>
+                          <div className='channels-fa-plus-circle'><i onClick={() => this.toggleMenu('create-channel')} className="fas fa-plus-circle"></i></div>
                           <div className='create-a-channel'><i className="fas fa-caret-down"></i>Create a channel</div>
                       </div>
                       <div className='row-col-channels'># general</div>
@@ -258,7 +225,7 @@ class Channels extends React.Component {
                     </div>
                   </div>
                 </div>
-              </div>*/}
+              </div>
             </div>
         );
     }
