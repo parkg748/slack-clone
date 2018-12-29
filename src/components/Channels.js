@@ -21,7 +21,8 @@ class Channels extends React.Component {
             browseChannel: false,
             privateMode: false,
             left: 75,
-            createChannel: false
+            createChannel: false,
+            currentChannel: 'general'
         };
         this._onMouseEnter = this._onMouseEnter.bind(this);
         this._onMouseLeave = this._onMouseLeave.bind(this);
@@ -54,6 +55,8 @@ class Channels extends React.Component {
         this.setState({ show: false, showChannel: type });
       } else if (selection === 'sort') {
         this.setState({ sort: false, sortChannel: type });
+      } else if (selection === 'currentChannel') {
+        this.setState({ [selection]: type });
       }
     }
 
@@ -78,7 +81,7 @@ class Channels extends React.Component {
     }
 
     render() {
-        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel, privateMode, left, createChannel } = this.state;
+        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel, privateMode, left, createChannel, currentChannel } = this.state;
 
         return (
             <div className='channel'>
@@ -109,9 +112,9 @@ class Channels extends React.Component {
                           <div className='channels-fa-plus-circle'><i onClick={() => this.toggleMenu('create-channel')} className="fas fa-plus-circle"></i></div>
                           <div className='create-a-channel'><i className="fas fa-caret-down"></i>Create a channel</div>
                       </div>
-                      <div className='row-col-channels'># general</div>
-                      <div className='row-col-channels'># hello</div>
-                      <div className='row-col-channels'># random</div>
+                      <div onClick={() => this.setSelection('general', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `general` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `general` ? `white` : `rgb(202,196,201)`}` }} className='row-col-channels'># general</div>
+                      <div onClick={() => this.setSelection('random', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `random` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `random` ? `white` : `rgb(202,196,201)`}`  }} className='row-col-channels'># random</div>
+                      <div onClick={() => this.setSelection('hello', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `hello` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `hello` ? `white` : `rgb(202,196,201)`}`  }} className='row-col-channels'># hello</div>
                       <div className='divider-2'></div>
                       <div className='row-col-channels-title'>
                           <span className='row-col-channels-direct-messages'>Direct Messages</span>
