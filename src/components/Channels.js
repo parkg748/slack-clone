@@ -51,6 +51,43 @@ class Channels extends React.Component {
 
         return (
             <div className='channel'>
+              <div className='contents-container'>
+                <div className='contents'>
+                  <div className='browse-channels'>
+                    <h1>Browse channels</h1>
+                    <button>Create Channel</button>
+                  </div>
+                  <input type='text' placeholder='Search channels'/>
+                  <i className="search-channels fas fa-search"></i>
+                  <div className='channel-browser-filter'>
+                    <div className='show-which-channels-container'>
+                      <strong>Show:</strong> All channels
+                      <i className="show-all-channels-arrow fas fa-angle-down"></i>
+                    </div>
+                    <div className='show-which-channels-container'>
+                      <strong>Sort:</strong> Channel Name
+                      <i className="show-all-channels-arrow fas fa-angle-down"></i>
+                    </div>
+                  </div>
+                  <div className='channel-list-container'>
+                    <div className='channel-browser-divider'>Channels you belong to</div>
+                    <div className='channel-browser-row'>
+                      <div className='channel-browser-header'># general</div>
+                      <div className='channel-browser-purpose'>This channel is for workspace-wide communication and announcements. All members are in this channel.</div>
+                      <div className='channel-browser-created-info'>Created by <strong>parkg748</strong> on December 27th, 2018</div>
+                    </div>
+                    <div className='channel-browser-row'>
+                      <div className='channel-browser-header'># random</div>
+                      <div className='channel-browser-purpose'>A place for non-work-related flimflam, faffing, hodge-podge or jibber-jabber you'd prefer to keep out of more focused work-related channels.</div>
+                      <div className='channel-browser-created-info'>Created by <strong>parkg748</strong> on December 27th, 2018</div>
+                    </div>
+                    <div className='channel-browser-row'>
+                      <div className='channel-browser-header'># testing</div>
+                      <div className='channel-browser-created-info'>Created by <strong>parkg748</strong> on December 27th, 2018</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
                 {/*<div className='channel-left-sidebar'>
                     <div onMouseEnter={() => this._onMouseEnter('font')} onMouseLeave={() => this._onMouseLeave('font')} className='channel-left-header'>
                         <div className='channel-left-header-teamname'>

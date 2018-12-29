@@ -3998,15 +3998,20 @@ input:focus {
   padding: 0 32px;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .contents {
-  width: 40%;
+  width: 47%;
   padding-top: 96px;
+  position: relative;
 }
 
 .browse-channels {
   margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .browse-channels h1 {
@@ -4014,4 +4019,106 @@ input:focus {
   font-size: 34px;
   font-weight: bold;
   font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+.browse-channels button {
+  padding: 8px 14px 9px;
+  font-size: 15px;
+  color: white;
+  background-color: #008952;
+  transition: all 75ms ease-in-out;
+  cursor: pointer;
+  border-radius: .25rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  align-items: center;
+}
+
+.contents input {
+  padding: 10px 12px 8px 40px;
+  margin-bottom: 16px;
+  border-radius: .25rem;
+  border: 1px solid #919193;
+  color: #2c2d30;
+  width: 100%;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+}
+
+.search-channels {
+  position: absolute;
+  top: 180px;
+  left: 12px;
+  color: #919193;
+  font-size: 20px;
+}
+
+.channel-browser-filter {
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.show-which-channels-container {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 7px 40px 8px 12px;
+  position: relative;
+  color: #717274;
+  width: fit-content;
+}
+
+.show-which-channels-container strong {
+  margin-right: 3px;
+}
+
+.show-all-channels-arrow {
+  position: absolute;
+  right: 20px;
+  top: 13px;
+  font-size: 12px;
+}
+
+.channel-list-container {
+  overflow: scroll;
+}
+
+.channel-browser-divider {
+  padding: 4px 0 4px 12px;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  background-color: #f9f9f9;
+  color: #717274;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.channel-browser-row {
+  padding: 11px 80px 15px 11px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.channel-browser-header {
+  font-family: 'Lato', sans-serif;
+  color: #2c2d30;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.channel-browser-purpose {
+  margin-bottom: 4px;
+  font-size: 15px;
+  font-family: 'Lato', sans-serif;
+  line-height: 22px;
+  color: #2c2d30;
+}
+
+.channel-browser-created-info {
+  font-size: 13px;
+  font-family: 'Lato', sans-serif;
+  color: #717274;
 }
