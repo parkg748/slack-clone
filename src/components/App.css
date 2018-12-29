@@ -4014,11 +4014,102 @@ input:focus {
   position: relative;
 }
 
+.create-channel-contents {
+  width: 47%;
+  padding-top: 76px;
+  position: relative;
+}
+
 .browse-channels {
   margin-bottom: 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.channel-modal-header {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.channel-modal-header h1 {
+  color: #2c2d30;
+  font-size: 34px;
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+.private-toggle-container {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.toggle-checked {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.private-button {
+  width: 97px;
+  height: 27px;
+  padding: 1px 16px 1px 32px;
+  background-color: #f26130;
+  color: white;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.public-button {
+  width: 97px;
+  height: 27px;
+  padding: 1px 32px 1px 16px;
+  background-color: #008952;
+  color: white;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.toggle-secondary-label {
+  font-size: 16px;
+  margin-left: 8px;
+  color: #2c2d30;
+  cursor: pointer;
+}
+
+.toggled-checked-circle {
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  top: 2px;
+  transition: 70ms ease-out;
+  background-color: white;
+}
+
+.create-channel-contents p {
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  line-height: 20px;
+  color: #717274;
+  margin-bottom: 24px;
 }
 
 .browse-channels h1 {
@@ -4101,6 +4192,17 @@ input:focus {
 }
 
 .contents input {
+  padding: 10px 12px 8px 40px;
+  margin-bottom: 16px;
+  border-radius: .25rem;
+  border: 1px solid #919193;
+  color: #2c2d30;
+  width: 100%;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+}
+
+.create-channel-contents input {
   padding: 10px 12px 8px 40px;
   margin-bottom: 16px;
   border-radius: .25rem;

@@ -17,7 +17,9 @@ class Channels extends React.Component {
             sort: false,
             showChannel: 'All Channels',
             sortChannel: 'Channel Name',
-            browseChannel: false
+            browseChannel: false,
+            privateMode: false,
+            left: 75
         };
         this._onMouseEnter = this._onMouseEnter.bind(this);
         this._onMouseLeave = this._onMouseLeave.bind(this);
@@ -36,6 +38,10 @@ class Channels extends React.Component {
         this.setState({ [type]: true });
       } else if (type === 'browse-channel') {
         this.setState({ browseChannel: !this.state.browseChannel });
+      } else if (type === 'public') {
+        this.setState({ privateMode: true, left: 2 });
+      } else if (type === 'private') {
+        this.setState({ privateMode: false, left: 75 });
       }
     }
 
@@ -68,12 +74,31 @@ class Channels extends React.Component {
     }
 
     render() {
-        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel } = this.state;
+        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel, privateMode, left } = this.state;
 
         return (
             <div className='channel'>
               {browseChannel ? <BrowseChannels showChannel={showChannel} sortChannel={sortChannel} toggleMenu={this.toggleMenu} setSelection={this.setSelection} sort={sort} show={show}/> : ''}
-              <div className='channel-left-sidebar'>
+              <div className='contents-container'>
+                <div onClick={() => this.toggleMenu('browse-channel')} className='contents-container-close-btn'>
+                  <i className="close-btn-icon fas fa-times"></i>
+                  <span>esc</span>
+                </div>
+                <div className='create-channel-contents'>
+                  <div className='channel-modal-header'>
+                    <h1>Create a channel</h1>
+                  </div>
+                  <p>Channels are where your members communicate. They’re best when organized around a topic — #leads, for example.</p>
+                  <div className='private-toggle-container'>
+                    <div className='toggle-checked'>
+                      {privateMode ? <button className='private-button' onClick={() => this.toggleMenu('private')}>Private<div style={{ left: `${left}%` }} className='toggled-checked-circle'></div></button> : <button className='public-button' onClick={() => this.toggleMenu('public')}>Public<div style={{ left: `${left}%` }} className='toggled-checked-circle'></div></button>}
+
+                      {privateMode ? <div className='toggle-secondary-label'>This channel can only be joined or viewed by invite.</div> : <div className='toggle-secondary-label'>Anyone in your workspace can view and join this channel.</div>}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/*<div className='channel-left-sidebar'>
                   <div onMouseEnter={() => this._onMouseEnter('font')} onMouseLeave={() => this._onMouseLeave('font')} className='channel-left-header'>
                       <div className='channel-left-header-teamname'>
                         {menu ? <MenuItemScroller /> : ''}
@@ -214,7 +239,7 @@ class Channels extends React.Component {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>*/}
             </div>
         );
     }
