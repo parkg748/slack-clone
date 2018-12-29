@@ -6,7 +6,7 @@ import BrowseChannels from './BrowseChannels';
 import CreateChannel from './CreateChannel';
 import DirectMessages from './DirectMessages';
 import BrowseApp from './BrowseApp';
-import SaveYourAccount from './SaveYourAccount';
+import SaveYourAccountStepOne from './SaveYourAccountStepOne';
 
 class Channels extends React.Component {
     constructor(props) {
@@ -101,7 +101,7 @@ class Channels extends React.Component {
               {createChannel ? <CreateChannel toggleMenu={this.toggleMenu} left={left} privateMode={privateMode}/> : ''}
               {directMessages ? <DirectMessages toggleMenu={this.toggleMenu}/> : ''}
               {browseApp ? <BrowseApp toggleMenu={this.toggleMenu}/> : ''}
-              {saveYourAccount ? <SaveYourAccount toggleMenu={this.toggleMenu}/> : ''}
+              {saveYourAccount ? <SaveYourAccountStepOne toggleMenu={this.toggleMenu}/> : ''}
               <div className='channel-left-sidebar'>
                 <div onMouseEnter={() => this._onMouseEnter('font')} onMouseLeave={() => this._onMouseLeave('font')} className='channel-left-header'>
                   <div className='channel-left-header-teamname'>

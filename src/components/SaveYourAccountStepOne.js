@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SaveYourAccountStepTwo from './SaveYourAccountStepTwo';
 
-class SaveYourAccount extends React.Component {
+class SaveYourAccountStepOne extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
           error: false,
           name: '',
-          nameValid: false,
+          stepTwo: false,
           passwordError: false,
           password: '',
           background: '#e8e8e8',
           color: 'rgba(44,45,48,.75)'
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.goBack = this.goBack.bind(this);
     }
 
     update(field) {
@@ -37,14 +39,18 @@ class SaveYourAccount extends React.Component {
     handleSubmit(e) {
       e.preventDefault();
       if (this.isNameValid(this.state.name) && this.isPasswordValid(this.state.password)) {
-        this.setState({ nameValid: true, error: false, passwordError: false });
+        this.setState({ error: false, passwordError: false, stepTwo: true });
       } else if (this.isNameValid(this.state.name)) {
-        this.setState({ nameValid: true, error: false, passwordError: true });
+        this.setState({ error: false, passwordError: true });
       } else if (this.isPasswordValid(this.state.password)) {
-        this.setState({ nameValid: false, error: true, passwordError: false });
+        this.setState({ error: true, passwordError: false });
       } else {
-        this.setState({ nameValid: false, error: true, passwordError: true });
+        this.setState({ error: true, passwordError: true });
       }
+    }
+
+    goBack() {
+      this.setState({ stepTwo: false });
     }
 
     isNameValid(name) {
@@ -57,7 +63,8 @@ class SaveYourAccount extends React.Component {
 
     render() {
         const { toggleMenu } = this.props;
-        const { error, name, passwordError, password, background, color } = this.state;
+        const { error, name, passwordError, password, background, color, stepTwo } = this.state;
+        if (stepTwo) return <SaveYourAccountStepTwo toggleMenu={toggleMenu} goBack={() => this.goBack()}/>;
 
         return (
           <div className='modal-overlay'>
@@ -107,4 +114,4 @@ class SaveYourAccount extends React.Component {
     }
 }
 
-export default SaveYourAccount;
+export default SaveYourAccountStepOne;
