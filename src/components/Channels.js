@@ -87,7 +87,43 @@ class Channels extends React.Component {
             <div className='channel'>
               {browseChannel ? <BrowseChannels showChannel={showChannel} sortChannel={sortChannel} toggleMenu={this.toggleMenu} setSelection={this.setSelection} sort={sort} show={show}/> : ''}
               {createChannel ? <CreateChannel toggleMenu={this.toggleMenu} left={left} privateMode={privateMode}/> : ''}
-              <div className='channel-left-sidebar'>
+              <div className='contents-container'>
+                <div onClick={() => this.toggleMenu('browse-channel')} className='contents-container-close-btn'>
+                  <i className="close-btn-icon fas fa-times"></i>
+                  <span>esc</span>
+                </div>
+                <div className='direct-messages'>
+                  <div className='browse-channels'>
+                    <h1>Direct Messages</h1>
+                  </div>
+                  <div className='start-conversation-container'>
+                    <input type='text' placeholder='Find or start a conversation' />
+                    <button>Go</button>
+                  </div>
+                  <div className='recent-conversations'>Recent conversations</div>
+
+                  <div className='channel-list-container'>
+                    <div className='unified-member'>
+                      <img />
+                      <div className='member-display-name'>
+                        <span>parkg748</span>
+                        <div className='member-display-name-online'></div>
+                      </div>
+                      <i className="unified-member-arrow fas fa-level-down-alt"></i>
+                    </div>
+                    <div className='unified-member'>
+                      <img />
+                      <div className='member-display-name'>
+                        <span>slackbot</span>
+                        <i className="unified-member-heart fas fa-heart"></i>
+                        <p>slackbot</p>
+                      </div>
+                      <i className="unified-member-arrow fas fa-level-down-alt"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/*<div className='channel-left-sidebar'>
                   <div onMouseEnter={() => this._onMouseEnter('font')} onMouseLeave={() => this._onMouseLeave('font')} className='channel-left-header'>
                       <div className='channel-left-header-teamname'>
                         {menu ? <MenuItemScroller /> : ''}
@@ -122,11 +158,11 @@ class Channels extends React.Component {
                           <div className='direct-fa-plus-circle'><i className="fas fa-plus-circle"></i></div>
                           <div className='open-direct-message-2'><i className="fas fa-caret-down"></i>Open a direct message</div>
                       </div>
-                      <div className='row-col-channels'><i className="fas fa-heart"></i>slackbot</div>
-                      <div className='row-col-channels'>
+                      <div onClick={() => this.setSelection('slackbot', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `slackbot` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `slackbot` ? `white` : `rgb(202,196,201)`}` }} className='row-col-channels'><i className="fas fa-heart"></i>slackbot</div>
+                      <div onClick={() => this.setSelection('parkg748', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `parkg748` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `parkg748` ? `white` : `rgb(202,196,201)`}` }} className='row-col-channels'>
                           <div className='team-menu-user-online'></div>
                           <span>parkg748</span>
-                          <p>(you)</p>
+                          <p style={{ color: `${currentChannel === `parkg748` ? `white` : `rgb(160, 154, 159)`}` }}>(you)</p>
                       </div>
                       <div className='divider-3'></div>
                       <div className='row-col-channels-title'>
@@ -228,7 +264,7 @@ class Channels extends React.Component {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>*/}
             </div>
         );
     }
