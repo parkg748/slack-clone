@@ -104,7 +104,7 @@ class Channels extends React.Component {
                 <div className='contents'>
                   <div className='apps-browser-filter-container'>
                     <div className='apps-browser-filter-channels'>
-                      <h1>Browse channels</h1>
+                      <h1>Browse Apps</h1>
                       <button>View App Directory</button>
                     </div>
                     <input type='text' placeholder='Search by name or category (e.g. productivity, sales)'/>
@@ -115,11 +115,96 @@ class Channels extends React.Component {
                     <div className='app-browser-category-section'>
                       <div className='app-browser-app'>
                         <img src={require('../app/assets/images/tutorial@2x.png')}/>
-                        <div className='app-browser-app-info'>
+                        <div className='app-browser-app-container'>
+                          <div className='app-browser-app-info'>
                           <strong>What are apps?</strong>
                           <span>A quick look at how apps in Slack can streamline your work</span>
+                          </div>
+                          <button>Start</button>
                         </div>
-                        <button>Start</button>
+                      </div>
+                    </div>
+                    <div className='app-browser-category'>
+                      <div className='recent-conversations'>Add apps to your workspace</div>
+                      <div className='app-browser-category-header'>
+                        <img src={require('../app/assets/images/service_72.png')}/>
+                        <div className='app-browser-app-container'>
+                          <div className='app-browser-app-info'>
+                          <strong>Giphy</strong>
+                          <span>An online library of animated GIFs</span>
+                          </div>
+                          <button>Install</button>
+                        </div>
+                      </div>
+                      <div className='app-browser-category-header'>
+                        <img src={require('../app/assets/images/232381175025_31793c43d684e5a7c75a_72.png')}/>
+                        <div className='app-browser-app-container'>
+                          <div className='app-browser-app-info'>
+                          <strong>Google Drive</strong>
+                          <span>Get notifications about Google Drive files within devchat</span>
+                          </div>
+                          <button>Install</button>
+                        </div>
+                      </div>
+                      <div className='app-browser-category-header'>
+                        <img src={require('../app/assets/images/44042585718_0e6a837d5b63fd1cfc07_72.png')}/>
+                        <div className='app-browser-app-container'>
+                          <div className='app-browser-app-info'>
+                          <strong>Trello</strong>
+                          <span>Collaborate on Trello projects without leaving devchat.</span>
+                          </div>
+                          <button>Install</button>
+                        </div>
+                      </div>
+                      <div className='app-browser-category-header'>
+                        <img src={require('../app/assets/images/dropbox_72.png')}/>
+                        <div className='app-browser-app-container'>
+                          <div className='app-browser-app-info'>
+                          <strong>Dropbox</strong>
+                          <span>Cloud file storage and syncing</span>
+                          </div>
+                          <button>Install</button>
+                        </div>
+                      </div>
+                      <div className='app-browser-category-header'>
+                        <img src={require('../app/assets/images/twitter_72.png')}/>
+                        <div className='app-browser-app-container'>
+                          <div className='app-browser-app-info'>
+                          <strong>Twitter</strong>
+                          <span>Bring tweets into devchat.</span>
+                          </div>
+                          <button>Install</button>
+                        </div>
+                      </div>
+                      <div className='app-browser-category-header'>
+                        <img src={require('../app/assets/images/17670668547_3b5cda05986fc6c0d978_72.png')}/>
+                        <div className='app-browser-app-container'>
+                          <div className='app-browser-app-info'>
+                          <strong>Simple Poll</strong>
+                          <span>Create native and simple polls in devchat.</span>
+                          </div>
+                          <button>Install</button>
+                        </div>
+                      </div>
+                      <div className='app-browser-category-header'>
+                        <img src={require('../app/assets/images/service_72 (1).png')}/>
+                        <div className='app-browser-app-container'>
+                          <div className='app-browser-app-info'>
+                          <strong>Google Calendar</strong>
+                          <span>A shared calendar for your team.</span>
+                          </div>
+                          <button>Install</button>
+                        </div>
+                      </div>
+                      <div className='app-browser-category-header'>
+                        <img src={require('../app/assets/images/hangouts_72.png')}/>
+                        <div className='app-browser-app-container'>
+                          <div className='app-browser-app-info'>
+                          <strong>Google+ Hangouts</strong>
+                          <span>Bring your conversations to life with free video calls.</span>
+                          </div>
+                          <button>Install</button>
+                        </div>
                       </div>
                     </div>
                     <div className='channel-browser-row'>

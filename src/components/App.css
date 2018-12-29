@@ -4229,7 +4229,13 @@ input:focus {
   font-size: 15px;
   line-height: 20px;
   display: flex;
-  flex-flow: wrap;
+  flex-flow: column;
+}
+
+.app-browser-app-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .app-browser-app-info strong {
@@ -4263,11 +4269,54 @@ input:focus {
   box-shadow: inset 0 0 0 1px rgba(44,45,48,.3), 0 1px 4px rgba(44,45,48,.2);
 }
 
+.app-browser-category-header button {
+  font-size: 15px;
+  font-family: 'Lato', sans-serif;
+  padding: 0 12px 1px;
+  height: 36px;
+  min-width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 80ms linear;
+  box-shadow: inset 0 0 0 1px rgba(44,45,48,.3);
+  color: #2c2d30;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.app-browser-category-header button:hover {
+  box-shadow: inset 0 0 0 1px rgba(44,45,48,.3), 0 1px 4px rgba(44,45,48,.2);
+}
+
 .recent-conversations {
   margin-bottom: 8px;
   font-size: 12px;
   font-family: 'Lato', sans-serif;
   color: #717274;
+}
+
+.app-browser-category-header {
+  padding: 11px 12px;
+  border: 1px solid transparent;
+  border-top-color: #e8e8e8;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.app-browser-category-header:hover {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  border: 1px solid #e8e8e8;
+}
+
+.app-browser-category-header img {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
 }
 
 .private-button {
