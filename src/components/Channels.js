@@ -97,55 +97,86 @@ class Channels extends React.Component {
               {createChannel ? <CreateChannel toggleMenu={this.toggleMenu} left={left} privateMode={privateMode}/> : ''}
               {directMessages ? <DirectMessages toggleMenu={this.toggleMenu}/> : ''}
               {browseApp ? <BrowseApp toggleMenu={this.toggleMenu}/> : ''}
+              <div className='modal-overlay'>
+                <div className='modal-content'>
+                  <div>
+                    <div className='onboarding-dialog-header'>
+                      <h3>Set your name and password</h3>
+                      <i className="onboarding-dialog-header-times fas fa-times"></i>
+                    </div>
+                    <img src={require('../app/assets/images/step_01@2x.png')}/>
+                    <div className='onboarding-step-fields'>
+                      <div className='onboarding-step-fields-container'>
+                      <p>Your full name</p>
+                      <input type='text'/>
+                      <div className='full-name-disclaimer'>Your name will be displayed with messages you send.</div>
+                    </div>
+                    <div className='onboarding-step-fields-container'>
+                      <p>Your password</p>
+                      <input type='password' minlength="8"/>
+                      <div className='full-name-disclaimer'>Passwords must be at least 6 characters long, and can’t be things like password, 123456, or abcdef.</div>
+                    </div>
+                    <div className='onboarding-step-fields-container'>
+                      <input type='checkbox' />
+                      <span>It’s okay to send me email with devchat tips, news, and offers.</span>
+                    </div>
+                  </div>
+                  </div>
+                  <div className='dialog-footer'>
+                    <span>Step 1 of 3</span>
+                    <button>Next</button>
+                  </div>
+                </div>
+              </div>
               <div className='channel-left-sidebar'>
-                  <div onMouseEnter={() => this._onMouseEnter('font')} onMouseLeave={() => this._onMouseLeave('font')} className='channel-left-header'>
-                      <div className='channel-left-header-teamname'>
-                        {menu ? <MenuItemScroller /> : ''}
-                        {notification ? <NotificationModal /> : ''}
-                        <div>
-                            <span>Testing</span>
-                            <i style={{ color: `${font}` }} onClick={() => this.toggleMenu('menu')} className="channel-left-header-caret fas fa-angle-down"></i>
-                        </div>
-                        <i onClick={() => this.toggleMenu('notification')} className="far fa-bell"></i>
-                        <div className='channel-left-notifications'><i className="fas fa-caret-up"></i>Notifications</div>
-                      </div>
-                      <div className='team-menu-user'>
-                          <div className='team-menu-user-online'></div>
-                          <span style={{ color: `${font}` }}>parkg748</span>
-                      </div>
+                <div onMouseEnter={() => this._onMouseEnter('font')} onMouseLeave={() => this._onMouseLeave('font')} className='channel-left-header'>
+                  <div className='channel-left-header-teamname'>
+                    {menu ? <MenuItemScroller /> : ''}
+                    {notification ? <NotificationModal /> : ''}
+                    <div>
+                      <span>Testing</span>
+                      <i style={{ color: `${font}` }} onClick={() => this.toggleMenu('menu')} className="channel-left-header-caret fas fa-angle-down"></i>
+                    </div>
+                    <i onClick={() => this.toggleMenu('notification')} className="far fa-bell"></i>
+                    <div className='channel-left-notifications'><i className="fas fa-caret-up"></i>Notifications</div>
                   </div>
-                  <div className='col-channels'>
-                      <div className='divider'></div>
-                      <div className='row-col-channels-title'>
-                          <span onClick={() => this.toggleMenu('browse-channel')} className='row-col-channels-title-name'>Channels</span>
-                          <div className='browse-all-channels'><i className="fas fa-caret-down"></i>Browse all channels</div>
-                          <div className='channels-fa-plus-circle'><i onClick={() => this.toggleMenu('create-channel')} className="fas fa-plus-circle"></i></div>
-                          <div className='create-a-channel'><i className="fas fa-caret-down"></i>Create a channel</div>
-                      </div>
-                      <div onClick={() => this.setSelection('general', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `general` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `general` ? `white` : `rgb(202,196,201)`}` }} className='row-col-channels'># general</div>
-                      <div onClick={() => this.setSelection('random', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `random` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `random` ? `white` : `rgb(202,196,201)`}`  }} className='row-col-channels'># random</div>
-                      <div onClick={() => this.setSelection('hello', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `hello` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `hello` ? `white` : `rgb(202,196,201)`}`  }} className='row-col-channels'># hello</div>
-                      <div className='divider-2'></div>
-                      <div className='row-col-channels-title'>
-                          <span onClick={() => this.toggleMenu('direct-messages')} className='row-col-channels-direct-messages'>Direct Messages</span>
-                          <div className='open-direct-message-1'><i className="fas fa-caret-down"></i>Open a direct message</div>
-                          <div onClick={() => this.toggleMenu('direct-messages')} className='direct-fa-plus-circle'><i className="fas fa-plus-circle"></i></div>
-                          <div className='open-direct-message-2'><i className="fas fa-caret-down"></i>Open a direct message</div>
-                      </div>
-                      <div onClick={() => this.setSelection('slackbot', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `slackbot` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `slackbot` ? `white` : `rgb(202,196,201)`}` }} className='row-col-channels'><i className="fas fa-heart"></i>slackbot</div>
-                      <div onClick={() => this.setSelection('parkg748', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `parkg748` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `parkg748` ? `white` : `rgb(202,196,201)`}` }} className='row-col-channels'>
-                          <div className='team-menu-user-online'></div>
-                          <span>parkg748</span>
-                          <p style={{ color: `${currentChannel === `parkg748` ? `white` : `rgb(160, 154, 159)`}` }}>(you)</p>
-                      </div>
-                      <div className='divider-3'></div>
-                      <div className='row-col-channels-title'>
-                          <span onClick={() => this.toggleMenu('browse-app')} className='row-col-channels-apps'>Apps</span>
-                          <div className='browse-apps-1'><i className="fas fa-caret-down"></i>Browse Apps</div>
-                          <div className='browse-fa-plus-circle'><i className="fas fa-plus-circle"></i></div>
-                          <div className='browse-apps-2'><i className="fas fa-caret-down"></i>Browse Apps</div>
-                      </div>
+                  <div className='team-menu-user'>
+                    <div className='team-menu-user-online'></div>
+                    <span style={{ color: `${font}` }}>parkg748</span>
                   </div>
+                </div>
+                <div className='col-channels'>
+                  <div className='divider'></div>
+                  <div className='row-col-channels-title'>
+                    <span onClick={() => this.toggleMenu('browse-channel')} className='row-col-channels-title-name'>Channels</span>
+                    <div className='browse-all-channels'><i className="fas fa-caret-down"></i>Browse all channels</div>
+                    <div className='channels-fa-plus-circle'><i onClick={() => this.toggleMenu('create-channel')} className="fas fa-plus-circle"></i></div>
+                    <div className='create-a-channel'><i className="fas fa-caret-down"></i>Create a channel</div>
+                  </div>
+                  <div onClick={() => this.setSelection('general', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `general` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `general` ? `white` : `rgb(202,196,201)`}` }} className='row-col-channels'># general</div>
+                  <div onClick={() => this.setSelection('random', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `random` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `random` ? `white` : `rgb(202,196,201)`}`  }} className='row-col-channels'># random</div>
+                  <div onClick={() => this.setSelection('hello', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `hello` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `hello` ? `white` : `rgb(202,196,201)`}`  }} className='row-col-channels'># hello</div>
+                  <div className='divider-2'></div>
+                  <div className='row-col-channels-title'>
+                    <span onClick={() => this.toggleMenu('direct-messages')} className='row-col-channels-direct-messages'>Direct Messages</span>
+                    <div className='open-direct-message-1'><i className="fas fa-caret-down"></i>Open a direct message</div>
+                    <div onClick={() => this.toggleMenu('direct-messages')} className='direct-fa-plus-circle'><i className="fas fa-plus-circle"></i></div>
+                    <div className='open-direct-message-2'><i className="fas fa-caret-down"></i>Open a direct message</div>
+                  </div>
+                  <div onClick={() => this.setSelection('slackbot', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `slackbot` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `slackbot` ? `white` : `rgb(202,196,201)`}` }} className='row-col-channels'><i className="fas fa-heart"></i>slackbot</div>
+                  <div onClick={() => this.setSelection('parkg748', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `parkg748` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `parkg748` ? `white` : `rgb(202,196,201)`}` }} className='row-col-channels'>
+                    <div className='team-menu-user-online'></div>
+                    <span>parkg748</span>
+                    <p style={{ color: `${currentChannel === `parkg748` ? `white` : `rgb(160, 154, 159)`}` }}>(you)</p>
+                  </div>
+                  <div className='divider-3'></div>
+                  <div className='row-col-channels-title'>
+                    <span onClick={() => this.toggleMenu('browse-app')} className='row-col-channels-apps'>Apps</span>
+                    <div className='browse-apps-1'><i className="fas fa-caret-down"></i>Browse Apps</div>
+                    <div onClick={() => this.toggleMenu('browse-app')} className='browse-fa-plus-circle'><i className="fas fa-plus-circle"></i></div>
+                    <div className='browse-apps-2'><i className="fas fa-caret-down"></i>Browse Apps</div>
+                  </div>
+                </div>
               </div>
               <div className='channel-right-sidebar'>
                 <div className='channel-right-top'>
@@ -158,51 +189,51 @@ class Channels extends React.Component {
                         |
                         <div className='fa-user-container'>
                           <i className="far fa-user"></i>1
-                          </div>
-                          <div className='view-member-list'><i className="fas fa-caret-up"></i>View member list</div>
-                          |
-                          <div className='fa-thumbtack-container'>
-                            <i className="fas fa-thumbtack"></i>0
-                            </div>
-                            <div className='view-pinned-items'><i className="fas fa-caret-up"></i>View pinned items</div>
-                            |
-                            <div onMouseEnter={() => this._onMouseEnter('edit')} onMouseLeave={() => this._onMouseLeave('edit')} className='fa-pencil-alt-container-edit'>
-                              <div className='fa-pencil-alt-container'>
-                                <i className="fas fa-pencil-alt"></i>
-                                Add a topic
-                              </div>
-                              <div style={{ display: `${edit}`}} className='add-topic-edit'>Edit</div>
-                            </div>
-                          </div>
                         </div>
-                        <div className='channel-title-info'>
-                          <i className="fas fa-phone"></i>
-                          <div className='phone-offline'><i className="fas fa-caret-up"></i>Only paid workspaces can start calls from channels.</div>
-                          <i className="fas fa-info-circle"></i>
-                          <div className='show-channel-details'><i className="fas fa-caret-up"></i>Show Channel Details</div>
-                          <i className="fas fa-cog"></i>
-                          <div className='channel-settings'><i className="fas fa-caret-up"></i>Channel Settings</div>
+                        <div className='view-member-list'><i className="fas fa-caret-up"></i>View member list</div>
+                        |
+                        <div className='fa-thumbtack-container'>
+                          <i className="fas fa-thumbtack"></i>0
                         </div>
-                        <div className='flex-header'>
-                          <input onMouseEnter={() => this._onMouseEnter('search')} onMouseLeave={() => this._onMouseLeave('search')} style={{ color: `${search}` }} type='text' placeholder='Search'/>
-                          <i style={{ color: `${search}` }} className="icon-search-wrapper fas fa-search"></i>
-                          <div className='channel-header-icon'>
-                            <i className="fas fa-at"></i>
-                            <div className='show-activity'><i className="fas fa-caret-up"></i>Show Activity</div>
-                            <i className="flex-header-star far fa-star"></i>
-                            <div className='show-starred-items'><i className="fas fa-caret-up"></i>Show Starred Items</div>
-                            <i className="fas fa-ellipsis-v"></i>
-                            <div className='more-items'><i className="fas fa-caret-up"></i>More Items</div>
+                        <div className='view-pinned-items'><i className="fas fa-caret-up"></i>View pinned items</div>
+                        |
+                        <div onMouseEnter={() => this._onMouseEnter('edit')} onMouseLeave={() => this._onMouseLeave('edit')} className='fa-pencil-alt-container-edit'>
+                          <div className='fa-pencil-alt-container'>
+                            <i className="fas fa-pencil-alt"></i>
+                            Add a topic
                           </div>
+                          <div style={{ display: `${edit}`}} className='add-topic-edit'>Edit</div>
                         </div>
                       </div>
+                    </div>
+                    <div className='channel-title-info'>
+                      <i className="fas fa-phone"></i>
+                      <div className='phone-offline'><i className="fas fa-caret-up"></i>Only paid workspaces can start calls from channels.</div>
+                      <i className="fas fa-info-circle"></i>
+                      <div className='show-channel-details'><i className="fas fa-caret-up"></i>Show Channel Details</div>
+                      <i className="fas fa-cog"></i>
+                      <div className='channel-settings'><i className="fas fa-caret-up"></i>Channel Settings</div>
+                    </div>
+                    <div className='flex-header'>
+                      <input onMouseEnter={() => this._onMouseEnter('search')} onMouseLeave={() => this._onMouseLeave('search')} style={{ color: `${search}` }} type='text' placeholder='Search'/>
+                      <i style={{ color: `${search}` }} className="icon-search-wrapper fas fa-search"></i>
+                      <div className='channel-header-icon'>
+                        <i className="fas fa-at"></i>
+                        <div className='show-activity'><i className="fas fa-caret-up"></i>Show Activity</div>
+                        <i className="flex-header-star far fa-star"></i>
+                        <div className='show-starred-items'><i className="fas fa-caret-up"></i>Show Starred Items</div>
+                        <i className="fas fa-ellipsis-v"></i>
+                        <div className='more-items'><i className="fas fa-caret-up"></i>More Items</div>
+                      </div>
+                    </div>
+                  </div>
                   <div className='message-pane-banner'>
                     <img src={require('../app/assets/images/second_setup@2x.png')}/>
                   </div>
                   <div className='message-pane-banner-body'>
-                      <h1>Save your account and start collaborating</h1>
-                      <p>To see what teamwork is like in devchat, take a moment to save your account and invite some teammates to join your workspace.</p>
-                      <button>Save Your Account</button>
+                    <h1>Save your account and start collaborating</h1>
+                    <p>To see what teamwork is like in devchat, take a moment to save your account and invite some teammates to join your workspace.</p>
+                    <button>Save Your Account</button>
                   </div>
                 </div>
                 <div className='channel-right-bottom'>
