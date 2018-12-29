@@ -3050,7 +3050,7 @@ input:focus {
 }
 
 .row-col-channels:hover {
-    background-color: #3e313c;
+    background-color: #3e313c !important;
 }
 
 .row-col-channels-title {
