@@ -4057,28 +4057,53 @@ input:focus {
 }
 
 .channel-browser-filter {
-  margin-bottom: 16px;
+  margin-bottom: 56px;
   display: flex;
+  position: relative;
 }
 
-.show-which-channels-container {
+.show-which-channels-container-show {
   height: 36px;
   display: flex;
   align-items: center;
   padding: 7px 40px 8px 12px;
-  position: relative;
+  position: absolute;
   color: #717274;
   width: fit-content;
+  cursor: pointer;
 }
 
-.show-which-channels-container strong {
+.show-which-channels-container-show strong {
   margin-right: 3px;
 }
 
-.show-all-channels-arrow {
+.show-which-channels-container-sort {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 7px 40px 8px 12px;
   position: absolute;
-  right: 20px;
-  top: 13px;
+  color: #717274;
+  width: fit-content;
+  cursor: pointer;
+  left: 172px;
+}
+
+.show-which-channels-container-sort strong {
+  margin-right: 3px;
+}
+
+.show-all-channels-arrow-show {
+  position: absolute;
+  left: 126px;
+  top: 12px;
+  font-size: 12px;
+}
+
+.show-all-channels-arrow-sort {
+  position: absolute;
+  left: 306px;
+  top: 12px;
   font-size: 12px;
 }
 
@@ -4106,6 +4131,46 @@ input:focus {
 
 .channel-browser-row:hover .fa-level-down-alt {
   display: flex;
+}
+
+.show-which-channels-container-show input {
+  border: none;
+  padding: 7px 0;
+  margin: 0;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  width: 130px;
+}
+
+.all-channels-list-container {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  width: 241px;
+  padding: 4px 3px 4px 4px;
+  margin: 3px 0;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 0 3px rgba(0,0,0,.1);
+  background-color: white;
+  z-index: 2;
+}
+
+.all-channels-list-container ul > li {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.show-which-channels-container-sort input {
+  border: none;
+  padding: 7px 0;
+  margin: 0;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  width: 130px;
 }
 
 .fa-level-down-alt {

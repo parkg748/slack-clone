@@ -11,18 +11,35 @@ class Channels extends React.Component {
             edit: 'none',
             search: '#717274',
             menu: false,
-            notification: false
+            notification: false,
+            show: false,
+            sort: false,
+            showChannel: 'All Channels',
+            sortChannel: 'Channel Name'
         };
         this._onMouseEnter = this._onMouseEnter.bind(this);
         this._onMouseLeave = this._onMouseLeave.bind(this);
         this.toggleMenu = this.toggleMenu.bind(this);
+        this.setSelection = this.setSelection.bind(this);
     }
 
     toggleMenu(type) {
       if (type === 'menu') {
-        this.setState({ menu: !this.state.menu });
+        this.setState({ [type]: !this.state.menu });
       } else if (type === 'notification') {
-        this.setState({ notification: !this.state.notification });
+        this.setState({ [type]: !this.state.notification });
+      } else if (type === 'show') {
+        this.setState({ [type]: true });
+      } else if (type === 'sort') {
+        this.setState({ [type]: true });
+      }
+    }
+
+    setSelection(type, selection) {
+      if (selection === 'show') {
+        this.setState({ showChannel: type, show: false });
+      } else if (selection === 'sort') {
+        this.setState({ sortChannel: type, sort: false });
       }
     }
 
@@ -47,7 +64,7 @@ class Channels extends React.Component {
     }
 
     render() {
-        const { font, edit, search, menu, notification } = this.state;
+        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel } = this.state;
 
         return (
             <div className='channel'>
@@ -60,14 +77,35 @@ class Channels extends React.Component {
                   <input type='text' placeholder='Search channels'/>
                   <i className="search-channels fas fa-search"></i>
                   <div className='channel-browser-filter'>
-                    <div className='show-which-channels-container'>
-                      <strong>Show:</strong> All channels
-                      <i className="show-all-channels-arrow fas fa-angle-down"></i>
+                    <div onClick={() => this.toggleMenu('show')} className='show-which-channels-container-show'>
+                      {show ? <div>
+                        <input type='text' placeholder='Choose an option...'/>
+                        <div className='all-channels-list-container'>
+                          <ul>
+                            <li onClick={() => this.setSelection('All Channels', 'show')} style={{ color: `${showChannel === `All Channels` ? `#0576b9` : `#2c2d30`}` }}>All Channels</li>
+                            <li onClick={() => this.setSelection('Private Channels', 'show')} style={{ color: `${showChannel === `Private Channels` ? `#0576b9` : `#2c2d30`}`}}>Private Channels</li>
+                            <li onClick={() => this.setSelection('Archived Channels', 'show')} style={{ color: `${showChannel === `Archived Channels` ? `#0576b9` : `#2c2d30`}`}}>Archived Channels</li>
+                          </ul>
+                        </div>
+                      </div> : <div><strong>Show:</strong> {showChannel}</div>}
+
                     </div>
-                    <div className='show-which-channels-container'>
-                      <strong>Sort:</strong> Channel Name
-                      <i className="show-all-channels-arrow fas fa-angle-down"></i>
+                    <i className="show-all-channels-arrow-show fas fa-angle-down"></i>
+                    <div onClick={() => this.toggleMenu('sort')} className='show-which-channels-container-sort'>
+                      {sort ? <div>
+                        <input type='text' placeholder='Choose an option...'/>
+                        <div className='all-channels-list-container'>
+                          <ul>
+                            <li onClick={() => this.setSelection('Channel Name', 'sort')} style={{ color: `${sortChannel === `Channel Name` ? `#0576b9` : `#2c2d30`}` }}>Channel Name</li>
+                            <li onClick={() => this.setSelection('Name of Creator', 'sort')} style={{ color: `${sortChannel === `Name of Creator` ? `#0576b9` : `#2c2d30`}`}}>Name of Creator</li>
+                            <li onClick={() => this.setSelection('Creation Date (newest first)', 'sort')} style={{ color: `${sortChannel === `Creation Date (newest first)` ? `#0576b9` : `#2c2d30`}`}}>Creation Date (newest first)</li>
+                            <li onClick={() => this.setSelection('Members (most to fewest)', 'sort')} style={{ color: `${sortChannel === `Members (most to fewest)` ? `#0576b9` : `#2c2d30`}`}}>Members (most to fewest)</li>
+                            <li onClick={() => this.setSelection('Members (fewest to most)', 'sort')} style={{ color: `${sortChannel === `Members (fewest to most)` ? `#0576b9` : `#2c2d30`}`}}>Members (fewest to most)</li>
+                          </ul>
+                        </div>
+                      </div> : <div><strong>Sort:</strong> {sortChannel}</div>}
                     </div>
+                    <i className="show-all-channels-arrow-sort fas fa-angle-down"></i>
                   </div>
                   <div className='channel-list-container'>
                     <div className='channel-browser-divider'>Channels you belong to</div>
