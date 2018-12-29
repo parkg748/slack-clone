@@ -4,6 +4,7 @@ import MenuItemScroller from './MenuItemScroller';
 import NotificationModal from './NotificationModal';
 import BrowseChannels from './BrowseChannels';
 import CreateChannel from './CreateChannel';
+import DirectMessages from './DirectMessages';
 
 class Channels extends React.Component {
     constructor(props) {
@@ -22,7 +23,8 @@ class Channels extends React.Component {
             privateMode: false,
             left: 75,
             createChannel: false,
-            currentChannel: 'general'
+            currentChannel: 'general',
+            directMessages: false
         };
         this._onMouseEnter = this._onMouseEnter.bind(this);
         this._onMouseLeave = this._onMouseLeave.bind(this);
@@ -47,6 +49,8 @@ class Channels extends React.Component {
         this.setState({ privateMode: false, left: 75 });
       } else if (type === 'create-channel') {
         this.setState({ createChannel: !this.state.createChannel });
+      } else if (type === 'direct-messages') {
+        this.setState({ directMessages: !this.state.directMessages });
       }
     }
 
@@ -81,49 +85,15 @@ class Channels extends React.Component {
     }
 
     render() {
-        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel, privateMode, left, createChannel, currentChannel } = this.state;
+        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel, privateMode, left, createChannel, currentChannel, directMessages } = this.state;
 
         return (
             <div className='channel'>
               {browseChannel ? <BrowseChannels showChannel={showChannel} sortChannel={sortChannel} toggleMenu={this.toggleMenu} setSelection={this.setSelection} sort={sort} show={show}/> : ''}
               {createChannel ? <CreateChannel toggleMenu={this.toggleMenu} left={left} privateMode={privateMode}/> : ''}
-              <div className='contents-container'>
-                <div onClick={() => this.toggleMenu('browse-channel')} className='contents-container-close-btn'>
-                  <i className="close-btn-icon fas fa-times"></i>
-                  <span>esc</span>
-                </div>
-                <div className='direct-messages'>
-                  <div className='browse-channels'>
-                    <h1>Direct Messages</h1>
-                  </div>
-                  <div className='start-conversation-container'>
-                    <input type='text' placeholder='Find or start a conversation' />
-                    <button>Go</button>
-                  </div>
-                  <div className='recent-conversations'>Recent conversations</div>
+              {directMessages ? <DirectMessages toggleMenu={this.toggleMenu}/> : ''}
 
-                  <div className='channel-list-container'>
-                    <div className='unified-member'>
-                      <img />
-                      <div className='member-display-name'>
-                        <span>parkg748</span>
-                        <div className='member-display-name-online'></div>
-                      </div>
-                      <i className="unified-member-arrow fas fa-level-down-alt"></i>
-                    </div>
-                    <div className='unified-member'>
-                      <img />
-                      <div className='member-display-name'>
-                        <span>slackbot</span>
-                        <i className="unified-member-heart fas fa-heart"></i>
-                        <p>slackbot</p>
-                      </div>
-                      <i className="unified-member-arrow fas fa-level-down-alt"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/*<div className='channel-left-sidebar'>
+              <div className='channel-left-sidebar'>
                   <div onMouseEnter={() => this._onMouseEnter('font')} onMouseLeave={() => this._onMouseLeave('font')} className='channel-left-header'>
                       <div className='channel-left-header-teamname'>
                         {menu ? <MenuItemScroller /> : ''}
@@ -153,7 +123,7 @@ class Channels extends React.Component {
                       <div onClick={() => this.setSelection('hello', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `hello` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `hello` ? `white` : `rgb(202,196,201)`}`  }} className='row-col-channels'># hello</div>
                       <div className='divider-2'></div>
                       <div className='row-col-channels-title'>
-                          <span className='row-col-channels-direct-messages'>Direct Messages</span>
+                          <span onClick={() => this.toggleMenu('direct-messages')} className='row-col-channels-direct-messages'>Direct Messages</span>
                           <div className='open-direct-message-1'><i className="fas fa-caret-down"></i>Open a direct message</div>
                           <div className='direct-fa-plus-circle'><i className="fas fa-plus-circle"></i></div>
                           <div className='open-direct-message-2'><i className="fas fa-caret-down"></i>Open a direct message</div>
@@ -264,7 +234,7 @@ class Channels extends React.Component {
                     </div>
                   </div>
                 </div>
-              </div>*/}
+              </div>
             </div>
         );
     }
