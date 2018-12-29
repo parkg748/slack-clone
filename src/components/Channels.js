@@ -92,9 +92,28 @@ class Channels extends React.Component {
                   <div className='private-toggle-container'>
                     <div className='toggle-checked'>
                       {privateMode ? <button className='private-button' onClick={() => this.toggleMenu('private')}>Private<div style={{ left: `${left}%` }} className='toggled-checked-circle'></div></button> : <button className='public-button' onClick={() => this.toggleMenu('public')}>Public<div style={{ left: `${left}%` }} className='toggled-checked-circle'></div></button>}
-
                       {privateMode ? <div className='toggle-secondary-label'>This channel can only be joined or viewed by invite.</div> : <div className='toggle-secondary-label'>Anyone in your workspace can view and join this channel.</div>}
                     </div>
+                  </div>
+                  <div className='invites-submit'>
+                    <label><strong>Name</strong></label>
+                    <input type='text' placeholder='e.g. leads'/>
+                    <i className="fas fa-lock"></i>
+                    <span>Names must be lowercase, without spaces or periods, and shorter than 22 characters.</span>
+                  </div>
+                  <div className='medium-bottom-margin'>
+                    <label><strong>Purpose</strong>(optional)</label>
+                    <input type='text' />
+                    <span>What’s this channel about?</span>
+                  </div>
+                  <div className='send-invites-to'>
+                    <label><strong>Send invites to:</strong> (optional)</label>
+                    <input className='send-invites-to' type='text' placeholder='Search by name'/>
+                    <span>Select up to 1000 people to add to this channel.</span>
+                  </div>
+                  <div className='save-channel'>
+                    <button className='save-channel-cancel'>Cancel</button>
+                    <button className='save-channel-create'>Create Channel</button>
                   </div>
                 </div>
               </div>

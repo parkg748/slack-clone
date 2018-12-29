@@ -1514,6 +1514,7 @@ input:focus {
 
 .invites-submit {
     margin-bottom: 16px;
+    position: relative;
 }
 
 .invites-submit button {
@@ -2130,6 +2131,142 @@ input:focus {
     border-radius: 50%;
     width: 5px;
     height: 5px;
+}
+
+.invites-submit label {
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.invites-submit label > strong {
+  font-weight: bold;
+  margin-right: 3px;
+}
+
+.medium-bottom-margin label {
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.medium-bottom-margin label > strong {
+  font-weight: bold;
+  margin-right: 3px;
+}
+
+.send-invites-to label {
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.send-invites-to label > strong {
+  font-weight: bold;
+  margin-right: 3px;
+}
+
+.invites-submit span {
+  margin-top: 4px;
+  font-size: 12px;
+  font-family: 'Lato', sans-serif;
+  color: #717274;
+}
+
+.medium-bottom-margin span {
+  margin-top: 4px;
+  font-size: 12px;
+  font-family: 'Lato', sans-serif;
+  color: #717274;
+}
+
+.save-channel {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-channel-cancel {
+  padding: 14px 18px 16px 18px;
+  margin-right: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c2d30;
+  border-radius: .25rem;
+  border: none;
+  box-shadow: inset 0 0 0 1px rgba(44,45,48,.3);
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+}
+
+.save-channel-cancel:hover {
+  box-shadow: inset 0 0 0 1px rgba(44,45,48,.3), 0 1px 4px rgba(44,45,48,.2);
+}
+
+.save-channel-create {
+  padding: 14px 18px 16px 18px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c2d30;
+  border-radius: .25rem;
+  border: none;
+  background-color: #e8e8e8;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+}
+
+.send-invites-to span {
+  margin-top: 4px;
+  font-size: 12px;
+  font-family: 'Lato', sans-serif;
+  color: #717274;
+}
+
+.fa-lock {
+  position: absolute;
+  top: 42px;
+  left: 13px;
+  font-size: 12px;
+  color: #717274;
+}
+
+.invites-submit input {
+  width: 100%;
+  padding: 12px 12px 12px 32px !important;
+  border: 1px solid #919193;
+  border-radius: .25rem;
+  color: #2c2d30;
+  font-family: 'Lato', sans-serif;
+  line-height: 22px;
+}
+
+.send-invites-to input {
+  padding: 10px 12px !important;
+  border: 1px solid #919193;
+  width: 100%;
+  border-radius: .25rem;
+  color: #2c2d30;
+  font-family: 'Lato', sans-serif;
+  line-height: 22px;
+}
+
+.medium-bottom-margin input {
+  padding: 10px 12px !important;
+  border: 1px solid #919193;
+  width: 100%;
+  border-radius: .25rem;
+  color: #2c2d30;
+  font-family: 'Lato', sans-serif;
+  line-height: 22px;
+}
+
+.send-invites-to {
+  margin-bottom: 16px;
 }
 
 .channelname-bullet-second {
@@ -4204,7 +4341,7 @@ input:focus {
 
 .create-channel-contents input {
   padding: 10px 12px 8px 40px;
-  margin-bottom: 16px;
+  margin-bottom: 2px;
   border-radius: .25rem;
   border: 1px solid #919193;
   color: #2c2d30;
@@ -4373,4 +4510,8 @@ input:focus {
   font-size: 13px;
   font-family: 'Lato', sans-serif;
   color: #717274;
+}
+
+.medium-bottom-margin {
+  margin-bottom: 24px;
 }
