@@ -9,7 +9,9 @@ class SaveYourAccount extends React.Component {
           name: '',
           nameValid: false,
           passwordError: false,
-          password: ''
+          password: '',
+          background: '#e8e8e8',
+          color: 'rgba(44,45,48,.75)'
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -17,24 +19,31 @@ class SaveYourAccount extends React.Component {
     update(field) {
       return (e) => {
         if (field === 'name') {
-          this.setState({ [field]: e.target.value, error: false });
+          if (this.isNameValid(e.target.value) && this.isPasswordValid(this.state.password)) {
+            this.setState({ [field]: e.target.value, error: false, background: '#008952', color: 'white' });
+          } else {
+            this.setState({ [field]: e.target.value, error: false, background: '#e8e8e8', color: 'rgba(44,45,48,.75)' });
+          }
         } else if (field === 'password') {
-          this.setState({ [field]: e.target.value, passwordError: false });
+          if (this.isNameValid(this.state.name) && this.isPasswordValid(e.target.value)) {
+            this.setState({ [field]: e.target.value, passwordError: false, background: '#008952', color: 'white' });
+          } else {
+            this.setState({ [field]: e.target.value, passwordError: false, background: '#e8e8e8', color: 'rgba(44,45,48,.75)' });
+          }
         }
       }
     }
 
     handleSubmit(e) {
       e.preventDefault();
-      if (this.isNameValid(this.state.name)) {
-          this.setState({ nameValid: true });
+      if (this.isNameValid(this.state.name) && this.isPasswordValid(this.state.password)) {
+        this.setState({ nameValid: true, error: false, passwordError: false });
+      } else if (this.isNameValid(this.state.name)) {
+        this.setState({ nameValid: true, error: false, passwordError: true });
+      } else if (this.isPasswordValid(this.state.password)) {
+        this.setState({ nameValid: false, error: true, passwordError: false });
       } else {
-          this.setState({ error: true });
-      }
-      if (this.isPasswordValid(this.state.password)) {
-        this.setState({ passwordError: true });
-      } else {
-        this.setState({ passwordError: false });
+        this.setState({ nameValid: false, error: true, passwordError: true });
       }
     }
 
@@ -43,16 +52,12 @@ class SaveYourAccount extends React.Component {
     }
 
     isPasswordValid(password) {
-      if (/^\w+$/.test(password) && password.length > 5) {
-        return true;
-      } else {
-        return false;
-      }
+      return /^\w+$/.test(password) && password.length > 5;
     }
 
     render() {
         const { toggleMenu } = this.props;
-        const { error, name, passwordError, password } = this.state;
+        const { error, name, passwordError, password, background, color } = this.state;
 
         return (
           <div className='modal-overlay'>
@@ -83,7 +88,7 @@ class SaveYourAccount extends React.Component {
                           <i className="red-border-icon fas fa-exclamation-triangle"></i>
                           <span>Your password must be at least 6 characters long.</span>
                       </div>
-                  </div> : <input type='password' minLength="8"/>}
+                  </div> : <input onChange={this.update('password')} type='password' minLength="8"/>}
                   <div className='full-name-disclaimer'>Passwords must be at least 6 characters long, and can’t be things like password, 123456, or abcdef.</div>
                 </div>
                 <div className='onboarding-step-fields-container'>
@@ -94,7 +99,7 @@ class SaveYourAccount extends React.Component {
               </div>
               <div className='dialog-footer'>
                 <span>Step 1 of 3</span>
-                <button onClick={(e) => this.handleSubmit(e)}>Next</button>
+                <button style={{ backgroundColor: `${background}`, color: `${color}` }} onClick={(e) => this.handleSubmit(e)}>Next</button>
               </div>
             </div>
           </div>
