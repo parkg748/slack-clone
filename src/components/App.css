@@ -2226,9 +2226,48 @@ input:focus {
   line-height: 25px;
 }
 
+.onboarding-step-fields-container textarea {
+  padding: 8px 12px 4px 12px;
+  border: 1px solid #919193;
+  border-radius: 4px;
+  transition: border 80ms ease-out,box-shadow 80ms ease-out;
+  font-size: 15px;
+  color: #2c2d30;
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  line-height: 22px;
+  min-height: 86px;
+  resize: vertical;
+}
+
 .onboarding-step-fields-container input[type='checkbox'] {
   width: fit-content;
   margin-right: 15px;
+}
+
+.step-three-fields-container input[type='checkbox'] {
+  width: fit-content;
+  margin-right: 15px;
+  margin-top: 4px;
+}
+
+.final-step {
+  height: 298px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.final-step img {
+  height: 100%;
+  width: initial !important;
+}
+
+.step-three-fields-container span {
+  color: #2c2d30;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
 }
 
 .onboarding-step-fields-container span {
@@ -2242,6 +2281,15 @@ input:focus {
   padding: 20px 24px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 76px;
+  width: 100%;
+}
+
+.final-step-footer {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
   height: 76px;
   width: 100%;
@@ -2313,6 +2361,24 @@ input:focus {
   border-radius: 4px;
   height: 100%;
   width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.final-step-footer button {
+  padding: 0 12px 1px 12px;
+  background-color: #e8e8e8;
+  transition: all 80ms linear;
+  color: rgba(44,45,48,.75);
+  font-weight: bold;
+  font-size: 15px;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  height: 100%;
+  width: 115px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2981,6 +3047,13 @@ input:focus {
   padding: 24px 24px 0 24px;
 }
 
+.onboarding-step-fields h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c2d30;
+}
+
 .onboarding-dialog-header h3 {
   font-family: 'Lato', sans-serif;
   font-weight: bold;
@@ -3009,6 +3082,13 @@ input:focus {
     background-color: #4d394b;
     height: 100vh;
     width: 16%;
+}
+
+.onboarding-step-fields span {
+  font-size: 15px;
+  font-family: 'Lato', sans-serif;
+  color: #2c2d30;
+  line-height: 22px;
 }
 
 .channel-right-sidebar {
@@ -4417,6 +4497,11 @@ input:focus {
   flex-flow: column;
 }
 
+.invalid-email {
+  display: flex;
+  flex-flow: column;
+}
+
 .app-browser-app-container {
   display: flex;
   justify-content: space-between;
@@ -5003,4 +5088,9 @@ input:focus {
 
 .onboarding-step-fields-container {
   margin-bottom: 24px;
+}
+
+.step-three-fields-container {
+  margin-bottom: 24px;
+  display: flex;
 }

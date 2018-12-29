@@ -44,7 +44,7 @@ class SaveYourAccountStepTwo extends React.Component {
         const { toggleMenu, goBack } = this.props;
         const { name, url, cursor, stepThree } = this.state;
 
-        if (stepThree) return <SaveYourAccountStepThree goBack={() => this.goBack()}/>
+        if (stepThree) return <SaveYourAccountStepThree toggleMenu={toggleMenu} goBack={() => this.goBack()}/>
 
         return (
           <div className='modal-overlay'>
