@@ -5,12 +5,18 @@ class BrowseChannels extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+          clicked: false
         };
+        this._onMouseDown = this._onMouseDown.bind(this);
+    }
+
+    _onMouseDown() {
+      this.setState({ clicked: true });
     }
 
     render() {
         const { showChannel, sortChannel, toggleMenu, setSelection, show, sort } = this.props;
+        const { clicked } = this.state;
 
         return (
           <div className='contents-container'>
@@ -18,7 +24,7 @@ class BrowseChannels extends React.Component {
               <i className="fas fa-info-circle"></i>
               <span>About channels...</span>
             </div>
-            <div onClick={() => toggleMenu('browse-channel')} className='contents-container-close-btn'>
+            <div style={{ backgroundColor: `${clicked ? '#008952' : ''}`, color: `${clicked ? 'white' : ''}` }} onMouseDown={() => this._onMouseDown()} onClick={() => toggleMenu('browse-channel')} className='contents-container-close-btn'>
               <i className="close-btn-icon fas fa-times"></i>
               <span>esc</span>
             </div>
