@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MenuItemScroller from './MenuItemScroller';
+import NotificationModal from './NotificationModal';
 
 class Channels extends React.Component {
     constructor(props) {
@@ -9,14 +10,20 @@ class Channels extends React.Component {
             font: '#a09a9f',
             edit: 'none',
             search: '#717274',
-            menu: false
+            menu: false,
+            notification: false
         };
         this._onMouseEnter = this._onMouseEnter.bind(this);
         this._onMouseLeave = this._onMouseLeave.bind(this);
+        this.toggleMenu = this.toggleMenu.bind(this);
     }
 
-    toggleMenuScroller() {
-      this.setState({ menu: !this.state.menu });
+    toggleMenu(type) {
+      if (type === 'menu') {
+        this.setState({ menu: !this.state.menu });
+      } else if (type === 'notification') {
+        this.setState({ notification: !this.state.notification });
+      }
     }
 
     _onMouseEnter(type) {
@@ -40,19 +47,20 @@ class Channels extends React.Component {
     }
 
     render() {
-        const { font, edit, search, menu } = this.state;
+        const { font, edit, search, menu, notification } = this.state;
 
         return (
             <div className='channel'>
-                <div className='channel-left-sidebar'>
+                {/*<div className='channel-left-sidebar'>
                     <div onMouseEnter={() => this._onMouseEnter('font')} onMouseLeave={() => this._onMouseLeave('font')} className='channel-left-header'>
                         <div className='channel-left-header-teamname'>
                           {menu ? <MenuItemScroller /> : ''}
+                          {notification ? <NotificationModal /> : ''}
                           <div>
                               <span>Testing</span>
-                              <i style={{ color: `${font}` }} onClick={() => this.toggleMenuScroller()} className="channel-left-header-caret fas fa-angle-down"></i>
+                              <i style={{ color: `${font}` }} onClick={() => this.toggleMenu('menu')} className="channel-left-header-caret fas fa-angle-down"></i>
                           </div>
-                          <i className="far fa-bell"></i>
+                          <i onClick={() => this.toggleMenu('notification')} className="far fa-bell"></i>
                           <div className='channel-left-notifications'><i className="fas fa-caret-up"></i>Notifications</div>
                         </div>
                         <div className='team-menu-user'>
@@ -184,7 +192,7 @@ class Channels extends React.Component {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div>*/}
             </div>
         );
     }
