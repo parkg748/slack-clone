@@ -59,8 +59,7 @@ class Root extends React.Component {
 const mapStateToProps = state => {
     return {
         user: state.user.currentUser,
-        isLoading: state.user.isLoading,
-        channels: state.channels
+        channel: state.channel.currentChannel
     }
 }
 

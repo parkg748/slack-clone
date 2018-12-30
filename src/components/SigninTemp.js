@@ -89,7 +89,7 @@ class SigninTemp extends React.Component {
                         <input style={{ border: `${emailBorder}`, backgroundColor: `${emailBackgroundColor}` }} onChange={this.update('email')} type='email' value={email} placeholder='you@example.com'/>
                         <input style={{ border: `${passwordBorder}`, backgroundColor: `${passwordBackgroundColor}` }} onChange={this.update('password')} type='password' value={password} placeholder='password'/>
                         <button style={{ backgroundColor: `${button}`, color: `${font}` }} onClick={(e) => this.handleSubmit(e)}>Sign in
-                            {loading ? <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> : ''}
+                            {loading ? <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> : ''}
                         </button>
                         <div className='next-signin-remember-me'>
                             <input type='checkbox' />
