@@ -5,7 +5,8 @@ class BrowseChannels extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          clicked: false
+          clicked: false,
+          createChannel: false
         };
         this._onMouseDown = this._onMouseDown.bind(this);
     }
@@ -31,7 +32,7 @@ class BrowseChannels extends React.Component {
             <div className='contents'>
               <div className='browse-channels'>
                 <h1>Browse channels</h1>
-                <button>Create Channel</button>
+                <button onClick={() => {toggleMenu('browse-channel'); toggleMenu('create-channel');}}>Create Channel</button>
               </div>
               <input type='text' placeholder='Search channels'/>
               <i className="search-channels fas fa-search"></i>

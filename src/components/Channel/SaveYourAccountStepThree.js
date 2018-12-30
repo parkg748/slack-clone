@@ -50,7 +50,7 @@ class SaveYourAccountStepThree extends React.Component {
                   <h3>Add people to your Slack workspace</h3>
                   <i onClick={() => toggleMenu('save-account')} className="onboarding-dialog-header-times fas fa-times"></i>
                 </div>
-                <img src={require('../app/assets/images/step_03@2x.png')}/>
+                <img src={require('../../app/assets/images/step_03@2x.png')}/>
                 <div className='onboarding-step-fields'>
                   <div className='onboarding-step-fields-container'>
                   <p>Email addresses</p>

@@ -7,10 +7,10 @@ import CreateChannel from './CreateChannel';
 import DirectMessages from './DirectMessages';
 import BrowseApp from './BrowseApp';
 import SaveYourAccountStepOne from './SaveYourAccountStepOne';
-import firebase from './firebase';
-import { setCurrentChannel } from '../actions/index';
+import firebase from '../firebase';
+import { setCurrentChannel } from '../../actions/index';
 import { connect } from 'react-redux';
-import Messages from './Messages/Messages';
+import Messages from '../Messages/Messages';
 
 class Channels extends React.Component {
     constructor(props) {
@@ -232,7 +232,7 @@ class Channels extends React.Component {
                     </div>
                   </div>
                   <div className='message-pane-banner'>
-                    <img src={require('../app/assets/images/second_setup@2x.png')}/>
+                    <img src={require('../../app/assets/images/second_setup@2x.png')}/>
                   </div>
                   <div className='message-pane-banner-body'>
                     <h1>Save your account and start collaborating</h1>

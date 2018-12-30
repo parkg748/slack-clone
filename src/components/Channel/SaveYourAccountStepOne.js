@@ -74,7 +74,7 @@ class SaveYourAccountStepOne extends React.Component {
                   <h3>Set your name and password</h3>
                   <i onClick={() => toggleMenu('save-account')} className="onboarding-dialog-header-times fas fa-times"></i>
                 </div>
-                <img src={require('../app/assets/images/step_01@2x.png')}/>
+                <img src={require('../../app/assets/images/step_01@2x.png')}/>
                 <div className='onboarding-step-fields'>
                   <div className='onboarding-step-fields-container'>
                   <p>Your full name</p>

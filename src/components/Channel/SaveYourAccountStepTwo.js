@@ -54,7 +54,7 @@ class SaveYourAccountStepTwo extends React.Component {
                   <h3>Review your team's details</h3>
                   <i onClick={() => toggleMenu('save-account')} className="onboarding-dialog-header-times fas fa-times"></i>
                 </div>
-                <img src={require('../app/assets/images/step_02@2x.png')}/>
+                <img src={require('../../app/assets/images/step_02@2x.png')}/>
                 <div className='onboarding-step-fields'>
                   <div className='onboarding-step-fields-container'>
                   <p>devchat workspace name</p>

@@ -41,7 +41,7 @@ class BrowseApp extends React.Component {
               <div className='channel-list-container'>
                 <div className='app-browser-category-section'>
                   <div className='app-browser-app'>
-                    <img src={require('../app/assets/images/tutorial@2x.png')}/>
+                    <img src={require('../../app/assets/images/tutorial@2x.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>What are apps?</strong>
@@ -54,7 +54,7 @@ class BrowseApp extends React.Component {
                 <div className='app-browser-category'>
                   <div className='recent-conversations'>Add apps to your workspace</div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/service_72.png')}/>
+                    <img src={require('../../app/assets/images/service_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Giphy</strong>
@@ -64,7 +64,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/232381175025_31793c43d684e5a7c75a_72.png')}/>
+                    <img src={require('../../app/assets/images/232381175025_31793c43d684e5a7c75a_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Google Drive</strong>
@@ -74,7 +74,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/44042585718_0e6a837d5b63fd1cfc07_72.png')}/>
+                    <img src={require('../../app/assets/images/44042585718_0e6a837d5b63fd1cfc07_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Trello</strong>
@@ -84,7 +84,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/dropbox_72.png')}/>
+                    <img src={require('../../app/assets/images/dropbox_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Dropbox</strong>
@@ -94,7 +94,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/twitter_72.png')}/>
+                    <img src={require('../../app/assets/images/twitter_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Twitter</strong>
@@ -104,7 +104,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/17670668547_3b5cda05986fc6c0d978_72.png')}/>
+                    <img src={require('../../app/assets/images/17670668547_3b5cda05986fc6c0d978_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Simple Poll</strong>
@@ -114,7 +114,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/service_72 (1).png')}/>
+                    <img src={require('../../app/assets/images/service_72 (1).png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Google Calendar</strong>
@@ -124,7 +124,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/hangouts_72.png')}/>
+                    <img src={require('../../app/assets/images/hangouts_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Google+ Hangouts</strong>
@@ -134,7 +134,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/130976277813_a8ab564623726e14ea32_72.png')}/>
+                    <img src={require('../../app/assets/images/130976277813_a8ab564623726e14ea32_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Workast</strong>
@@ -144,7 +144,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/101273840518_6a9119a0601c8509247c_72.png')}/>
+                    <img src={require('../../app/assets/images/101273840518_6a9119a0601c8509247c_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>IFTTT</strong>
@@ -154,7 +154,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/200850512066_2d5e268a3b71c87f969c_72.png')}/>
+                    <img src={require('../../app/assets/images/200850512066_2d5e268a3b71c87f969c_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Zapier</strong>
@@ -164,7 +164,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/rss_72.png')}/>
+                    <img src={require('../../app/assets/images/rss_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>RSS</strong>
@@ -174,7 +174,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/41532123248_86c89d7c608b75bbd782_72.png')}/>
+                    <img src={require('../../app/assets/images/41532123248_86c89d7c608b75bbd782_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Polly</strong>
@@ -184,7 +184,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/service_72 (2).png')}/>
+                    <img src={require('../../app/assets/images/service_72 (2).png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Microsoft OneDrive</strong>
@@ -194,7 +194,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/288981919427_f45f04edd92902a96859_72.png')}/>
+                    <img src={require('../../app/assets/images/288981919427_f45f04edd92902a96859_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>GitHub</strong>
@@ -204,7 +204,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/493753869479_4b703f4119efe3d7d0ff_72.png')}/>
+                    <img src={require('../../app/assets/images/493753869479_4b703f4119efe3d7d0ff_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Jira Cloud</strong>
@@ -214,7 +214,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/16747233735_cd6d563053f8079cd36f_72.png')}/>
+                    <img src={require('../../app/assets/images/16747233735_cd6d563053f8079cd36f_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Gif Keyboard</strong>
@@ -224,7 +224,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/service_72 (3).png')}/>
+                    <img src={require('../../app/assets/images/service_72 (3).png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Box</strong>
@@ -234,7 +234,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/32656022455_3f51bd50630a4ea2a08b_72.png')}/>
+                    <img src={require('../../app/assets/images/32656022455_3f51bd50630a4ea2a08b_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Kyber</strong>
@@ -244,7 +244,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/service_72 (4).png')}/>
+                    <img src={require('../../app/assets/images/service_72 (4).png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Hubot</strong>
@@ -254,7 +254,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/334235045829_1d1db85d6877560365df_72.png')}/>
+                    <img src={require('../../app/assets/images/334235045829_1d1db85d6877560365df_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Bitbucket Cloud</strong>
@@ -264,7 +264,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/361581500802_805517e7bd209d4189d4_72.png')}/>
+                    <img src={require('../../app/assets/images/361581500802_805517e7bd209d4189d4_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Teamline</strong>
@@ -274,7 +274,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/159746031889_77753ab40a2fa603bd53_72.png')}/>
+                    <img src={require('../../app/assets/images/159746031889_77753ab40a2fa603bd53_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>InVision App</strong>
@@ -284,7 +284,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/245295805989_06e77af1bfb8e3c81d4d_72.png')}/>
+                    <img src={require('../../app/assets/images/245295805989_06e77af1bfb8e3c81d4d_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Zoom</strong>
@@ -294,7 +294,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/service_72 (5).png')}/>
+                    <img src={require('../../app/assets/images/service_72 (5).png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Salesforce</strong>
@@ -304,7 +304,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/144221668546_9c44dbfe73488d4b8d5e_72.png')}/>
+                    <img src={require('../../app/assets/images/144221668546_9c44dbfe73488d4b8d5e_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Meekan Scheduling</strong>
@@ -314,7 +314,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/384053245894_495b0d8bc7454e59a3c8_72.png')}/>
+                    <img src={require('../../app/assets/images/384053245894_495b0d8bc7454e59a3c8_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Cisco Webex Meetings</strong>
@@ -324,7 +324,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/474008204773_946a31a43846271803a5_72.png')}/>
+                    <img src={require('../../app/assets/images/474008204773_946a31a43846271803a5_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>StandupIy</strong>
@@ -334,7 +334,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/275879732834_2e4075f294f71c6bc9d0_72.png')}/>
+                    <img src={require('../../app/assets/images/275879732834_2e4075f294f71c6bc9d0_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Eventbot Calendar</strong>
@@ -344,7 +344,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/458684668640_b6e0feb5a3be66d465f4_72.png')}/>
+                    <img src={require('../../app/assets/images/458684668640_b6e0feb5a3be66d465f4_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Geekbot</strong>
@@ -354,7 +354,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/300655353986_53957f8929256e832140_72.png')}/>
+                    <img src={require('../../app/assets/images/300655353986_53957f8929256e832140_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Disco</strong>
@@ -364,7 +364,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/238810648614_7050c90574e7f953aa42_72.png')}/>
+                    <img src={require('../../app/assets/images/238810648614_7050c90574e7f953aa42_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Donut</strong>
@@ -374,7 +374,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/416861742148_9a4f2f5b0d2c7259bee8_72.png')}/>
+                    <img src={require('../../app/assets/images/416861742148_9a4f2f5b0d2c7259bee8_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Slack Foundry</strong>
@@ -384,7 +384,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/service_72 (6).png')}/>
+                    <img src={require('../../app/assets/images/service_72 (6).png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>BlueJeans</strong>
@@ -394,7 +394,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/49671169684_cbdc45293ab75ea06413_72.png')}/>
+                    <img src={require('../../app/assets/images/49671169684_cbdc45293ab75ea06413_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>PagerDuty</strong>
@@ -404,7 +404,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/297532298896_b38db12dd15a4aebf3d1_72.png')}/>
+                    <img src={require('../../app/assets/images/297532298896_b38db12dd15a4aebf3d1_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Troops</strong>
@@ -414,7 +414,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/341591994389_f9b34fbf501c8b52203d_72.png')}/>
+                    <img src={require('../../app/assets/images/341591994389_f9b34fbf501c8b52203d_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Asana</strong>
@@ -424,7 +424,7 @@ class BrowseApp extends React.Component {
                     </div>
                   </div>
                   <div className='app-browser-category-header'>
-                    <img src={require('../app/assets/images/403895177205_5bba247da24a9129c161_72.png')}/>
+                    <img src={require('../../app/assets/images/403895177205_5bba247da24a9129c161_72.png')}/>
                     <div className='app-browser-app-container'>
                       <div className='app-browser-app-info'>
                       <strong>Zendesk</strong>

@@ -26,7 +26,7 @@ class SaveYourAccountFinalStep extends React.Component {
                   <i onClick={() => toggleMenu('save-account')} className="onboarding-dialog-header-times fas fa-times"></i>
                 </div>
                 <div className='final-step'>
-                  <img src={require('../app/assets/images/step_04@2x.png')}/>
+                  <img src={require('../../app/assets/images/step_04@2x.png')}/>
                 </div>
                 <div className='onboarding-step-fields'>
                   <h2>Your devchat workspace is all set</h2>

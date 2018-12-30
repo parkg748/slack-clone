@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import firebase from './firebase';
+import firebase from '../firebase';
 
 class CreateChannel extends React.Component {
     constructor(props) {
@@ -45,21 +45,31 @@ class CreateChannel extends React.Component {
       }
     }
 
-    addChannel() {
-      const { name, channelsRef, purpose, email, privateMode, invites } = this.state;
-      const key = channelsRef.push().key;
-      const newChannel = {
-          id: key,
-          name,
-          purpose,
-          invites,
-          privacy: privateMode,
-          createdBy: {
-              name: email
-          }
-      }
-      channelsRef.child(key).update(newChannel);
+    handleSubmit(e) {
+    e.preventDefault();
+    if (this.isFormValid(this.state)) {
+      this.addChannel();
     }
+  };
+
+  isFormValid = ({ name }) => name;
+
+addChannel() {
+  const { name, purpose, email, privateMode, invites } = this.state;
+  const { channelsRef } = this.props;
+  const key = channelsRef.push().key;
+  const newChannel = {
+    id: key,
+    name,
+    purpose,
+    invites,
+    privacy: privateMode,
+    createdBy: {
+      name: email
+    }
+  }
+  channelsRef.child(key).update(newChannel);
+}
 
     render() {
         const { toggleMenu } = this.props;
@@ -100,7 +110,7 @@ class CreateChannel extends React.Component {
               </div>
               <div className='save-channel'>
                 <button onClick={() => toggleMenu('create-channel')} className='save-channel-cancel'>Cancel</button>
-                <button onClick={() => this.addChannel()} style={{ backgroundColor: `${background}`, color: `${color}` }} className='save-channel-create'>Create Channel</button>
+                <button onClick={(e) => this.handleSubmit(e)} style={{ backgroundColor: `${background}`, color: `${color}` }} className='save-channel-create'>Create Channel</button>
               </div>
             </div>
           </div>

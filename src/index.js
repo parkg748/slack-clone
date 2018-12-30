@@ -20,7 +20,7 @@ import GetStartedCreate from './components/GetStarted/GetStartedCreate';
 import CreateConfirmEmail from './components/CreateConfirmEmail';
 import GetStartedFind from './components/GetStarted/GetStartedFind';
 import SigninTemp from './components/SigninTemp';
-import Channels from './components/Channels';
+import Channels from './components/Channel/Channels';
 
 const store = createStore(rootReducer, composeWithDevTools());
 
