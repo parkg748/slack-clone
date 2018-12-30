@@ -16,7 +16,7 @@ class CreateInvites extends React.Component {
         errors: [false, false, false],
         check: [false, false, false],
         idx: 3,
-        invitesValid: false, 
+        invitesValid: false,
         button: '#e8e8e8',
         font: 'rgba(44,45,48,.75)',
         skip: false
@@ -117,7 +117,7 @@ displayCloseButton(idx) {
   }
 
   render() {
-    const { name, channelDetail, invites, close, idx, invitesValid, errors, check, button, font, skip } = this.state;
+    const { name, email, channelDetail, invites, close, idx, invitesValid, errors, check, button, font, skip, channelsRef } = this.state;
 
     let inputBox = [];
     let j = 105;
@@ -139,7 +139,7 @@ displayCloseButton(idx) {
     }
 
     if (invitesValid) {
-        return skip ? <CreateTada name={name} channelDetail={channelDetail} invites={[]}/> : <CreateTada name={name} channelDetail={channelDetail} invites={invites}/>;
+        return skip ? <CreateTada channelsRef={channelsRef} name={name} email={email} channelDetail={channelDetail} invites={[]}/> : <CreateTada channelsRef={channelsRef} name={name} email={email} channelDetail={channelDetail} invites={invites}/>;
     }
     return (
       <div className='team-name'>
@@ -160,7 +160,7 @@ displayCloseButton(idx) {
                         <button onClick={(e) => this.handleSubmit(e, 'add')} style={{ color: `${font}`, backgroundColor: `${button}` }}>Add Teammates</button>
                         <div className='invites-skipfornow'>Or, <a onClick={(e) => this.handleSubmit(e, 'skip')}>skip for now</a></div>
                     </div>
-                    
+
                 </div>
             </div>
             <div className='teamname-right-sidebar'>

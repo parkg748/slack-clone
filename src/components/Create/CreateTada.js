@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setCurrentChannel } from '../../actions/index';
 import '../App.css';
 
 class CreateTada extends React.Component {
@@ -9,15 +11,16 @@ class CreateTada extends React.Component {
         name: this.props.name,
         channelDetail: this.props.channelDetail,
         invites: this.props.invites,
+        channelsRef: this.props.channelsRef
     };
   }
 
-  goToChannelsPage() {
-      this.props.history.push('/channel');
+  changeChannel(channel) {
+    this.props.setCurrentChannel(channel);
   }
 
   render() {
-    const { name, channelDetail, invites } = this.state;
+    const { name, channelDetail, invites, channelsRef } = this.state;
     let invitesBox = [];
     let topBullet = 191;
     let topSpan = 183;
@@ -55,7 +58,7 @@ class CreateTada extends React.Component {
                 <div className='tada-left-sidebar-body'>
                     <h1>Tada! Meet your team’s first channel: #{channelDetail}</h1>
                     <p>A channel brings together every part of your project – the people, conversations, ideas, updates, and files – so your team can move forward and get more done.</p>
-                    <button onClick={() => this.goToChannelsPage()}>See Your Channel in devchat</button>
+                    <button onClick={() => this.changeChannel(channelsRef)}>See Your Channel in devchat</button>
                     <p className='tada-left-sidebar-disclaimer'>By continuing, you're agreeing to our <Link to='/'>Customer Terms of Service</Link>, <Link to='/'>Privacy Policy</Link>, and <Link to='/'>Cookie Policy</Link>.</p>
                 </div>
             </div>
@@ -83,4 +86,4 @@ class CreateTada extends React.Component {
   }
 }
 
-export default CreateTada;
+export default connect(null, { setCurrentChannel })(CreateTada);

@@ -36,6 +36,17 @@ class Channels extends React.Component {
         this.setSelection = this.setSelection.bind(this);
     }
 
+    // componentDidMount() {
+    //   this.addListeners();
+    // }
+
+    addListeners() {
+      let loadedChannels = [];
+      this.state.channelsRef.on('child_added', snap => {
+        loadedChannels
+      })
+    }
+
     toggleMenu(type) {
       if (type === 'menu') {
         this.setState({ [type]: !this.state.menu });
@@ -47,10 +58,6 @@ class Channels extends React.Component {
         this.setState({ [type]: true });
       } else if (type === 'browse-channel') {
         this.setState({ browseChannel: !this.state.browseChannel });
-      } else if (type === 'public') {
-        this.setState({ privateMode: true, left: 2 });
-      } else if (type === 'private') {
-        this.setState({ privateMode: false, left: 75 });
       } else if (type === 'create-channel') {
         this.setState({ createChannel: !this.state.createChannel });
       } else if (type === 'direct-messages') {
@@ -98,7 +105,7 @@ class Channels extends React.Component {
         return (
             <div className='channel'>
               {browseChannel ? <BrowseChannels showChannel={showChannel} sortChannel={sortChannel} toggleMenu={this.toggleMenu} setSelection={this.setSelection} sort={sort} show={show}/> : ''}
-              {createChannel ? <CreateChannel toggleMenu={this.toggleMenu} left={left} privateMode={privateMode}/> : ''}
+              {createChannel ? <CreateChannel toggleMenu={this.toggleMenu}/> : ''}
               {directMessages ? <DirectMessages toggleMenu={this.toggleMenu}/> : ''}
               {browseApp ? <BrowseApp toggleMenu={this.toggleMenu}/> : ''}
               {saveYourAccount ? <SaveYourAccountStepOne toggleMenu={this.toggleMenu}/> : ''}

@@ -6,7 +6,7 @@ import Register from './components/Auth/Register';
 import registerServiceWorker from './registerServiceWorker';
 import firebase from './components/firebase';
 import 'semantic-ui-css/semantic.min.css'
-import { setUser, clearUser, setChannels } from './actions/index';
+import { setUser, clearUser, setCurrentChannel } from './actions/index';
 import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux';
@@ -64,7 +64,7 @@ const mapStateToProps = state => {
     }
 }
 
-const RootWithAuth = withRouter(connect(mapStateToProps, { setUser, clearUser, setChannels })(Root));
+const RootWithAuth = withRouter(connect(mapStateToProps, { setUser, clearUser, setCurrentChannel })(Root));
 
 ReactDOM.render(<Provider store={store}>
     <Router>
