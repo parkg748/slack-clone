@@ -35,12 +35,14 @@ class Channels extends React.Component {
             saveYourAccount: false,
             channels: [],
             channelsRef: firebase.database().ref('channels'),
-            firstLoad: true
+            firstLoad: true,
+            activeChannel: ''
         };
         this._onMouseEnter = this._onMouseEnter.bind(this);
         this._onMouseLeave = this._onMouseLeave.bind(this);
         this.toggleMenu = this.toggleMenu.bind(this);
         this.setSelection = this.setSelection.bind(this);
+        this.setActiveChannel = this.setActiveChannel.bind(this);
     }
 
     componentDidMount() {
@@ -70,6 +72,22 @@ class Channels extends React.Component {
       }
       this.setState({ firstLoad: false });
     }
+
+    changeChannel(channel) {
+        this.setActiveChannel(channel);
+        this.props.setCurrentChannel(channel);
+      };
+
+    setActiveChannel(channel) {
+      this.setState({ activeChannel: channel.id });
+    };
+
+    displayChannels = channels =>
+    channels.length > 0 &&
+    channels.map(channel => (
+      <div onClick={() => { this.setSelection(`${channel.name}`, 'currentChannel'); this.changeChannel(channel)}} style={{ backgroundColor: `${this.state.currentChannel === `${channel.name}` && `${this.state.activeChannel}` === `${channel.id}` ? `#4C9689` : `transparent`}`, color: `${this.state.currentChannel === `${channel.name}` && `${this.state.activeChannel}` === `${channel.id}` ? `white` : `rgb(202,196,201)`}`  }} className='row-col-channels'># {channel.name}</div>
+
+    ));
 
     toggleMenu(type) {
       if (type === 'menu') {
@@ -124,7 +142,7 @@ class Channels extends React.Component {
     }
 
     render() {
-        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel, privateMode, left, createChannel, currentChannel, directMessages, browseApp, saveYourAccount, channelsRef } = this.state;
+        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel, privateMode, left, createChannel, currentChannel, directMessages, browseApp, saveYourAccount, channelsRef, channels } = this.state;
         return (
             <div className='channel'>
               {browseChannel ? <BrowseChannels showChannel={showChannel} sortChannel={sortChannel} toggleMenu={this.toggleMenu} setSelection={this.setSelection} sort={sort} show={show}/> : ''}
@@ -159,7 +177,7 @@ class Channels extends React.Component {
                   </div>
                   <div onClick={() => this.setSelection('general', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `general` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `general` ? `white` : `rgb(202,196,201)`}` }} className='row-col-channels'># general</div>
                   <div onClick={() => this.setSelection('random', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `random` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `random` ? `white` : `rgb(202,196,201)`}`  }} className='row-col-channels'># random</div>
-                  <div onClick={() => this.setSelection('hello', 'currentChannel')} style={{ backgroundColor: `${currentChannel === `hello` ? `#4C9689` : `transparent`}`, color: `${currentChannel === `hello` ? `white` : `rgb(202,196,201)`}`  }} className='row-col-channels'># hello</div>
+                  {this.displayChannels(channels)}
                   <div className='divider-2'></div>
                   <div className='row-col-channels-title'>
                     <span onClick={() => this.toggleMenu('direct-messages')} className='row-col-channels-direct-messages'>Direct Messages</span>
