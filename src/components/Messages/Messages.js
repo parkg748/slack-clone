@@ -12,9 +12,30 @@ class Messages extends React.Component {
       message: '',
       loading: false,
       channel: this.props.channel,
-      user: this.props.user
+      user: this.props.user,
+      messages: [],
+      messagesLoading: true
     }
     this.sendMessage = this.sendMessage.bind(this);
+  }
+
+  componentDidMount() {
+    const { channel, user } = this.props;
+    if (channel && user) {
+      this.addListeners(channel.id);
+    }
+  }
+
+  addListeners(channelId) {
+    this.addMessageListener(channelId);
+  }
+
+  addMessageListener(channelId) {
+    let loadedMessages = [];
+    this.state.messagesRef.child(channelId).on('child_added', snap => {
+      loadedMessages.push(snap.val());
+      this.setState({ messages: loadedMessages, messagesLoading: false });
+    });
   }
 
   createMessage() {
@@ -49,7 +70,7 @@ class Messages extends React.Component {
 
     render() {
       const { messagesRef, message } = this.state;
-
+      debugger;
         return (
           <div className='channel-right-bottom'>
             <div className='virtual-list-sticky-container'>
