@@ -7,7 +7,7 @@ class CreateChannel extends React.Component {
         super(props);
         this.state = {
           name: '',
-          channelsRef: firebase.database().ref('channels'),
+          channelsRef: this.props.channelsRef,
           email: this.props.email,
           purpose: '',
           invites: '',
@@ -15,7 +15,9 @@ class CreateChannel extends React.Component {
           privateMode: false,
           left: 75,
           nameError: false,
-          nameBorder: '1px solid #919193'
+          nameBorder: '1px solid #919193',
+          background: '#e8e8e8',
+          color: '#2c2d30'
         };
         this._onMouseDown = this._onMouseDown.bind(this);
         this.privatePublic = this.privatePublic.bind(this);
@@ -25,7 +27,7 @@ class CreateChannel extends React.Component {
       this.setState({ clicked: true });
     }
 
-    privatePublic() {
+    privatePublic(type) {
       if (type === 'public') {
         this.setState({ privateMode: true, left: 2 });
       } else if (type === 'private') {
@@ -36,15 +38,15 @@ class CreateChannel extends React.Component {
     update(field) {
       return (e) => {
         if (e.target.value === '' && field === 'name') {
-          this.setState({ [field]: e.target.value, nameError: true, nameBorder: '1px solid #f26130' });
+          this.setState({ [field]: e.target.value, nameError: true, nameBorder: '1px solid #f26130', background: '#e8e8e8', color: '#2c2d30' });
         } else {
-          this.setState({ [field]: e.target.value, nameError: false, nameBorder: '1px solid #919193' });
+          this.setState({ [field]: e.target.value, nameError: false, nameBorder: '1px solid #919193', background: '#008952', color: 'white' });
         }
       }
     }
 
     addChannel() {
-      const { name, channelsRef, purpose, email, privateMode } = this.state;
+      const { name, channelsRef, purpose, email, privateMode, invites } = this.state;
       const key = channelsRef.push().key;
       const newChannel = {
           id: key,
@@ -61,7 +63,7 @@ class CreateChannel extends React.Component {
 
     render() {
         const { toggleMenu } = this.props;
-        const { clicked, name, purpose, privateMode, left, nameError, nameBorder } = this.state;
+        const { clicked, name, purpose, privateMode, left, nameError, nameBorder, invites, background, color } = this.state;
 
         return (
           <div className='contents-container'>
@@ -93,12 +95,12 @@ class CreateChannel extends React.Component {
               </div>
               <div className='send-invites-to'>
                 <label><strong>Send invites to:</strong> (optional)</label>
-                <input className='send-invites-to' type='text' placeholder='Search by name'/>
+                <input onChange={this.update('invites')} className='send-invites-to' type='text' placeholder='Search by name' value={invites}/>
                 <span>Select up to 1000 people to add to this channel.</span>
               </div>
               <div className='save-channel'>
                 <button onClick={() => toggleMenu('create-channel')} className='save-channel-cancel'>Cancel</button>
-                <button className='save-channel-create'>Create Channel</button>
+                <button onClick={() => this.addChannel()} style={{ backgroundColor: `${background}`, color: `${color}` }} className='save-channel-create'>Create Channel</button>
               </div>
             </div>
           </div>

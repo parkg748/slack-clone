@@ -7,6 +7,9 @@ import CreateChannel from './CreateChannel';
 import DirectMessages from './DirectMessages';
 import BrowseApp from './BrowseApp';
 import SaveYourAccountStepOne from './SaveYourAccountStepOne';
+import firebase from './firebase';
+import { setCurrentChannel } from '../actions/index';
+import { connect } from 'react-redux';
 
 class Channels extends React.Component {
     constructor(props) {
@@ -28,7 +31,10 @@ class Channels extends React.Component {
             currentChannel: 'general',
             directMessages: false,
             browseApp: false,
-            saveYourAccount: false
+            saveYourAccount: false,
+            channels: [],
+            channelsRef: firebase.database().ref('channels'),
+            firstLoad: true
         };
         this._onMouseEnter = this._onMouseEnter.bind(this);
         this._onMouseLeave = this._onMouseLeave.bind(this);
@@ -36,15 +42,32 @@ class Channels extends React.Component {
         this.setSelection = this.setSelection.bind(this);
     }
 
-    // componentDidMount() {
-    //   this.addListeners();
-    // }
+    componentDidMount() {
+      this.addListeners();
+    }
+
+    componentWillUnmount() {
+      this.removeListeners();
+    }
 
     addListeners() {
       let loadedChannels = [];
       this.state.channelsRef.on('child_added', snap => {
-        loadedChannels
-      })
+        loadedChannels.push(snap.val());
+        this.setState({ channels: loadedChannels }, () => this.setFirstChannel());
+      });
+    }
+
+    removeListeners() {
+      this.state.channelsRef.off();
+    }
+
+    setFirstChannel() {
+      const firstChannel = this.state.channels[0];
+      if (this.state.firstLoad && this.state.channels.length > 0) {
+        this.props.setCurrentChannel(firstChannel);
+      }
+      this.setState({ firstLoad: false });
     }
 
     toggleMenu(type) {
@@ -100,12 +123,11 @@ class Channels extends React.Component {
     }
 
     render() {
-        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel, privateMode, left, createChannel, currentChannel, directMessages, browseApp, saveYourAccount } = this.state;
-
+        const { font, edit, search, menu, notification, show, sort, showChannel, sortChannel, browseChannel, privateMode, left, createChannel, currentChannel, directMessages, browseApp, saveYourAccount, channelsRef } = this.state;
         return (
             <div className='channel'>
               {browseChannel ? <BrowseChannels showChannel={showChannel} sortChannel={sortChannel} toggleMenu={this.toggleMenu} setSelection={this.setSelection} sort={sort} show={show}/> : ''}
-              {createChannel ? <CreateChannel toggleMenu={this.toggleMenu}/> : ''}
+              {createChannel ? <CreateChannel toggleMenu={this.toggleMenu} channelsRef={channelsRef}/> : ''}
               {directMessages ? <DirectMessages toggleMenu={this.toggleMenu}/> : ''}
               {browseApp ? <BrowseApp toggleMenu={this.toggleMenu}/> : ''}
               {saveYourAccount ? <SaveYourAccountStepOne toggleMenu={this.toggleMenu}/> : ''}
@@ -256,4 +278,4 @@ class Channels extends React.Component {
     }
 }
 
-export default Channels;
+export default connect(null, { setCurrentChannel })(Channels);

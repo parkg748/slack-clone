@@ -2417,10 +2417,8 @@ input:focus {
   padding: 14px 18px 16px 18px;
   font-size: 20px;
   font-weight: bold;
-  color: #2c2d30;
   border-radius: .25rem;
   border: none;
-  background-color: #e8e8e8;
   font-family: 'Lato', sans-serif;
   cursor: pointer;
 }
@@ -2464,6 +2462,7 @@ input:focus {
   margin-left: 5px;
   font-size: 16px;
   font-weight: bold;
+  margin-top: 0;
 }
 
 .send-invites-to input {
